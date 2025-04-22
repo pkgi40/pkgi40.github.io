@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Papyrus Documentation">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <title>Papyrus Documentation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="custom.css" rel="stylesheet" type="text/css">
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-brand-custom" href="index.html"><img class="img-responsive" src="img/papyrus-logo.png" alt="Papyrus"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#applications">Applications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#technologies">Technologies</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="download.html">Downloads</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="relatives.html">Relatives</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#page-top">Documentation</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="community.html">Community</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <section id="main" class="custom-section">
+
+        <div class="container">
+            <h1 class="section-title wrap">Eclipse Papyrus&trade; Documentation</h1>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p><img class="img-responsive center-block" src="img/documentation.png" alt="Documentation">
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-justify">Eclipse Papyrus is a UML tool that provide very advanced facilities for customizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custom facilities. Developers may go to the <a href="http://wiki.eclipse.org/MDT/Papyrus">wiki</a> to know more about the design of Eclipse Papyrus and questions may be asked on the <a href="http://www.eclipse.org/forums/index.php/f/121/">forum</a>. In addition to the documentation available through this page, you will find documentation in the online help of the tool.
+                    </p>
+
+                    <h2 class="subsection-title wrap">End Users Documentation</h2>
+                    <h3 class="subsubsection-title wrap">Guides and documentations</h3>
+                    <ul class="text-justify">
+                        <li> <a href="https://help.eclipse.org/2022-12/index.jsp?nav=%2F66" title="Papyrus User Guide">User Guide</a></li>
+                        <li><a href="http://wiki.eclipse.org/MDT/Papyrus/UserGuide/CSS">CSS documentation</a></li>
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Tutorials</h3>
+                    <ul class="text-justify">
+                        <li><a href="resources/TutorialOnPapyrusUSE_d20101001.pdf">A slide-ware tutorial on Eclipse Papyrus usage for starters (2010-10-01)</a></li>
+                        <li><a href="resources/PapyrusTutorial_CollaborativeWork_v1.0_d20110727.pdf">A tutorial on Eclipse Papyrus usage for collaborative work  (2011-07-27)</a></li>
+                        <li><a href="resources/PapyrusTutorial_OnSequenceDiagrams_v0.1_d2010100.pdf">A tutorial on Eclipse Papyrus sequence diagram editor  (2010-10-01)</a></li>
+                        <li><a href="resources/PapyrusTutorial_OnActivityDiagrams_v0.2_d20110719.pdf">A tutorial on Eclipse Papyrus activity diagram editor (2011-07-19)</a></li>
+                    </ul>
+                    
+                    
+                    <h2 class="subsection-title wrap">Toolsmiths and Developers Documentation</h2>
+                    <h3 class="subsubsection-title wrap">Guides and documentations</h3>
+                    <ul class="text-justify">
+                        <li> <a href="https://wiki.eclipse.org/Papyrus_Developer_Guide" title="Papyrus Developer Guide">Developer Guide</a>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Tutorials</h3>
+                    <ul class="text-justify">
+                        <li><a href="resources/PapyrusTutorial_OnDiagramStylesheets.pdf">A tutorial on Eclipse Papyrus diagram stylesheets (2012-09-27)</a></li>
+                        <li><a href="resources/PapyrusUserGuideSeries_AboutUMLProfile_v1.0.0_d20120606.pdf">A tutorial on designing and using UML profiles with Eclipse Papyrus (2012-06-06)</a></li>
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Demonstrations</h3>
+                    <ul class="text-justify">
+                        <li><a href="http://youtu.be/90Qt9a_0c-k">Custom SVG shapes with CSS</a></li>
+                        <li><a href="http://youtu.be/9WJF8SABSHA">CSS tutorial</a></li>
+                    </ul>
+                    
+                    <h2 class="subsection-title wrap">Other Documentations</h2>
+                    <h3 class="subsubsection-title wrap">Presentations at conferences</h3>
+                    <ul class="text-justify">
+                        <li><a href="resources/ECE15-MDE_WITH_PAPYRUS_novelties_and_beyond.pdf">Presentation at the EclipseCon 2015 Europe</a></li>
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Videos and demos</h3>
+                    <ul class="text-justify">
+                        <li> <a href="https://www.youtube.com/channel/UCxyPoBlZc_rKLS7_K2dtwYA">Eclipse Papyrus YouTube Channel</a>
+                        </li>
+
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Eclipse Papyrus Community</h3>
+                    <ul class="text-justify">
+                        <li> <a href="community.html#resources">Users and Developers resources</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+</body>
+
+</html>

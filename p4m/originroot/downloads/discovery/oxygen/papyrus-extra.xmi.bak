@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<discovery:DiscoveryDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:discovery="http://www.eclipse.org/papyrus/discovery/1.0">
+  <categories
+      name="Languages"
+      description="UML language extensions"
+      relevance="6">
+    <components
+        name="Papyrus Req"
+        provider="Eclipse Modeling Project"
+        description="Component used to manage requirements of SysML"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/Papyrus_Req_32x32.png">
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/</sitesURLS>
+      <overview
+          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation. You will need the latest Oxygen version of SyML14 to install this feature"/>
+      <id>org.eclipse.papyrus.requirements.core.feature</id>
+    </components>
+    <components
+        name="SysML 1.4"
+        provider="Eclipse Modeling Project"
+        description="SysML 1.4 extension for Papyrus"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/sysml_32_32.gif">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/oxygen/</sitesURLS>
+      <overview
+          summary="SysML 1.4 extension for Papyrus. You will need the org.eclipse.ocl.all.sdk (5.3.0) and the org.eclipse.papyrus.sdk.feature (3.1.0 or above) released in the eclipse oxygen update site"/>
+      <id>org.eclipse.papyrus.sysml14.feature</id>
+    </components>
+  </categories>
+  <categories
+      name="Modeler extensions"
+      description="Extension of the tool">
+    <components
+        name="Papyrus Layers"
+        provider="Eclipse Modeling Project"
+        description="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/incubation/layers/updates/oxygen/</sitesURLS>
+      <overview
+          summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views. You will need org.eclipse.emf.query.ocl 2.0.0 or above to install this feature."/>
+      <id>org.eclipse.papyrus.layers.feature</id>
+    </components>
+    <components
+        name="Papyrus DSML Validation"
+        provider="Eclipse Modeling Project"
+        description="Component to generate a validation plug-in from a UML Profile"
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/incubation/dsml.validation/updates/oxygen/</sitesURLS>
+      <overview
+          summary="Component to generate a validation plug-in from a UML Profile"/>
+      <id>org.eclipse.papyrus.dsml.validation.feature</id>
+    </components>
+    <components
+        name="Integrated ALF Editor"
+        provider="Eclipse Modeling Project"
+        description="Edit your packages, classes, signals, datatypes, enumerations, associations and activities with ALF"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/alf-icon-32x32.png"
+        incubation="true">
+      <sitesURLS>https://ci.eclipse.org/papyrus/job/Papyrus-Incubation-Alf/lastSuccessfulBuild/artifact/alf/releng/org.eclipse.papyrus.incubation.alf.p2/target/repository/</sitesURLS>
+      <overview
+          summary="ALF is a standard language enabling the specification of fUML (subet of UML - scope limited to Classes an Activities) models using text. The advantage of ALF is that it is fully aligned on the subset of UML  covered by fUML. This means any ALF specification can be compiled as a fUML model. Conversely a fUML model can be translated as an ALF model whose representation is given textually. ALF provides a way to make easier the specification of fUML models. This is especially true in the case of activities which become hard to understand as soon as you have more than a dozen of action nodes. In the context of Papyrus an ALF editor is integrated within the property and become available according to the selection you have in your current model. For the moment edition is limited to Class, Signal, DataType, Enumeration, Package, Association and Activity. The user has the opportunity to modify, validate and compile (i.e. propagate the modifications) ALF specifications corresponding to these elements. "/>
+      <id>org.eclipse.papyrus.uml.alf.integration.feature</id>
+    </components>
+    <components
+        name="Moka"
+        provider="Eclipse Modeling Project"
+        description="Moka is a Papyrus module for execution, animation and debugging of UML models."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/moka.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/oxygen/</sitesURLS>
+      <overview
+          summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
+      <id>org.eclipse.papyrus.moka.feature</id>
+    </components>
+  </categories>
+  <filters name="Stable"/>
+  <filters name="Experimental"/>
+</discovery:DiscoveryDefinition>

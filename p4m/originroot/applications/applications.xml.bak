@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<applications>
+    <application author="CIL4Sys" logo="resources/PUCS-CIL4Sys-OK.png" resource="resources/PUCS-CIL4Sys-OK.pdf">
+        We cut the number of system engineers hours by more than half
+    </application>
+    <application author="Spacebel" logo="resources/spacebel-usecasestory.png" resource="resources/spacebel-usecasestory.pdf">
+        From napkin sketches to production software
+    </application>
+    <application author="Plastic Omnium" logo="resources/plasticomnium-usecasestory.png" resource="resources/plasticomnium-usecasestory.pdf">
+        From document-centric to model-centric
+    </application>
+    <application author="Sherpa Engineering" logo="resources/sherpa-usecasestory.png" resource="resources/sherpa-usecasestory.pdf">
+       Sherpa Engineering business empowered by Papyrus
+    </application>
+	<application author="LRI - CEA LIST" logo="resources/lri-usecasestory.png" resource="resources/lri-usecasestory.pdf">
+       Giving birth to safe robots - A human’s best friends
+    </application>
+	<application author="Aldebaran" logo="resources/aldebaran-usecasestory.png" resource="resources/aldebaran-usecasestory.pdf">
+       Humanoid robots family is growing
+    </application>
+	<application author="DGA" logo="resources/dga-usecasestory.png" resource="resources/dga-usecasestory.pdf">
+       A collaboration platform for avionics systems
+    </application>
+	<application author="Ericsson" logo="resources/ericsson-usecasestory.png" resource="http://www.ericsson.com/res/thecompany/docs/publications/ericsson_review/2015/er-network-modeling.pdf">
+       Design, architects, and complex communication systems: painting the bigger picture
+    </application>
+	<application author="Airbus" logo="resources/airbus-usecasestory.png" resource="resources/airbus-usecasestory.pdf">
+       Designing freedom of flight
+    </application>
+</applications>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Papyrus">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <title>Testimonials</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="custom.css" rel="stylesheet" type="text/css">
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <script>
+        $(function () {
+            $("#footer").load("./footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-brand-custom" href="index.html"><img class="img-responsive" src="img/papyrus-logo.png" alt="Papyrus"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#applications">Applications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#technologies">Technologies</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="download.html">Downloads</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="relatives.html">Relatives</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="documentation.html">Documentation</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="community.html">Community</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="custom-section">
+
+        <div class="container">
+            <h1 class="section-title wrap">Papyrus Use Case Stories</h1>
+            <div class="row row-eq-height">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/PUCS-CIL4Sys-OK.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/PUCS-CIL4Sys-OK.png" alt="CIL4Sys Use Case Story">
+                            </a>
+                            <h2>&quot;<b>We cut the number of system engineers hours by more than half</b>&quot; <br>CIL4Sys</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/spacebel-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/spacebel-usecasestory.png" alt="Spacebel Use Case Story">
+                            </a>
+                            <h2>&quot;<b>From napkin sketches to production software</b>&quot; <br>Spacebel</h2>
+
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<div class="row row-eq-height">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/plasticomnium-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/plasticomnium-usecasestory.png" alt="Plastic Omnium Use Case Story">
+                            </a>
+                            <h2>&quot;<b>From document-centric to model-centric</b>&quot; <br>Plastic Omnium</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/sherpa-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/sherpa-usecasestory.png" alt="Sherpa Use Case Story">
+                            </a>
+                            <h2>&quot;<b>Sherpa Engineering business empowered by Papyrus</b>&quot; <br>Sherpa Engineering</h2>
+
+                        </div>
+                    </div>
+                </div>
+			</div>
+            <div class="row row-eq-height">				
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/lri-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/lri-usecasestory.png" alt="LRI Use Case Story">
+                            </a>
+                            <h2>&quot;<b>Giving birth to safe robots - A human’s best friends</b>&quot; <br>LRI - CEA LIST</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/aldebaran-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/aldebaran-usecasestory.png" alt="Aldebaran Use Case Story">
+                            </a>
+                            <h2>&quot;<b>Humanoid robots family<br> is growing</b>&quot; <br>Aldebaran</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-eq-height">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/dga-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/dga-usecasestory.png" alt="DGA Use Case Story">
+                            </a>
+                            <h2>&quot;<b>A collaboration platform for avionics systems</b>&quot; <br>DGA</h2>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/airbus-usecasestory.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/airbus-usecasestory.png" alt="Airbus Use Case Story">
+                            </a>
+                            <h2>&quot;<b>Designing freedom of flight</b>&quot;<br><br>Airbus</h2>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           <div class="row row-eq-height">
+				<div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="https://www.eclipsecon.org/europe2014/sites/default/files/slides/Ericsson_NWADSL_at_EclipseCon_Europe2014_0.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/ericsson-usecasestory.png" alt="Ericsson Use Case Story">
+                            </a>
+                            <h2>&quot;<b>Design, architects, and complex communication systems: painting the bigger picture</b>&quot; <br>Ericsson</h2>
+                            <a href="https://www.youtube.com/watch?v=m5cIi7hg2OU" target="_blank">Presentation</a> | <a href="https://www.eclipsecon.org/europe2014/sites/default/files/slides/Ericsson_NWADSL_at_EclipseCon_Europe2014_0.pdf" target="_blank">Slides</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="resources/Papyrus_Usecase_Story_RobMoSys.pdf" target="_blank">
+                                <img class="img-responsive center-block" src="resources/Papyrus_Usecase_Story_RobMoSys.png" alt="RobMoSys Use Case Story">
+                            </a>
+                            <h2>&quot;<b>A consolidated EU Digital Industrial Platform for robotics</b>&quot; <br>RobMoSys</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="custom-section">
+
+        <div class="container">
+            <h1 class="section-title wrap">Testimonials</h1>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Esterel Technologies has chosen the Papyrus technology platform from CEA LIST as a core component of its SCADE System model-based systems engineering product offering and is extremely pleased with its quality and efficiency as well as the common developments undertaken within our common LISTEREL Laboratory.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/esterel.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Eric Bantégnie, President &amp; CEO of Esterel Technologies, a wholly owned subsidiary of ANSYS, Inc.</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote">For the safety study of its companion robots, Aldebaran uses Papyrus as complex system modelling tool.<img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+
+                    <p class="text-justify"><b>Aldebaran detailled usage of Papyrus</b>: Aldebaran Robotics designs and manufactures humanoid robots. Our current market is research and education but we will soon address the customer market. For this very demanding market, the dependability and the reliability are crucial. Within the Romeo 2 project, Aldebaran collaborates with CEA LIST to build the model of its humanoid robots in UML (and its extension to robotics, RobotML) with Papyrus. Papyrus made very easy the modelling of Romeo with its 37 actuators, more than 100 sensors, the 4 embedded processors and the 40 microcontrollers of its distributed architecture. This modelling will be the first step of the safety analysis that we have to proceed before designing the robots we will deliver to customers.</p>
+                    <p class="text-justify"><b>About</b>: Rodolphe Gelin (1965) started his career at CEA (French Atomic Energy Commission). He has been working there for 10 years on mobile robots control for industrial applications and on rehabilitation robotics. Then he has been in charge of different teams working on robotics, virtual reality and cognitics. From 2006 to 2008, he was in charge of business development for Interactive System Program. He has participated to the European Coordinated Action CARE that supports the ETP EUROP on robotics in charge of the robotic roadmap for the European Community. In 2009, he joined Aldebaran Robotics as head of collaborative projects. He is the leader of the French project ROMEO that aims to develop a human size humanoid robot. Since 2015, he is Chief Scientist Officer at Aldebaran Robotics. </p>
+
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/aldebaran.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Rodolphe Gelin, Chief Scientist Officer at Aldebaran Robotics</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Given the success of this pilot project, the Eclipse and Papyrus based toolchain is now being deployed on most embedded-C projects at Spacebel.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/spacebel.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Arnaud Bourdoux, Project Manager at Spacebel</em></b></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> The development of TARANIS on-board software and the project itself are demonstrations that put in evidence benefits of using Eclipse Papyrus as modeling tool.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/spacebel.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Johan Hardy, Software Engineer at Spacebel</em></b></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><b>SPACEBEL detailed usage of Papyrus</b>: As sub-contractor of CNES, Spacebel works with Papyrus in the frame of the TARANIS mission. The general objective of the TARANIS mission is to analyse radiations from lightning and sprites in magnetosphere-ionosphere-atmosphere. Spacebel is in charge of the development of the On-Board Software (OBSW) of the satellite main payload. About the OBSW functionalities, it is mainly in charge of the handling, monitoring and the processing of the scientific data to be transmitted to the central data handling of the spacecraft. In other words, the software manages the main scientific instrument of the spacecraft. In the frame of this development, Papyrus is used as the UML modeler for the architecture and development of the OBSW. Taking the advantage of UML and Papyrus, the complete specification of the software is implemented in UML through Papyrus. Then, the architectural elements can easily be traced with their requirements. For instance, an operation (functionality) can be linked to a constraint (requirement). In doing so, the architectural design can be deduced from the specification by populating classes with operations, attributes, data types, etc. Besides UML, Spacebel has developed an extension to Papyrus. Since the target language of the software is the ANSI C, the semantic of UML didn’t permit us to map the C semantic in UML. Therefore, a functional C profile and several stereotypes have been developed aside of the project. The profile is actually enclosed in an Eclipse plugin and fully integrated with Papyrus. Finally, at the end of the chain, Spacebel generates all the C sources with the help of a C code generator. A text transformation is performed from UML to C. Furthermore, the documentation (software requirement document and architectural design document) is also generated from UML.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Modern communication systems are complex, not only at the system level. The complexity appears also between and within organizations, as today’s systems are designed collaboratively, taking the viewpoints of many stakeholders into consideration. In order to tackle this massive coordination task Ericsson has turned to Papyrus. Designed from the ground up for adaptability, Papyrus can be extended and specialized to provide the architect community with a domain-specific modeling language (DSML), well suited to the needs of the network architects and the related stakeholders. The fact that it is an open source project is another major benefit, as it gives us full visibility into the code base as well as opportunities to influence its future.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Ulf Olsson is Senior Expert at Ericsson’s Business Unit Multimedia, with a main interest in application architecture. He has a background in software architecture for large scale distributed systems, ranging from military command and control to current and future telecommunications. He joined Ericsson in 1996, working mainly with packet-based systems, such as Packet PDC, GPRS, UMTS, CDMA2000 and IMS. He then moved out of basic communication and connectivity into systems architecture for associated areas such as mobile applications and OSS/BSS systems, leading to engagements in areas like service exposure and analytics.
+                        <br> His current position is as Senior Expert at Group Function Technology, where his focus is on overall system architecture issues and how they relate to the industry area(s) that Ericsson operates in. He holds a M.Sc. in engineering physics from the KTH Royal Institute of Technology in Stockholm, Sweden.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/ericsson.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Ulf Olsson, Senior Expert at Ericsson&#39;s Business Unit Multimedia, Sweden</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> 
+                        We have worked closely with the Papyrus team to enable the migration of our operations &amp; maintenance tool from a vendor tool to the open source Papyrus tool. Papyrus is now a desirable and robust UML modeling tool which is industry ready. The strong eco-system surrounding Papyrus and community involvement make Papyrus the easy choice when working on UML based domain specific languages.
+
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Ronan Barrett is a Senior Specialist in Modeling Technologies &amp; Transformations at Ericsson, Sweden, with over 10 years experience in the model driven development. Since completing his Ph.D. in the model driven area Ronan has worked on applying model driven engineering concepts and technologies to industrial telecommunication contexts. He has worked extensively with Eclipse based open source modeling technologies, working closely with the open source community and internally within Ericsson. Ronan has a wealth of experience in writing model transformations and designing domain specific language tools that meet demanding non-functional requirements.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/ericsson.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Ronan Barrett, Senior Specialist, Ericsson</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> ALL4TEC is involved in the model based technologies since several years and works closely with the CEA List on many projects. To build the new version of its tool of SAFETY Analysis “Safety Architect”, ALL4TEC has selected Papyrus technologies as framework. The main added value is to focus our developments on CEA LIST field of expertise, and rely on a opened and dependable modeler.
+                        <br>This integration is performed as part of our common laboratory CALL4S, and the resulting perspectives, especially around the Open Source, are particularly welcomed by users and partners.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/all4tec.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Jonathan Dumont, Safety Architect project manager at All4tec</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Plastic Omnium company is evaluating to move from document based approach to model based system engineering. We were looking for an adaptive platform to avoid classical vendor lock-in. Papyrus offers flexibility in terms of customization and deployment. The achievements are a domain specific solution from System requirements to Autosar Software implementation.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: After Five years as electronic architecture engineer within the research department of Peugeot SA, in 2010, Thibaud Thomas joined Plastic Omnium company within Plastic Omnium Auto Inergy division. As a controlled systems architect he has participated to product and process innovations. Group leader since 2013 he is in charge of system engineering in the research department. He also deals with controlled system architecture expertise field as a Plastic Omnium senior expert.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/plasticomnium.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Thibaud Thomas, Controlled System Architecture Advanced innovation &amp; research, Plastic Omnium</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> To complement its integrated tools for design and evaluation of cyber-physical systems, Sherpa Engineering has chosen Papyrus as a development platform for PhiSystem. For this new challenge, there was a need for expertise and for an efficient tool which meet SysML standard.
+                        <br>Thanks to our innovative laboratory with CEA-LIST and to Papyrus which is supported by a scientific and industrial community, we have successfully deployed PhiSystem for the benefit of our main customers.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Philippe Fiani, Research &amp; Technologies Manager at Sherpa Engineering. Graduate in engineering from the Ecole Centrale de Paris, he became a specialist in Control System after 10 years of collaboration with ADERSA, a research company specialized in modelling and control and pioneer in Model Based Predictive Control. In 2004, he joined Sherpa Engineering as Control System Manager and in particular he developed the fuel cell related activities. In 2010, he was charged with the R&amp;D and the Engineering Department. As a member of the Executive Board of Sherpa Engineering, he is now charged in the development and the deployment of a MBSE tool-based methodology dedicated to cyber-physical systems
+
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/sherpa.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Philippe Fiani, R&amp;D Manager at Sherpa Engineering</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote">The Interactive Robotics Lab was looking for a tool that will ease the design and validation of their complex safe robotic systems. We adopted Papyrus and its specialization for RobotML as a modeling tool thanks to its ability to be highly adapted to specific domains. 
+                    <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Baptiste Gradoussoff (1984) is a research engineer at CEA (French Atomic Energy Commission). He has been working at the Interactive Robotics Laboratory for 5 years. At first in charge of the implementation and tuning of robot controllers, he is now focused on the software part, in charge of the evolution of the laboratory's control framework. In 2014, he started the P-RC2 "Platform for Robot Controller Construction" project, a collaboration with french industrials aimed at the development of an innovative, model-based, robotics controller framework.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/cealist.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Baptiste Gradoussouff, Research engineer, CEA LIST</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Papyrus provides the complete package for software design professionals: from architects to developers. It is the only open source modeling tool that I know of that is truly industrial strength. Based on a well-known standard, it is characterized by its unique ability to be adapted to a wide variety of different domains, purposes, and ways of working.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Bran Selic is President and Founder of Malina Software Corp., a Canadian consultancy specializing in model-based engineering methods and technologies. Prior to founding Malina, he was an IBM Distinguished Engineer, responsible for IBM Rational's strategy for software development tools for the real-time/technical domain. In addition, during his four-decades long technical career, he acted as an entrepreneur, system architect, and software developer on a variety of large industrial projects in telecommunications, robotics, and aerospace. He chaired the standardization team for the widely-used UML standard, as well as a primary contributor to a variety of other modeling language standards (SysML, MARTE). Bran is on the editorial board of several leading technical journals focusing on software and is a frequent invited and keynote speaker at various technical conferences and events. He is an adjunct research scientist in several research institutions worldwide (including CEA LIST), and an adjunct at the University of Sydney in Australia.
+
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/malina.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Bran Selic, Malina Software Corp., Canada</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> I use Papyrus both for my research developments and for my teaching courses on UML or SysML. There are numerous reasons for that: Open source, developed by a reactive and competent research lab, integrated in the Polarsys project that involves so many big companies, fully compliant with the standards, fully customizable, … I am also very proud to contribute in its use in academia through the Papyrus4Education initiative.
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify">
+                        <b>About</b>: Jean-Michel Bruel received his Ph.D. from the University Paul Sabatier (Toulouse) in December 1996. From September 1997 to August 2008, he was associate professor at the University of Pau. Currently head of the MACAO team (Models, Architectures, Components, Agility and prOcesses) of the IRIT (Institut de Recherche en Informatique de Toulouse) CNRS laboratory. His research areas include development of distributed, component-based applications, methods integration, and on the use of formal methods in the Component-Based Software Engineering context. He is full professor at University of Toulouse since 2008. He has been head of the Computer Science department of the Technical Institute of Blagnac from 2009 to 2012. He has founded the SysML-France association to promote the notation. He was (co-)General Chair of the ACM/IEEE MODELS conference and is a member of its steering committee. He is a member of the board of the SoSyM journal.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/irit-toulouse.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Jean-Michel Bruel, Professor, IRIT/University of Toulouse, France</em></b></p>
+                </div>
+            </div>
+            <hr class="custom-divider">
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="text-justify"><img class="openquote" src="img/openquote.png" alt="Open quote"> Papyrus has be chosen by ESTACA, a French engineering school, for teaching and research. In one hand, several student projects consist in modeling embedded systems with Papyrus (e.g., modeling an indoor UAV with autonomous guidance for performance estimation using SysML). In the other hand, one of the mean research topic of the school is optimization of system parameters such as cost and reliability, combining MBSE and CSP problem solving paradigms. The proposed solution is then implemented as a Papyrus extension using its various powerful customization mechanisms (e.g., DSML support).
+                        <img class="closequote" src="img/closequote.png" alt="Close quote"></p>
+                    <p class="text-justify"><b>About</b>: Patrick Leserf, born in 1969, received an engineering degree in computer science/electronic from ESEO (1993, Angers). He started to work for 10 years as R&amp;D engineer and project leader in telecommunication industry (3G testing at Acterna). Mr Leserf was the technical coordinator of the PCRD “Matelo” project at ALL4TEC. Then he joined ESTACA, as associate professor. His research works concerns the model-based design of distributed real-time systems, and embedded networks for transportation. Mr Leserf was in charge of “O4A” (Open for Autosar) national collaborative project at ESTACA, integrating and demonstrating the Flexray network in Autosar. Mr Leserf is now working on the optimization of embedded system design with MBSE, in collaboration with the ISAE-DISC team at Toulouse.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-right"><img class="quote-logo" src="quotes/estaca.png" alt="Quote logo"></p>
+                    <p class="text-right"><b><em>Patrick Leserf, Associate Professor at ESTACA</em></b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+
+</body>
+
+</html>

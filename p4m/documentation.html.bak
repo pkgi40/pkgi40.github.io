@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Papyrus4Manufacturing Documentation">
+    <link rel="shortcut icon" href=".originroot/img/favicon.ico">
+
+    <title>Papyrus4Manufacturing Documentation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href=".originroot/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href=".originroot/custom.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./papyrus4Manufacturing.css" type="text/css">
+
+    <!-- Core JavaScript Files -->
+    <script src=".originroot/js/jquery-1.11.3.min.js"></script>
+    <script src=".originroot/dist/js/bootstrap.min.js"></script>
+    <script src=".originroot/js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src=".originroot/js/scrolling-nav.js"></script>
+
+    <script>
+        $(function () {
+            $("#footer").load(".originroot/footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-brand-custom" href="index.html"><img class="img-responsive" src=".originroot/img/papyrus-logo.png" alt="Home"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="index.html">Papyrus4Manufacturing</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="downloadaas.html">Downloads AAS Designer</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="downloadopcua.html">Downloads OPC UA Designer</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#page-top">Documentation</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="community.html">Community</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <section id="main" class="custom-section">
+
+        <div class="container">
+            <h1 class="section-title wrap">Eclipse Papyrus&trade; For  Manufacturing Documentation</h1>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p><img class="img-responsive center-block" src=".originroot/img/documentation.png" alt="Documentation">
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-justify">Papyrus4Manufacturing is graphical modeling tool for Industry 4.0 and 5.0 applications that complies with multiple industrial standards and architectures. Moreover, it is extended to support new concepts and technologies, harmonizing both practical and research directions.
+                    </p>
+
+                    <h2 class="subsection-title wrap">End Users Documentation</h2>
+                    <h3 class="subsubsection-title wrap">Guides and documentations</h3>
+                    <ul class="text-justify">
+                        <li> <a href="" title="Papyrus4Manufacturing User Guide">Papyrus4Manufacturing User Guide</a></li>
+                        
+                    </ul>
+                    
+                    <h3 class="subsubsection-title wrap">Tutorials</h3>
+                   
+                    <h4 class="subsubsubsection-title wrap">AAS Designer Tutorials</h4>
+                    <ul class="text-justify">
+                       <li><a href="resources/Papyrus4Manufacturing-Introduction.pdf">Introduction to Papyrus4Manufacturing AAS Designer </a></li>
+						<li><a href="resources/Papyrus4Manufacturing-AAS-Designer.pdf">Presentation on Papyrus4Manufacturing AAS Designer </a></li>
+                    </ul>
+                    
+					<h4 class="subsubsubsection-title wrap">OPC UA Designer Tutorials</h4>
+                    <ul class="text-justify">
+                       <li><a href="resources/Papyrus4Manufacturing-OPCUA-Designer.pdf">Presentation on Papyrus4Manufacturing OPC UA Designer transformation</a></li>
+                    
+                    </ul>
+                    
+                    <h2 class="subsection-title wrap">Toolsmiths and Developers Documentation</h2>
+                    <h3 class="subsubsection-title wrap">Guides and documentations</h3>
+                    <ul class="text-justify">
+                        <li> <a href="https://wiki.eclipse.org/Papyrus/customizations/manufacturing/aas" title="AAS Designer">Papyrus AAS Designer Wiki</a>
+                        </li>
+						<li> <a href="https://wiki.eclipse.org/Papyrus/customizations/manufacturing/opcua" title="OPC UA Designer">Papyrus OPC UA Designer Wiki</a>
+                        </li>
+                    </ul>
+                    
+                    
+                    
+					
+                    <h3 class="subsubsection-title wrap">Demonstrations</h3>
+                    <ul class="text-justify">
+                        <li> <a href="https://www.youtube.com/playlist?list=PL9nkS1KDTMm7IH0ucDZ7YjlJyZnwSxTk9">Eclipse Papyrus for manufacturing : AAS YouTube List</a>
+						<li> <a href="https://www.youtube.com/watch?v=FVqNg3zWOd8&list=PL9nkS1KDTMm4neo11WIG09sz37bbbodpE">Eclipse Papyrus for manufacturing : OPC UA YouTube List</a>
+                        </li>
+                    </ul>
+                    
+                    <h2 class="subsection-title wrap">Other Documentations</h2>
+                    <h3 class="subsubsection-title wrap">Scientific Papers</h3>
+                    <h4 class="subsubsubsection-title wrap">AAS Designer-related Papers</h4>
+                    <ul class="text-justify">
+			<li><a href="https://doi.org/10.1109/ETFA54631.2023.10275523">Papyrus4Manufacturing: A Model-Based Systems Engineering approach to AAS Digital Twins</a></li>	
+			<li><a href="http://dx.doi.org/10.1109/ONCON62778.2024.10931434">Lessons from Developing AAS Digital Twins for Factory Buildings with Papyrus4Manufacturing</a></li>	
+			<li><a href="https://doi.org/10.1109/ETFA61755.2024.10711067">An Approach for Sovereign Data Exchange of AAS Digital Twins Through the International Data Space Network</a></li>	
+			<li><a href="https://doi.org/10.1109/ETFA61755.2024.10711103">Bridging the Gap between IT and OT with AAS Digital Twins and MDE Techniques: An Industrial Waste Management Case Study</a></li>	
+			<li><a href="https://doi.org/10.1109/ETFA61755.2024.10711123">From Multiple Digital Twins to a Multi-Faceted Digital Twin: Towards an AAS-Based Approach</a></li>		
+			<li><a href="https://doi.org/10.3390/machines12020095">Manufacturing 4.0: Checking the Feasibility of a Work Cell Using AAS and Physics-Based 3D Digital Twins</a></li>	
+			<li><a href="https://doi.org/10.1109/ICPS58381.2023.10128003">Semantic Interoperability of Digital Twins: Ontology-based Capability Checking in AAS Modeling Framework</a></li>		
+			<li><a href="https://doi.org/10.1109/IECON48115.2021.9589329">An AAS Modeling Tool for Capability-Based Engineering of Flexible Production Lines</a></li>
+                        
+                    </ul>
+                    <h4 class="subsubsubsection-title wrap">OPC UA Designer-related Papers</h4>
+                    <ul class="text-justify">
+			 <li><a href="http://dx.doi.org/10.5381/jot.2023.22.2.a14">Bridging the Gap between SysML and OPC UA Information Models for Industry 4.0</a></li>	
+			 <li><a href="https://doi.org/10.1109/INDIN51773.2022.9976157">From Requirement Specification to OPC UA Information Model Design: A Product Assembly Line Monitoring Case Study</a></li>		
+                    </ul>                    
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+</body>
+
+</html>

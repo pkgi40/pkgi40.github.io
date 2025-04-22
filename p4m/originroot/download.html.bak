@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Papyrus Downloads">
+	<link rel="shortcut icon" href="img/favicon.ico">
+
+	<title>Papyrus Dowloads</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom CSS -->
+	<link href="custom.css" rel="stylesheet" type="text/css">
+
+	<!-- Core JavaScript Files -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="js/scrolling-nav.js"></script>
+
+	<script>
+		$(function () {
+			$("#footer").load("footer.html");
+		});
+	</script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+	<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+		<div class="container">
+
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand navbar-brand-custom" href="index.html"><img class="img-responsive"
+						src="img/papyrus-logo.png" alt="Papyrus"></a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden">
+						<a href="#page-top"></a>
+					</li>
+					<li class="page-scroll">
+						<a href="index.html#applications">Applications</a>
+					</li>
+					<li class="page-scroll">
+						<a href="index.html#technologies">Technologies</a>
+					</li>
+					<li class="page-scroll">
+						<a href="#page-top">Downloads</a>
+					</li>
+					<li class="page-scroll">
+						<a href="relatives.html">Relatives</a>
+					</li>
+					<li class="page-scroll">
+						<a href="documentation.html">Documentation</a>
+					</li>
+					<li class="page-scroll">
+						<a href="community.html">Community</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<section id="rcp" class="custom-section">
+		<div class="container">
+			<h1 class="section-title wrap">Eclipse Papyrus&trade; Downloads</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<img class="img-responsive center-block" src="img/logo.png" alt="Papyrus">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Requires a 21 compatible JVM | Released under <a
+							href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License v2.0</a>
+					</p>
+				</div>
+			</div>
+
+			<h1 class="section-title wrap">Eclipse Papyrus RCP</h1>
+
+			<h2 class="subsection-title wrap">Latest Released RCP</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default panel-default-custom">
+
+						<div class="panel-heading">
+							<b>2024-06 release (6.7.0) - Includes <a href="https://download.eclipse.org/justj/jres/21/updates/release">Java 21 JustJ</a> JRE</b>
+						</div>
+						<div class="panel-body panel-body-custom">
+							<p>
+								<img src="img/win.png" alt="Windows">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://download.eclipse.org/modeling/mdt/papyrus/rcp/2024-06/6.7.0/papyrus-2024-06-6.7.0-win64.zip'">64 Bits</button>
+							</p>
+							<p>
+								<img src="img/linux.png" alt="Linux">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://download.eclipse.org/modeling/mdt/papyrus/rcp/2024-06/6.7.0/papyrus-2024-06-6.7.0-linux64.tar.gz'">64 Bits</button>
+							</p>
+							<p>
+								<img src="img/osx.png" alt="OS X">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://download.eclipse.org/modeling/mdt/papyrus/rcp/2024-06/6.7.0/papyrus-2024-06-6.7.0-macosx64.tar.gz'">64 Bits</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2 class="subsection-title wrap">Weekly RCP</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-justify">For advanced users and pioneers, you can access the latest commits done
+						within Eclipse Papyrus by accessing its nightly builds...</p>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-default panel-default-custom">
+
+						<div class="panel-heading">
+							<b>nightly</b>
+						</div>
+						<div class="panel-body panel-body-custom">
+							<p>
+								<img src="img/win.png" alt="Windows">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://ci.eclipse.org/papyrus/job/Papyrus-Master-Rcp/lastSuccessfulBuild/artifact/products/papyrus-win-64.zip'">64 Bits</button>
+							</p>
+							<p>
+								<img src="img/linux.png" alt="Linux">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://ci.eclipse.org/papyrus/job/Papyrus-Master-Rcp/lastSuccessfulBuild/artifact/products/papyrus-linux-64.tar.gz'">64 Bits</button>
+							</p>
+							<p>
+								<img src="img/osx.png" alt="OS X">&nbsp;:&nbsp;
+								<button type="button" class="btn btn-lg btn-success custom-success-btn"
+									onclick="location.href='https://ci.eclipse.org/papyrus/job/Papyrus-Master-Rcp/lastSuccessfulBuild/artifact/products/papyrus-macosx-64.tar.gz'">64 Bits</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+	<section id="main" class="custom-section">
+
+		<div class="container">
+
+			<h1 class="section-title wrap">Eclipse Papyrus Update sites</h1>
+
+			<h2 class="subsection-title wrap">Packages Downloads</h2>
+			<p class="text-justify">
+				If you are interested in a specific package release of Eclipse Papyrus, you may find it directly in <a href="downloads">Eclipse Papyrus Packages Downloads</a>.
+			</p>
+
+			<h2 class="subsection-title wrap">Update Sites</h2>
+			<h3 class="subsubsection-title wrap">Setup Eclipse Papyrus with Update Sites</h3>
+			<ul class="text-justify">
+				<li> The most basic procedure for installing Eclipse Papyrus consists in installing the <a href="http://www.eclipse.org/downloads/packages/">Eclipse Modeling Package</a> for your own platform.</li>
+				<li> Then, you have to use the discovery interface ("Help" > "Install New Software" > "Modeling" ) and select Papyrus for UML.</li>
+				<li> You may install the latest release of Eclipse Papyrus by following the instructions below "Update sites".</li>
+			</ul>
+			<h3 class="subsubsection-title wrap">Update Sites</h3>
+			<p class="text-justify">
+				Eclipse provides facilities for adding new software to the platform or updating software in the system.
+				In all cases, the site location (i.e. the Web URL or the archived Update Site provided above) is the
+				only required item to update or install a software within Eclipse.
+			</p>
+
+			<div class="panel-group wrap" id="accordion">
+				<div class="panel panel-default">
+
+					<a data-toggle="collapse" data-parent="#accordion" href="#member1">
+						<div class="panel-heading  panel-heading-custom">
+							<h1 class="solution-heading">Nightly Update Sites</h1>
+
+							<b>&nbsp;<span class="caret"></span></b>
+
+						</div>
+					</a>
+					<div id="member1" class="panel-collapse collapse" role="tabpanel">
+						<div class="panel-body panel-body-custom">
+							<p class="text-justify"><b>Master</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master">https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+
+					<a data-toggle="collapse" data-parent="#accordion" href="#member2">
+						<div class="panel-heading  panel-heading-custom">
+							<h1 class="solution-heading">Latest Release Update Site</h1>
+
+							<b>&nbsp;<span class="caret"></span></b>
+
+						</div>
+					</a>
+					<div id="member2" class="panel-collapse collapse in" role="tabpanel">
+						<div class="panel-body panel-body-custom">
+							<p class="text-justify"><b>Eclipse Papyrus 2024-06 (6.7.0)</b></p>
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2024-06">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2024-06</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#member3">
+						<div class="panel-heading  panel-heading-custom">
+							<h1 class="solution-heading">Previous Releases Update Sites</h1>
+
+							<b>&nbsp;<span class="caret"></span></b>
+						</div>
+					</a>
+					<div id="member3" class="panel-collapse collapse" role="tabpanel">
+						<div class="panel-body panel-body-custom">
+                                                        <p class="text-justify"><b>Eclipse Papyrus 2023-12 (6.6.X)</b></p>
+
+                                                        <ul class="text-justify">
+                                                                <li><a
+                                                                                href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12</a>
+                                                                </li>
+                                                        </ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2023-06 (6.5.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-06">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-06</a>
+								</li>
+							</ul>
+							<p class="text-justify"><b>Eclipse Papyrus 2023-03 (6.4.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-03">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-03</a>
+								</li>
+							</ul>
+							<p class="text-justify"><b>Eclipse Papyrus 2022-12 (6.3.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12</a>
+								</li>
+							</ul>
+							<p class="text-justify"><b>Eclipse Papyrus 2022-06 (6.2.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2022-03 (6.1.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2021-12 (6.0.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2021-09 (5.2.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-09</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2021-03 (5.1.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-03">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-03</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2020-12 (5.0.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-12">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-12</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2020-06 (4.8.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2020-03 (4.7.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-03">https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-03</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2019-12 (4.6.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-12">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-12</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2019-09 (4.5.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-09">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-09</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2019-06 (4.4.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-06">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-06</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2019-03 (4.3.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-03">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-03</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2018-12 (4.2.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2018-12">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2018-12</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus 2018-09 (4.1.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2018-09">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/2018-09</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Photon (4.0.0)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/photon">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/photon</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Oxygen (3.X.0)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/oxygen">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/oxygen</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Neon (2.0.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/neon">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Mars (1.1.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/mars">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/mars</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Luna (1.0.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/luna">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/luna</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Kepler (0.10.X)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Juno (0.9.2)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/juno">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/juno</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Indigo (0.8.2)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/indigo">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/indigo</a>
+								</li>
+							</ul>
+
+							<p class="text-justify"><b>Eclipse Papyrus Helios (0.7.3)</b></p>
+
+							<ul class="text-justify">
+								<li><a
+										href="https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/helios">https://archive.eclipse.org/modeling/mdt/papyrus/updates/releases/helios</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<section id="otherResources" class="custom-section">
+			<div class="container">
+				<h1 class="section-title wrap">Other resources</h1>
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="subsection-title wrap">Archived resources</h2>
+						<ul class="text-justify">
+							If you are interested in previously released content and you can't find it in the links
+							above, you should be able to find it in the <a href="https://archive.eclipse.org/modeling/mdt/papyrus/">Papyrus archives</a>.
+						</ul>
+
+						<h2 class="subsection-title wrap">Artwork</h2>
+						<ul class="text-justify">
+							<li> Eclipse Papyrus logo (<a href="artwork/papyrus-logo-text.svg">SVG</a>|<a href="artwork/papyrus-logo-text.png">PNG</a>)
+							</li>
+							<li> Eclipse Papyrus logo - Icon (<a href="artwork/papyrus-logo.svg">SVG</a>|<a href="artwork/papyrus-logo.png">PNG</a>)
+							</li>
+							<li> Eclipse Papyrus splash screen (<a href="artwork/splash.svg">SVG</a>|<a href="artwork/splash.png">PNG</a>)
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div id="footer"></div>
+
+</body>
+
+</html>
