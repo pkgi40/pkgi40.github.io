@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The structure of the news items are
+    
+    <news>
+    <item title="" date="YYYY-MM-DDThh:mm:ss">
+    News content
+    </item>*
+    </news>
+    
+    Add your item to the top of the list.  Do not delete or move any items.  We generate permalinks by inverse file position.
+    Please post in UTC.  The correct current time can be found at: http://www.time.gov/timezone.cgi?UTC/s/0/java
+    All links must be absolute!  If you do not specify a link, a link to your entry on the Web Tools News page will be
+    generated for you.
+
+    For announcements about releases, the release page is used because the download site will change after archival.
+-->
+<news>
+    <item
+        date="2024-09-19"
+        title="Papyrus Classic and Desktop">
+        <p>
+            Hello Everyone, most of you would have already seen it but, just to broadcast it to the largest amount of people possible : the latest 6.7.0 release of Papyrus should be the last official release based on GMF diagrams and XWT property views. We are not planning to maintain a regular release schedule for this version now refered as Papyrus-Classic and available on the <a href="https://gitlab.eclipse.org/eclipse/papyrus/org.eclipse.papyrus-classic">Eclipse Gitlab</a>.
+            The next version is already under development and will be contain major updates and its frameworks. Its diagrams will be based on the Eclipse Sirius diagram framework, its property view on EEF and the ElementTypes framework will gradually be replaced with the DomainService framework in charge of the UML editions.
+            This 7.0.0 release is planned to be released aroung the 2024-12 GA. More information can be found on this <a href="https://www.eclipse.org/forums/index.php/t/1115544/">forum post</a>.
+            For this reason, we might have to rework the current update sites and releases references under the usual <a href="https://download.eclipse.org/modeling/mdt/papyrus/">Eclipse download server</a>. We will make sure to keep you informed when this is happening, via both these news and the forum.
+        </p>
+    </item>
+    <item
+        date="2024-06-12"
+        title="Papyrus 6.7.0 Released">
+        <p>
+            The Eclipse Papyrus 6.7.0 2024-06 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+            The first iteration of Papyrus Sirius is now also available to be installed as an <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/papyrus-sirius/2024-06/">update site</a> for the latest release.
+        </p>
+    </item>
+    <item
+        date="2024-01-12"
+        title="Papyrus 6.6.0 Released">
+        <p>
+            The Eclipse Papyrus 6.6.0 2023-12 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2023-07-18"
+        title="Next Papyrus release : 2023-12">
+        <p>
+            Papyrus won't be participating in the next 2023-09 release train and will publish its next 6.6.0 release for the next 2023-12 train. 
+        </p>
+    </item>
+    <item
+        date="2023-06-20"
+        title="Papyrus 6.5.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.5.0">
+        <p>
+            The Eclipse Papyrus 6.5.0 2023-06 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2023-03-23"
+        title="Papyrus 6.4.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.4.0">
+        <p>
+            The Eclipse Papyrus 6.4.0 2023-03 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2023-01-27"
+        title="Moka Released"
+        link="https://marketplace.eclipse.org/content/papyrus-moka">
+        <p>
+            Papyrus Moka for eclipse 2022-12 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-moka">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/moka/2022-12/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2023-01-27"
+        title="SysML 1.6 Released"
+        link="https://marketplace.eclipse.org/content/papyrus-sysml-16">
+        <p>
+            SysML 1.6 for eclipse 2022-12 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-sysml-16">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/sysml16/2022-12/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2022-12-07"
+        title="Papyrus 6.3.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.3.0">
+        <p>
+            The Eclipse Papyrus 6.3.0 2022-12 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2022-06-15"
+        title="Papyrus 6.2.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.2.0">
+        <p>
+            The Eclipse Papyrus 6.2.0 2022-06 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+        </p>
+    </item>
+    <item
+        date="2022-03-17"
+        title="Papyrus 6.1.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.1.0">
+        <p>
+            The Eclipse Papyrus 6.1.0 2022-03 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+			Batik is now synchronized with the train at 1.14 and pointing to the new GMF-runtime/-notation releases. Old orbit reference has henced been removed.
+			The Mac signing problem should have been fixed now.
+        </p>
+    </item>
+    <item
+        date="2022-02-03"
+        title="Model2Doc Released"
+        link="https://marketplace.eclipse.org/content/papyrus-model2doc">
+        <p>
+            Model2Doc for eclipse 2021-12 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-model2doc">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/model2doc/2021-12/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2021-12-16"
+        title="SysML 1.6 Released"
+        link="https://marketplace.eclipse.org/content/papyrus-sysml-16">
+        <p>
+            SysML 1.6 for eclipse 2021-12 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-sysml-16">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/sysml16/2021-12/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2021-12-16"
+        title="Papyrus 6.0.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/6.0.0">
+        <p>
+            The Eclipse Papyrus 6.0.0 2021-12 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive.
+            We have reduced the dead code in the generated diagram code for GMF by introducing abstract classes. 
+            We have worked on tools to validate all customization models. 
+            We have added a library to be able to connect a Xtext editor as  diagram editor or tbale editor.
+            We have added a set of fixed bugs 
+        </p>
+    </item>
+    <item
+        date="2021-09-27"
+        title="SysML 1.6 Released"
+        link="https://marketplace.eclipse.org/content/papyrus-sysml-16">
+        <p>
+            SysML 1.6 for eclipse 2021-09 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-sysml-16">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/sysml16/2021-09/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2021-09-17"
+        title="Papyrus 5.2.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/5.2.0">
+        <p>
+            The Eclipse Papyrus 5.2.0 2021-09 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2020-12-18"
+        title="Papyrus 5.0.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/5.0.0">
+        <p>
+            It is now possible to associate model explorer customizations to the architecture framework.
+            Papyrus now requires Java 11 to run along with the 2020-12 eclipse releases and has trimmed down the number of re-exported bundles.
+            Note that most of the 'relatives': Sysml 1.4, 1.6, Moka, designer... have also been made compatible with the new re-exports and the Java 11 migration.
+            You can download the new release from the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it from an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2020-06-18"
+        title="Papyrus 5.0.0"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/5.0.0">
+        <p>
+            We will now begin to work on the next major release of Papyrus (5.0.0) in order to allow us some API changes and other corrections. This version will be available in time to integrate the 2020-12 release train.
+            Because we need to focus on this goal, there is no release planned for the 2020-09 train.
+            The 5.0.0 release will contain, for example, the refactoring of some dependencies such as removing the reexports wherever possible and removing deprecated APIs lingering for far too long in the code base.
+            We will inform you about any work undertaken on the wiki page <a href="https://wiki.eclipse.org/Papyrus/2020.12_Work_Description">Incoming work for 2020-12</a>. 
+        </p>
+    </item>
+    <item
+        date="2020-06-18"
+        title="Papyrus 4.8.0 2020-06 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.8.0">
+        <p>
+            The Eclipse Papyrus 4.8.0 2020-06 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2020-03-19"
+        title="Papyrus 4.7.0 2020-03 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.7.0">
+        <p>
+            The Eclipse Papyrus 4.7.0 2020-03 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2019-12-18"
+        title="Papyrus 4.6.0 2019-12 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.6.0">
+        <p>
+            The Eclipse Papyrus 4.6.0 2019-12 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2019-09-24"
+        title="Papyrus 4.5.0 2019-09 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.5.0">
+        <p>
+            The Eclipse Papyrus 4.5.0 2019-09 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2019-07-03"
+        title="Moka 4.0.0 Released"
+        link="https://marketplace.eclipse.org/content/papyrus-moka">
+        <p>
+            Moka 4.0.0 2019-03 release is now available!
+            Go to the <a href="https://marketplace.eclipse.org/content/papyrus-moka">Market Place</a> or use the <a href="https://download.eclipse.org/modeling/mdt/papyrus/components/moka/2019-03/">update site</a> to install it. 
+        </p>
+    </item>
+    <item
+        date="2019-06-19"
+        title="Papyrus 4.4.0 2019-06 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.4.0">
+        <p>
+            The Eclipse Papyrus 4.4.0 2019-06 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. 
+            The associated RCP is available from the <a href="https://www.eclipse.org/papyrus/download.html#rcp">RCP download page</a> as well.
+        </p>
+    </item>
+    <item
+        date="2019-04-11"
+        title="A video Papyrus for Robotics"
+        link="https://www.eclipse.org/papyrus/components/robotics/">
+        <p>
+            A new video demonstrating Papyrus for Robotics capabilities is available <a href="https://www.eclipse.org/papyrus/components/robotics/">here</a>.
+        </p>
+    </item>
+    <item
+        date="2019-03-26"
+        title="Papyrus 4.3.0 2019-03 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.3.0">
+        <p>
+            The Eclipse Papyrus 4.3.0 2019-03 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. The associated RCP will be released during the following week.
+        </p>
+    </item>
+    <item
+        date="2019-02-15"
+        title="Papyrus for Robotics 0.7 available"
+        link="https://www.eclipse.org/papyrus/components/robotics/">
+        <p>
+            The Papyrus for Robotics customization is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/components/robotics/">web page</a> and install an update site or RCP from there.
+        </p>
+    </item>
+    <item
+        date="2018-12-20"
+        title="Papyrus 4.2.0 2018-12 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.2.0">
+        <p>
+            The Eclipse Papyrus 4.2.0 2018-12 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site or a zip archive. The associated RCP will be released during the following week.
+        </p>
+    </item>
+    <item
+        date="2018-10-26"
+        title="Papyrus 4.2.0 Nightly RCP">
+        <p>
+            Eclipse has stopped its support for 32 bits systems launchers. Papyrus 4.2.0 RCP and onward will not be released for 32 bits environments until a 32 bits launcher solution has been found. 
+        </p>
+    </item>
+    <item
+        date="2018-09-21"
+        title="Papyrus 4.1.0 2018-09 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.1.0">
+        <p>
+            The Eclipse Papyrus 4.1.0 2018-09 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site, a zip archive or as an RCP.
+        </p>
+    </item>
+    <item
+        date="2018-09-21"
+        title="Papyrus 4.1.0 2018-09 RCP"
+        link="http://download.eclipse.org/modeling/mdt/papyrus/rcp/2018-09/4.1.0/">
+        <p>
+            The Eclipse Papyrus 4.1.0 2018-09 RCP is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#rcp">Download page</a> latest released RCP section.
+        </p>
+    </item>
+    <item
+        date="2018-06-26"
+        title="Papyrus 4.0.0 Photon Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.0.0">
+        <p>
+            The Eclipse Papyrus 4.0.0 Photon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site, a zip archive or as an RCP.
+        </p>
+    </item>
+    <item
+        date="2018-06-26"
+        title="Papyrus 4.0.0 Photon RCP"
+        link="http://download.eclipse.org/modeling/mdt/papyrus/rcp/photon/4.0.0/">
+        <p>
+            The Eclipse Papyrus 4.0.0 Photon RCP is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#rcp">Download page</a> latest released RCP section.
+        </p>
+    </item>
+    <item
+        date="2018-05-22"
+        title="Papyrus 3.4.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.4.0">
+        <p>
+            The Eclipse Papyrus 3.4.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install it as an update site, a zip archive or as an RCP.
+        </p>
+    </item>
+    <item
+        date="2018-04-04"
+        title="Papyrus 3.3.0 Oxygen RCP">
+        <p>
+            The Eclipse Papyrus 3.3.0 Oxygen RCP is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> latest released RCP section.
+        </p>
+    </item>
+    <item
+        date="2018-03-21"
+        title="Papyrus 3.3.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.3.0">
+        <p>
+            The Eclipse Papyrus 3.3.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2018-03-14"
+        title="Papyrus 3.4.0 is planned" 
+        link="https://www.eclipse.org/forums/index.php/t/1092260/">
+        <p>
+            Papyrus Team will make a new service release of Papyrus, Papyrus 3.4. This latter will be available on May the 21th.
+        </p>
+    </item>
+    <item
+        date="2017-03-14"
+        title="Papyrus 4.0.0 Photon M6 milestone"
+        link="http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/4.0/M6/">
+        <p>
+            The Eclipse Papyrus 4.0.0 M6 is now available!
+            This milestone contains the newly released Test and Developer tools under the Toolsmiths category.
+            You can see and install the new features in the latest Photon package by fetching them from the above mentioned update site. These will now be released with Papyrus UML to ease third party integration.
+        </p>
+    </item>
+    <item
+        date="2017-12-20"
+        title="Papyrus 3.2.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.2.0">
+        <p>
+            The Eclipse Papyrus 3.2.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2017-09-27"
+        title="Papyrus 3.1.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.1.0">
+        <p>
+            The Eclipse Papyrus 3.1.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2017-06-28"
+        title="Papyrus 3.0.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.0.0">
+        <p>
+            The Eclipse Papyrus 3.0.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2017-03-23"
+        title="Papyrus 2.0.3 Neon.3 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.3">
+        <p>
+            The Eclipse Papyrus 2.0.3 Neon release is now available!
+            You'll be able to install it using the <a href="http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon/">Neon update site</a>.
+        </p>
+    </item>
+    <item
+        date="2017-01-10"
+        title="Papyrus 2.0.2 Neon.2 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.2">
+        <p>
+            The Eclipse Papyrus 2.0.2 Neon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2016-10-06"
+        title="Papyrus 2.0.1 Neon.1 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.1">
+        <p>
+            The Eclipse Papyrus 2.0.1 Neon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2016-07-01"
+        title="Papyrus Use Case Story"
+        link="/papyrus/testimonials.html">
+        <p>
+            A new Papyrus Use Case Story entitled "Designing freedom of flight" from Airbus is <a href="/papyrus/resources/airbus-usecasestory.pdf" target="_blank">available here</a>.
+        </p>
+    </item>
+    <item
+        date="2016-06-24"
+        title="Papyrus 2.0.0 Neon Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.0">
+        <p>
+            The Eclipse Papyrus 2.0.0 Neon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
+        date="2016-06-23"
+        title="New videos in Papyrus youtube channel"
+        link="https://www.youtube.com/channel/UCxyPoBlZc_rKLS7_K2dtwYA">
+        <p>
+            <ul>
+                <li><a href="https://youtu.be/eW1qut4NO_k">"Papyrus Information Modeling Preview"</a></li>
+                <li><a href="https://youtu.be/-k1xWJr4wg0">"Modeling and Safety Analysis of Nao Robot"</a></li>
+            </ul>
+        </p>
+    </item>
+    <item
+        date="2016-06-18"
+        title="Papyrus at Incose Edinburgh 2016"
+        link="http://www.incose.org/symp2016/">
+        <p>Papyrus will be present in the Polarsys booth : 
+            <ul>
+                <li><a href="https://www.polarsys.org/polarsys-incose-international-symposium-2016">"Polarsys announcement"</a></li>
+            </ul>
+        </p>
+    </item>
+    <item
+        date="2016-04-26"
+        title="Talks at EclipseCon France 2016"
+        link="https://www.eclipsecon.org/france2016/">
+        <p>Some presentations about or related to Papyrus will be given during EclipseCon France 2016 : 
+            <ul>
+                <li><a href="https://www.eclipsecon.org/france2016/session/lessons-learned-migrating-industrial-development-proprietary-commercial-tool-papyrus">"Lessons Learned from Migrating Industrial Development from Proprietary Commercial Tool to Papyrus"</a></li>
+                <li><a href="https://www.eclipsecon.org/france2016/session/close-encounters-requirements-sysml">"Close Encounters of Requirements with SysML"</a></li>
+            </ul>
+        </p>
+    </item>
+    <item
+        date="2016-04-21"
+        title="Eclipse Newsletter on Model-Based Engineering"
+        link="https://www.eclipse.org/community/eclipse_newsletter/2016/april/">
+        <p>This month, the Eclipse Newsletter focuses on Model-Based Engineering. Some applications of Papyrus for MBE and the last developments of Papyrus are presented in four detailed articles. <a href="https://www.eclipse.org/community/eclipse_newsletter/2016/april/">Details here.</a>
+        </p>
+    </item>
+    <item
+        date="2016-03-08"
+        title="Papyrus, a full-fledged framework for empowering model-based engineering for better complex systems"
+        link="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/model-based-engineering-for-better-complex-systems-systems-engineering.aspx">
+        <p>Thanks to Papyrus, engineers from various industrial domains can put model-based engineering to work for their systems and software engineering projects. <a href="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/model-based-engineering-for-better-complex-systems-systems-engineering.aspx">Details here.</a>
+        </p>
+    </item>
+    <item
+        date="2016-03-04"
+        title="Papyrus used to simplify distribution of computing tasks in complex systems"
+        link="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/simpler-distribution-of-computing-tasks-in-complex-systems-advanced-manufacturing.aspx">
+        <p>Researchers at List, a CEA Tech institute, have developed a technique and related tools based on Papyrus for distributing software across machines in complex systems. This novel technique is faster and more efficient than the traditional method. <a href="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/simpler-distribution-of-computing-tasks-in-complex-systems-advanced-manufacturing.aspx">Details here.</a>
+        </p>
+    </item>
+    <item
+        date="2015-12-21"
+        title="EclipseCon NA 2016"
+        link="https://www.eclipsecon.org/na2016/">
+        <p>Some presentations about or related to Papyrus will be given during EclipseCon NA 2016 : 
+            <ul>
+            <li><a href="https://www.eclipsecon.org/na2016/session/uml-gone-wild-lego-experience">"UML gone wild: the Lego experience"</a></li>
+            <li><a href="https://www.eclipsecon.org/na2016/session/papyrus-real-time-executable-modeling-eclipse">"Papyrus for Real Time: Executable modeling on Eclipse"</a></li>
+            <li><a href="https://www.eclipsecon.org/na2016/session/tailor-made-model-comparison-how-customize-emf-compare-your-modeling-language">"Tailor-made model comparison: how to customize EMF Compare for your modeling language"</a></li>
+            </ul>
+        </p>
+    </item>
+    <item
+        date="2015-12-01"
+        title="Papyrus 1.1.3 Released"
+        link="https://www.eclipse.org/papyrus/download.html">
+        <p>The Eclipse Papyrus 1.1.3 release is now available! </p>
+        <p>Go to <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus. </p>
+    </item>
+    <item
+        date="2015-11-03"
+        title="2nd Papyrus Summit and EclipseCon Europe 2015"
+        link="https://www.eclipsecon.org/europe2015/">
+        <p>The <a href="https://wiki.eclipse.org/Papyrus/SummitEclipseConEurope2015">2nd Papyrus Summit</a> will be held Tuesday November 3, 2015 in Ludwigsburg, Germany. </p>
+        <p>The Papyrus Team will also give a couple of presentations during EclipseCon Europe 2015 : <a href="https://www.eclipsecon.org/europe2015/session/papyrus4java-uml-diagrams-ordinary-java-developers">"Papyrus4Java - UML diagrams for ordinary java developers"</a> and <a href="https://www.eclipsecon.org/europe2015/session/mde-papyrus-novelties-and-beyond-sponsored-cea-list">"MDE with Papyrus, novelties and beyond"</a></p>
+    </item>
+    <item
+        date="2015-06-24"
+        title="Papyrus 1.1.0 Released"
+        link="https://www.eclipse.org/papyrus/download.html">
+        <p>The Eclipse Papyrus 1.1.0 release is now available! Check the new features on the <a href="https://wiki.eclipse.org/Papyrus/NewAndNoteworthy/Mars">what's new?</a> page.</p>
+        <p>You can install Papyrus from the <a href="https://www.eclipse.org/mars/">Mars packages</a> or use the <a href="https://www.eclipse.org/papyrus/downloads/">Papyrus Downloads page</a></p>
+    </item>
+    <item
+        date="2014-12-12T08:30:00"
+        title="Save the date!"
+        link="http://www.eclipse.org/papyrus/news/save_the_date_CEA breakfast.pdf">
+        <p><b>INVITATION BUSINESS BREAKFAST CEA TECH (WITH THE PARTICIPATION OF ERICSSON)</b></p>
+            <p>Your system design needs modeling: Papyrus, the MDE open-source cutting-edge solution
+            <ul><li>Thursday, January 29th 2015, at hotel Napoleon Paris</li></ul>
+            </p>
+            <p>If you cannot come to Paris, we invite you to join a web-conference on the same subject
+            Friday, January 30th 2015 at 10 am
+            </p>
+            <p>
+            Why participate? 
+            <ul>
+            <li>You will understand the strategic value of Papyrus modeling tool</li>
+            <li>You will understand how to leverage both standard modeling languages (e.g., UML and SysML) and domain-specific modeling languages.</li>
+            <li>You will listen and exchange around the feedback from the company ERICSSON</li>
+            </ul>
+            Send us an email to register (dils -at- cea.fr) 
+            </p>
+    </item>
+    <item
+        date="2014-06-25T14:30:00"
+        title="Papyrus 1.0.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/1.0.0">
+       The Eclipse Papyrus 1.0.0 release is now available! For a short listing of the new features available in this release, check
+        <a href="https://wiki.eclipse.org/Papyrus/NewAndNoteworthy/Luna">the release plan</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/luna/">Luna packages</a> or use the <a href="https://www.eclipse.org/papyrus/downloads/">Papyrus Downloads page</a>.
+    </item>    
+</news>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<builds>
+	<repo>https://download.eclipse.org/modeling/mdt/papyrus/downloads/drops</repo>
+	<build>
+		<id>6.7</id>
+		<version>
+			<id>6.7.0 RC2</id>
+			<date>2024/06/05</date>
+			<hour>15:42</hour>
+			<type>S202406051542</type>
+			<name>Papyrus-Update-6.7.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.7.0 RC1</id>
+			<date>2024/05/29</date>
+			<hour>17:46</hour>
+			<type>S202405291746</type>
+			<name>Papyrus-Update-6.7.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.7.0 M3</id>
+			<date>2024/05/22</date>
+			<hour>17:07</hour>
+			<type>S202405221707</type>
+			<name>Papyrus-Update-6.7.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.7.0 M2</id>
+			<date>2024/05/01</date>
+			<hour>13:52</hour>
+			<type>S202405011352</type>
+			<name>Papyrus-Update-6.7.0M2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.6</id>
+		<version>
+			<id>6.6.0 RC2</id>
+			<date>2024/01/12</date>
+			<hour>09:53</hour>
+			<type>S202401120953</type>
+			<name>Papyrus-Update-6.6.0RC2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.5</id>
+		<version>
+			<id>6.5.0 RC2</id>
+			<date>2023/06/07</date>
+			<hour>10:00</hour>
+			<type>S202306071000</type>
+			<name>Papyrus-Update-6.5.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.5.0 RC1</id>
+			<date>2023/05/31</date>
+			<hour>12:36</hour>
+			<type>S202305311236</type>
+			<name>Papyrus-Update-6.5.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.5.0 M3</id>
+			<date>2023/05/24</date>
+			<hour>09:15</hour>
+			<type>S202305240915</type>
+			<name>Papyrus-Update-6.5.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.5.0 M2</id>
+			<date>2023/05/03</date>
+			<hour>10:54</hour>
+			<type>S202305031054</type>
+			<name>Papyrus-Update-6.5.0M2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.4</id>
+		<version>
+			<id>6.4.0 RC2</id>
+			<date>2023/03/08</date>
+			<hour>12:31</hour>
+			<type>S202303081231</type>
+			<name>Papyrus-Update-6.4.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.4.0 RC1</id>
+			<date>2023/03/01</date>
+			<hour>11:39</hour>
+			<type>S202303011139</type>
+			<name>Papyrus-Update-6.4.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.4.0 M3</id>
+			<date>2023/02/22</date>
+			<hour>10:39</hour>
+			<type>S202302221039</type>
+			<name>Papyrus-Update-6.4.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.4.0</id>
+			<date>2023/02/10</date>
+			<hour>10:11</hour>
+			<type>S202302101011</type>
+			<name>Papyrus-Update-6.4.0I1.zip</name>
+		</version>
+		<version>
+			<id>6.4.0 M2</id>
+			<date>2023/02/01</date>
+			<hour>15:42</hour>
+			<type>S202302011542</type>
+			<name>Papyrus-Update-6.4.0M2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.3</id>
+		<version>
+			<id>6.3.0 RC2</id>
+			<date>2023/01/17</date>
+			<hour>12:44</hour>
+			<type>S202301171244</type>
+			<name>Papyrus-Update-6.3.0RC2b.zip</name>
+		</version>
+		<version>
+			<id>6.3.0 RC2</id>
+			<date>2022/12/02</date>
+			<hour>13:43</hour>
+			<type>S202212021343</type>
+			<name>Papyrus-Update-6.3.0RC2a.zip</name>
+		</version>
+		<version>
+			<id>6.3.0 RC2</id>
+			<date>2022/11/30</date>
+			<hour>14:04</hour>
+			<type>S202211301404</type>
+			<name>Papyrus-Update-6.3.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.3.0 RC1</id>
+			<date>2022/11/23</date>
+			<hour>13:43</hour>
+			<type>S202211231343</type>
+			<name>Papyrus-Update-6.3.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.3.0</id>
+			<date>2022/11/17</date>
+			<hour>16:16</hour>
+			<type>S202211171616</type>
+			<name>Papyrus-Update-6.3.0I1.zip</name>
+		</version>
+		<version>
+			<id>6.3.0 M3</id>
+			<date>2022/11/16</date>
+			<hour>10:28</hour>
+			<type>S202211161028</type>
+			<name>Papyrus-Update-6.3.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.3.0</id>
+			<date>2022/11/15</date>
+			<hour>15:15</hour>
+			<type>S202211151515</type>
+			<name>Papyrus-Update-6.3.0I3.zip</name>
+		</version>
+		<version>
+			<id>6.3.0 M1</id>
+			<date>2022/10/05</date>
+			<hour>18:14</hour>
+			<type>S202210051814</type>
+			<name>Papyrus-Update-6.3.0M1.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.2</id>
+		<version>
+			<id>6.2.0 M3</id>
+			<date>2022/05/25</date>
+			<hour>10:45</hour>
+			<type>S202205251045</type>
+			<name>Papyrus-Update-6.2.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.2.0 M2</id>
+			<date>2022/05/04</date>
+			<hour>09:36</hour>
+			<type>S202205040936</type>
+			<name>Papyrus-Update-6.2.0M2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.1</id>
+		<version>
+			<id>6.1.0 RC2</id>
+			<date>2022/03/09</date>
+			<hour>10:04</hour>
+			<type>S202203091004</type>
+			<name>Papyrus-Update-6.1.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.1.0 RC1</id>
+			<date>2022/03/02</date>
+			<hour>09:53</hour>
+			<type>S202203020953</type>
+			<name>Papyrus-Update-6.1.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.1.0 M3</id>
+			<date>2022/02/23</date>
+			<hour>09:42</hour>
+			<type>S202202230942</type>
+			<name>Papyrus-Update-6.1.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.1.0 M2</id>
+			<date>2022/02/02</date>
+			<hour>14:54</hour>
+			<type>S202202021454</type>
+			<name>Papyrus-Update-6.1.0M2.zip</name>
+		</version>
+		<version>
+			<id>6.1.0 M1</id>
+			<date>2022/01/12</date>
+			<hour>09:57</hour>
+			<type>S202201120957</type>
+			<name>Papyrus-Update-6.1.0M1.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>6.0</id>
+		<version>
+			<id>6.0.0 RC2</id>
+			<date>2021/12/01</date>
+			<hour>10:50</hour>
+			<type>S202112011050</type>
+			<name>Papyrus-Update-6.0.0RC2.zip</name>
+		</version>
+		<version>
+			<id>6.0.0 RC1</id>
+			<date>2021/11/24</date>
+			<hour>11:13</hour>
+			<type>S202111241113</type>
+			<name>Papyrus-Update-6.0.0RC1.zip</name>
+		</version>
+		<version>
+			<id>6.0.0 M3</id>
+			<date>2021/11/17</date>
+			<hour>13:44</hour>
+			<type>S202111171344</type>
+			<name>Papyrus-Update-6.0.0M3.zip</name>
+		</version>
+		<version>
+			<id>6.0.0 M2</id>
+			<date>2021/10/27</date>
+			<hour></hour>
+			<type>S202110271008</type>
+			<name>Papyrus-Update-6.0.0M2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>5.2</id>
+		<version>
+			<id>5.2.0</id>
+			<date>2021/10/19</date>
+			<hour>14:37</hour>
+			<type>S202110191437</type>
+			<name>Papyrus-Update-5.2.0I3.zip</name>
+		</version>
+		<version>
+			<id>5.2.0</id>
+			<date>2021/09/16</date>
+			<hour>13:18</hour>
+			<type>S202109161318</type>
+			<name>Papyrus-Update-5.2.0.zip</name>
+		</version>
+		<version>
+			<id>5.2.0</id>
+			<date>2021/05/03</date>
+			<hour>12:50</hour>
+			<type>S202105031250</type>
+			<name>Papyrus-Update-5.2.0I2.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>5.1</id>
+		<version>
+			<id>5.1.0</id>
+			<date>2021/03/18</date>
+			<hour>16:57</hour>
+			<type>S202103181657</type>
+			<name>Papyrus-Update-5.1.0_RC2a.zip</name>
+		</version>
+		<version>
+			<id>5.1.0 RC2</id>
+			<date>2021/03/10</date>
+			<hour>11:50</hour>
+			<type>S202103101150</type>
+			<name>Papyrus-Update-5.1.0RC2.zip</name>
+		</version>
+		<version>
+			<id>5.1.0</id>
+			<date>2021/03/08</date>
+			<hour>18:31</hour>
+			<type>S202103081831</type>
+			<name>Papyrus-Update-5.1.0_RC1.zip</name>
+		</version>
+		<version>
+			<id>5.1.0 M2</id>
+			<date>2021/02/03</date>
+			<hour>16:55</hour>
+			<type>S202102031655</type>
+			<name>Papyrus-Update-5.1.0M2.zip</name>
+		</version>
+		<version>
+			<id>5.1.0 M1</id>
+			<date>2021/01/13</date>
+			<hour>07:31</hour>
+			<type>S202101130731</type>
+			<name>Papyrus-Update-5.1.0M1.zip</name>
+		</version>
+	</build>
+	<build>
+		<id>5.0</id>
+		<version>
+			<id>5.0.0 RC2</id>
+			<date>2020/12/09</date>
+			<hour>05:597</hour>
+			<type>S202012090559</type>
+			<name>Papyrus-Update-5.0.0RC2.zip</name>
+		</version>
+		<version>
+			<id>5.0.0 RC1</id>
+			<date>2020/12/02</date>
+			<hour>05:28</hour>
+			<type>S202012020528</type>
+			<name>Papyrus-Update-5.0.0RC1.zip</name>
+		</version>
+		<version>
+			<id>5.0.0 M3</id>
+			<date>2020/11/25</date>
+			<hour>04:45</hour>
+			<type>S202011250445</type>
+			<name>Papyrus-Update-5.0.0M3.zip</name>
+		</version>
+		<version>
+			<id>5.0.0 M2</id>
+			<date>2020/11/04</date>
+			<hour>10:04</hour>
+			<type>S202011041004</type>
+			<name>Papyrus-Update-5.0.0M2.zip</name>
+		</version>
+	</build>
+</builds>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script>
+      $.fn.computeLink = function (link, index) {
+        return link !== undefined && link !== false
+          ? link
+          : location.protocol.concat("//").concat(window.location.host).concat("/") + "news.html#permalink" + index;
+      };
+      $.fn.computePermaLink = function (link, index) {
+        return location.protocol.concat("//").concat(window.location.host).concat("/") + "news.html#permalink" + index;
+      };
+
+      $(document).ready(function () {
+        $.ajax({
+          type: "GET",
+          url: "news.xml",
+          dataType: "xml",
+          success: function (xml) {
+            let itemIndex = $(xml).find("item").length;
+
+            let rssDoc = document.implementation.createDocument("", "", null);
+            let rss = rssDoc.createElement("rss");
+            rss.setAttribute("version", "2.0");
+            let channel = rssDoc.createElement("channel");
+
+            let title = rssDoc.createElement("title");
+            title.textContent = "Papyrus Project: News";
+            channel.appendChild(title);
+
+            let link = rssDoc.createElement("link");
+            link.textContent = "http://www.eclipse.org/papyrus/";
+            channel.appendChild(link);
+
+            let description = rssDoc.createElement("description");
+            description.textContent =
+              "This RSS feed contains the latest news from the Modeling Papyrus project. Papyrus is a graphical modeler based on UML and UML-based domain specific languages, like SysML and MARTE languages.";
+            channel.appendChild(description);
+
+            let language = rssDoc.createElement("language");
+            language.textContent = "en-us";
+            channel.appendChild(language);
+
+            let copyright = rssDoc.createElement("copyright");
+            copyright.textContent =
+              "Copyright (c) 2008 - 2024 CEA LIST and others. All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html Contributors: CEA LIST - initial API and implementation";
+            channel.appendChild(copyright);
+
+            let lastBuildDate = rssDoc.createElement("lastBuildDate");
+            lastBuildDate.textContent = new Date().toLocaleString("en-us");
+            channel.appendChild(lastBuildDate);
+
+            $(xml)
+              .find("item")
+              .filter(function (index) {
+                return index < 3;
+              })
+              .each(function () {
+                let item = rssDoc.createElement("item");
+
+                let itemTitle = rssDoc.createElement("title");
+                itemTitle.textContent = $(this).attr("title");
+                item.appendChild(itemTitle);
+
+                let pubDate = rssDoc.createElement("pubDate");
+                pubDate.textContent = new Date(
+                  $(this).attr("date")
+                ).toLocaleString("en-us");
+                item.appendChild(pubDate);
+
+                let linkItem = rssDoc.createElement("link");
+                $(this).computeLink($(this).attr("link"), itemIndex);
+                linkItem.textContent = $(this).computeLink(
+                  $(this).attr("link"),
+                  itemIndex
+                );
+                item.appendChild(linkItem);
+
+                let guid = rssDoc.createElement("guid");
+                guid.setAttribute("isPermaLink", "true");
+                $(this).computeLink($(this).attr("link"), itemIndex);
+                guid.textContent = $(this).computePermaLink(
+                  $(this).attr("link"),
+                  itemIndex
+                );
+                item.appendChild(guid);
+
+                let itemDescription = rssDoc.createElement("description");
+                itemDescription.textContent = $(this).html();
+                item.appendChild(itemDescription);
+
+                channel.appendChild(item);
+
+                itemIndex = itemIndex - 1;
+              });
+
+            rss.appendChild(channel);
+            rssDoc.appendChild(rss);
+
+            let xmlString = new XMLSerializer().serializeToString(rssDoc);
+            let blob = new Blob([xmlString], { type: "application/xml" });
+            let url = URL.createObjectURL(blob);
+            window.open(url, "_self");
+
+            setTimeout(() => {
+              URL.revokeObjectURL(url);
+            }, 1000);
+          },
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

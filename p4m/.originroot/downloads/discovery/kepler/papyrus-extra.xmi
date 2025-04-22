@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ASCII"?>
+<discovery:DiscoveryDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:discovery="http://www.eclipse.org/papyrus/discovery/1.0">
+  <categories
+      name="Additional Domain Specific Modeling Languages"
+      description=""
+      relevance="6">
+    <components
+        name="MARTE 1.1"
+        provider="Eclipse Modeling Project"
+        description="MARTE is the OMG extension on the UML dedicated to real time embedded systems."
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/marte-32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="This specification of a UML profile adds capabilities to UML for model-driven development of Real Time and Embedded Systems (RTES). This extension, called the UML profile for MARTE (in short MARTE), provides support for specification, design, and verification/validation stages. This new profile is intended to replace the existing UML Profile for Schedulability, Performance and Time (formal/03-09-01)."
+          screenshot="images/marte.png"
+          url="http://www.omg.org/spec/MARTE/1.1/"/>
+      <id>org.eclipse.papyrus.extra.marte.feature</id>
+      <id>org.eclipse.papyrus.extra.marte.properties.feature</id>
+      <id>org.eclipse.papyrus.extra.marte.textedit.feature</id>
+    </components>
+    <components
+        name="EAST-ADL"
+        provider="Eclipse Modeling Project"
+        description="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/EASTADL_32x32.gif"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
+          url="http://www.east-adl.info/"/>
+      <id>org.eclipse.papyrus.extra.eastadl.feature</id>
+    </components>
+    <components
+        name="RobotML"
+        provider="Eclipse Modeling Project"
+        description="Modeling language and tools for mobile robotic applications"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/robotml_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="Modeling language and tools for mobile robotic applications"/>
+      <id>org.eclipse.papyrus.extra.robotml.feature</id>
+    </components>
+    <components
+        name="UML-RT"
+        provider="Eclipse Modeling Project"
+        description="UML profile and tools for UML-RT"
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="UML profile and tools for UML-RT"/>
+      <id>org.eclipse.papyrus.extra.umlrt.feature</id>
+    </components>
+  </categories>
+  <categories
+      name="Modeler Extensions"
+      description="Extension of the tool">
+    <components
+        name="View Stylesheets"
+        provider="Eclipse Modeling Project"
+        description="Support of themes for Papyrus enabling specific stylesheets definition on views."
+        license="EPL"
+        groups="//@filters.0"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="Support of themes for Papyrus enabling specific stylesheets definition on views."/>
+      <id>org.eclipse.papyrus.extra.infra.gmfdiag.css.feature</id>
+      <id>org.eclipse.papyrus.extra.uml.diagram.css.feature</id>
+    </components>
+    <components
+        name="Diagram generation"
+        provider="Eclipse Modeling Project"
+        description="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/DiagramTemplate_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
+      <id>org.eclipse.papyrus.extra.diagramtemplate.feature</id>
+    </components>
+    <components
+        name="CDO Model Repository"
+        provider="Eclipse Modeling Project"
+        description="Provides integration with CDO model repository technology for sharing and real-time collaborative editing of Papyrus models."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/Papyrus_CDO.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="Provides integration with CDO model repository technology for sharing and real-time collaborative editing of Papyrus models."/>
+      <id>org.eclipse.papyrus.extra.cdo.feature</id>
+    </components>
+    <components
+        name="Papyrus Tabular Editors"
+        provider="Eclipse Modeling Project"
+        description="Tabular views for Papyrus"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/table_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/nattable/releases/1.0.0/repository/</sitesURLS>
+      <overview
+          summary="Provides tabular editors for Papyrus"/>
+      <id>org.eclipse.papyrus.infra.nattable.feature</id>
+      <id>org.eclipse.papyrus.uml.nattable.feature</id>
+      <id>org.eclipse.papyrus.sysml.nattable.feature</id>
+    </components>
+    <components
+        name="Papyrus Compare"
+        provider="Eclipse Modeling Project"
+        description="Semantic and Diagram comparison for Papyrus Models"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/papyrus_compare_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
+      <overview
+          summary="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"/>
+      <id>org.eclipse.papyrus.extra.uml.compare.feature</id>
+    </components>
+  </categories>
+  <filters name="Stable"/>
+  <filters name="Experimental"/>
+</discovery:DiscoveryDefinition>

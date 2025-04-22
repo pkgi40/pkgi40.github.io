@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Papyrus">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <title>News</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="custom.css" rel="stylesheet" type="text/css">
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        $(function () {
+            $("#footer").load("./footer.html");
+        });
+
+        $(document).ready(function () {
+            $.fn.loadNews(40);
+         });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-brand-custom" href="index.html"><img class="img-responsive" src="img/papyrus-logo.png" alt="Papyrus"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#applications">Applications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#technologies">Technologies</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="download.html">Downloads</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="relatives.html">Relatives</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="documentation.html">Documentation</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="community.html">Community</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="custom-section">
+
+        <div class="container">
+            <h1 class="section-title wrap">Papyrus News</h1>
+            <div class="row">
+                <div class="col-md-12" id ="news-news">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+
+</body>
+
+</html>
