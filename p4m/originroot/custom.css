@@ -293,6 +293,7 @@ fieldset[disabled] .custom-white-btn:hover {
 .footer-section {
     color: #fff;
     background-color: #777;
+    text-align: left;
 }
 
 li.footer-link > a:link,
