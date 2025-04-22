@@ -300,6 +300,7 @@ li.footer-link > a:link,
 li.footer-link > a:hover,
 li.footer-link > a:visited {
     color: #fff;
+    text-align: left;
 }
 
 .section-title {
