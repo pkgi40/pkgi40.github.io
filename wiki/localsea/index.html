@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="design/">
+        <link rel="next" href="ledblink/">
       
       
       <link rel="icon" href="None">
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Home
             
           </span>
         </div>
@@ -208,7 +208,7 @@
   
   
   <span class="md-ellipsis">
-    Introduction
+    Home
     
   </span>
   
@@ -221,7 +221,7 @@
   
   
   <span class="md-ellipsis">
-    Introduction
+    Home
     
   </span>
   
@@ -244,18 +244,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#tutorials" class="md-nav__link">
     <span class="md-ellipsis">
-      Table of Contents
+      Tutorials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acknowledgements" class="md-nav__link">
+  <a href="#localsea" class="md-nav__link">
     <span class="md-ellipsis">
-      Acknowledgements
+      LocalSEA
     </span>
   </a>
   
@@ -276,12 +276,12 @@
   
   
     <li class="md-nav__item">
-      <a href="design/" class="md-nav__link">
+      <a href="ledblink/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    AAS Model design
+    T01 Led Blink
     
   </span>
   
@@ -298,12 +298,12 @@
   
   
     <li class="md-nav__item">
-      <a href="gennpb/" class="md-nav__link">
+      <a href="t3wpmove/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Software Bridge generation
+    T02 T3WP Move
     
   </span>
   
@@ -320,12 +320,12 @@
   
   
     <li class="md-nav__item">
-      <a href="genaas/" class="md-nav__link">
+      <a href="ur3econtrol/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Digital Twin generation
+    T03 UR3e Control
     
   </span>
   
@@ -342,12 +342,12 @@
   
   
     <li class="md-nav__item">
-      <a href="uc01/" class="md-nav__link">
+      <a href="mprotocols/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    UC01 PAL
+    T04 Multiple Protocols
     
   </span>
   
@@ -364,12 +364,12 @@
   
   
     <li class="md-nav__item">
-      <a href="uc02/" class="md-nav__link">
+      <a href="aas2ua/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    UC02 LW
+    T05 AAS to OPC UA
     
   </span>
   
@@ -406,18 +406,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#tutorials" class="md-nav__link">
     <span class="md-ellipsis">
-      Table of Contents
+      Tutorials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acknowledgements" class="md-nav__link">
+  <a href="#localsea" class="md-nav__link">
     <span class="md-ellipsis">
-      Acknowledgements
+      LocalSEA
     </span>
   </a>
   
@@ -440,49 +440,61 @@
 
 
 <h1 id="introduction">Introduction</h1>
-<p>This user guide provides instructions on how to design, build and run 
-the network protocols bridges (NPB) and its digital twin (DT). 
-Two use cases 01 &amp; 02 demonstrates simulated applications of the NPB. </p>
-<h3 id="table-of-contents">Table of Contents</h3>
-<ol>
+<p>This tutorial collection guides users from understanding Papyrus4Manufacturing 
+to applying it in complex use cases. All of the use cases are implemented 
+and tested in LocalSEA, the Industry 4.0 &amp; 5.0 testbed under the management 
+of DRT/LIST/DILS. </p>
+<h3 id="tutorials">Tutorials</h3>
+<ul>
 <li>
-<p><a href="design/">AAS Model design</a>  </p>
+<p><a href="ledblink/">01: Led blink</a>  </p>
 <blockquote>
-<p>Intructions on designing an AAS model for NPB and NPB DT.    </p>
+<p>Monitor and Control a led to blink using an AAS DT of led.       </p>
 </blockquote>
 </li>
 <li>
-<p><a href="gennpb/">Software Bridge generation</a>  </p>
+<p><a href="t3wpmove/">02: T3WP moving</a>  </p>
 <blockquote>
-<p>Intructions on generating and configuring NPB.    </p>
+<p>Control a the TurtleBot3 Waffle Pi robot to move forward/backward with.  </p>
 </blockquote>
 </li>
 <li>
-<p><a href="genaas/">Digital Twin generation</a>  </p>
+<p><a href="ur3econtrol/">03: UR3e control</a>  </p>
 <blockquote>
-<p>Intructions on generating and configuring AAS DT of NPB.   </p>
+<p>Control a UR3e robot for basic Pick and Place tasks.   </p>
 </blockquote>
 </li>
 <li>
-<p><a href="uc01/">Use case 01: Product Assembly Line</a>  </p>
+<p><a href="mprotocols/">04: Multiple protocols</a>  </p>
 <blockquote>
-<p><em>Production Assembly Line</em> use case description and deployment steps.    </p>
+<p>Use +10 network protocols to change color of an object.  </p>
 </blockquote>
 </li>
 <li>
-<p><a href="uc02/">Use case 02: Led Waterfall</a>  </p>
+<p><a href="aas2ua/">05: AAS-OPC UA Information models conversion</a>  </p>
 <blockquote>
-<p><em>Led Waterfall</em> use case description and deployment steps.   </p>
+<p>Convert an AAS information model into OPC UA information model.        </p>
 </blockquote>
 </li>
-</ol>
-<h3 id="acknowledgements">Acknowledgements</h3>
-<p>This document and its related resources are developed within the project 
-TARGET-X : ROS6GBridge. The <a href="https://target-x.eu/">TARGET-X project</a> 
-has received funding from the 
-Smart Networks and Services Joint Undertaking (SNS JU) under the 
-European Union's Horizon Europe research and innovation program under 
-<a href="https://cordis.europa.eu/project/id/101096614">Grant Agreement No 101096614</a>. </p>
+</ul>
+<h3 id="localsea">LocalSEA</h3>
+<p>LocalSEA is a small-scale and didatic testbed under the management of 
+DRT/LIST/DILS. The tests primarily focus on the software components and 
+technologies developed by the department. 
+It is equipped with compact industrial equipment, IoT devices, and robots.  </p>
+<div align="center">
+  <figure style="display: inline-block; margin: 0 10px;">
+    <img src="https://pkgi40.github.io/raw/jpg/nano.jpg" 
+    alt="nano" style="height: 200px;"/>
+    <figcaption style="text-align: center;">
+    Nano-Innov, Palaiseau, France</figcaption>
+  </figure>
+  <figure style="display: inline-block; margin: 0 10px;">
+    <img src="https://pkgi40.github.io/raw/jpg/loca.jpg" 
+    alt="localsea" style="height: 200px;"/>
+    <figcaption style="text-align: center;">LocalSEA</figcaption>
+  </figure>
+</div>
 
 
 
