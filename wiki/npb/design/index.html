@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../setup/">
       
       
         <link rel="next" href="../gennpb/">
@@ -20,11 +20,14 @@
     
     
       
-        <title>AAS Model design - P4M for ROS6GBridge</title>
+        <title>AAS Model design - Papyrus4Manufacturing for ROS6GBridge</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -55,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#todo" class="md-skip">
+        <a href="#aas-model-design" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="P4M for ROS6GBridge" class="md-header__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-header__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,7 +102,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            P4M for ROS6GBridge
+            Papyrus4Manufacturing for ROS6GBridge
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -178,13 +186,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="P4M for ROS6GBridge" class="md-nav__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-nav__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    P4M for ROS6GBridge
+    Papyrus4Manufacturing for ROS6GBridge
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -215,6 +223,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDE Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -227,6 +257,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AAS Model design
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -238,6 +281,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-papyrus-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create Papyrus Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-design-an-aas-model-for-npb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Design an AAS model for NPB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Design an AAS model for NPB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-design-asset-npb" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Design Asset (NPB)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-design-aas-npb-dt" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Design AAS (NPB DT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-design-interfaces-and-routing-submodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Design Interfaces and Routing submodels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-activate-the-npb-generation-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Activate the NPB generation feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helpful-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpful Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpful Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aas-model-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      AAS Model Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-model-design-with-the-class-diagram-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing model design with the Class Diagram Designer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -255,7 +425,7 @@
   
   
   <span class="md-ellipsis">
-    Software Bridge generation
+    Software NPB generation
     
   </span>
   
@@ -277,7 +447,7 @@
   
   
   <span class="md-ellipsis">
-    Digital Twin generation
+    NPB Digital Twin generation
     
   </span>
   
@@ -299,7 +469,7 @@
   
   
   <span class="md-ellipsis">
-    UC01 PAL
+    Use case 01
     
   </span>
   
@@ -321,7 +491,7 @@
   
   
   <span class="md-ellipsis">
-    UC02 LW
+    Use case 02
     
   </span>
   
@@ -351,6 +521,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-papyrus-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create Papyrus Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-design-an-aas-model-for-npb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Design an AAS model for NPB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Design an AAS model for NPB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-design-asset-npb" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Design Asset (NPB)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-design-aas-npb-dt" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Design AAS (NPB DT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-design-interfaces-and-routing-submodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Design Interfaces and Routing submodels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-activate-the-npb-generation-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Activate the NPB generation feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helpful-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpful Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpful Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aas-model-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      AAS Model Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-model-design-with-the-class-diagram-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing model design with the Class Diagram Designer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -365,7 +651,185 @@
 
 
 
-<h1 id="todo">TODO</h1>
+<h1 id="aas-model-design">AAS Model Design</h1>
+<p>Asset Administration Shell (AAS) is an industrial standard developed by 
+<a href="https://industrialdigitaltwin.org/en/">IDTA</a>. The AAS model is likely the
+UML Class diagram with the concepts from the AAS standard. 
+This section focus on using Papyrus4Manufacturing to design an AAS model to 
+generate NPB and NPB DT.   </p>
+<hr />
+<h3 id="step-by-step-guide">Step-by-Step Guide</h3>
+<p>This section presents three basic steps to design an AAS Model 
+for NPB and NPB DT. You can find the detail description about how to design
+an AAS model using the cheet sheets of Papyrus4Manufacturing.  </p>
+<h4 id="step-1-create-papyrus-project">Step 1: Create Papyrus Project</h4>
+<p>Open Papyrus4Manufacturing. In the menu bar, 
+go to <em>File</em> &gt; <em>New</em> &gt; <em>Project...</em> &gt; <em>Papyrus</em> &gt; <em>Papyrus Project</em>, 
+then click <em>Next</em>. In the new appeared window, 
+check <em>AAS Modeling Language</em>, then click <em>Next</em>. 
+Input the required information, including the <em>Project name</em> and location, 
+then click <em>Finish</em>. 
+In the <em>Project Explorer</em> window, a new folder is generated with related 
+files <em>di</em>, <em>notation</em>, and <em>uml</em>. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">    
+    <img src="../images/newproject.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">       
+      Figure 1. Project is created and shown in the Project Explorer window
+    </figcaption> 
+  </figure>        
+</div>
+
+<h4 id="step-2-design-an-aas-model-for-npb">Step 2: Design an AAS model for NPB</h4>
+<p>In the <em>Project Explorer</em> window, double click on the Papyrus icon under the 
+new created folder. Next, it is necessary to create an asset (means NPB), 
+its AAS (means NPB DT), and its two AAS submodels <em>Interfaces</em> 
+and <em>Routing</em>.   </p>
+<h5 id="a-design-asset-npb">A. Design Asset (NPB)</h5>
+<p>In the <em>Model Explorer</em> window, the model folder appears. Right click at the 
+folder, go to <em>New Package child</em> &gt; <em>Asset</em>. 
+In the <em>Properties</em> window, you need to input the information of the asset. 
+The following fields are fundamental:<br />
+- <em>Asset</em>: the name of the asset. Choose a name, such as <em>BrxFPGA</em><br />
+- <em>Kind</em>: the type of the model element. Choose <em>Instance</em>. <br />
+- <em>Identification</em>: the identifier of the asset. Click the plus button, 
+choose idType as Custom, then input an id.<br />
+- <em>Endpoint</em>: the endpoint that the NPB expose to its NPB DT to connect. 
+Click the plus button, input the information about the address 
+and name of the endpoint.  </p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> The current version of NPB only supports the 
+<strong>WebSocket</strong> endpoint. 
+</span></p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/assetfields.jpg" alt="download" style="width:100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 2. Endpoint and Identifcation fields of the asset BrxFPGA  
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<h5 id="b-design-aas-npb-dt">B. Design AAS (NPB DT)</h5>
+<p>In the <em>Model Explorer</em> window. Right click at <em>Asset</em>, 
+go to <em>New Asset child</em> &gt; <em>AAS</em>. In the <em>Properties</em> window, you need 
+to input the information of the AAS. 
+In the <em>Properties</em> window, you need to input the information of the AAS. 
+The following fields are fundamental:<br />
+- <em>Name</em>: the name of the AAS. Choose a name, such as <em>BrxFPGA</em>. 
+- <em>Identification</em>: the identifier of the AAS. Click the plus button, 
+choose idType as Custom, then input an id.<br />
+- <em>Endpoint</em>: the endpoint that the NPB DT expose to external application. 
+Click the plus button, input the information about the address 
+and name of the endpoint.  </p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> The name of asset and its AAS DT can be the same and 
+should have at least <strong>three letters</strong>. 
+</span></p>
+<h5 id="c-design-interfaces-and-routing-submodels">C. Design Interfaces and Routing submodels</h5>
+<p>The two submodels <em>Interfaces</em> and <em>Routing</em> are fundamental and required 
+by the NPB. You can add other submodels to the AAS model.  </p>
+<p>In the <em>Model Explorer</em> window. Right click at <em>AAS</em>, 
+go to <em>New AAS child</em> &gt; <em>Submodel</em> to create one submodel. 
+Repeat the step to create the second one. 
+In the <em>Properties</em> window, you need to input the information required by
+each submodel. 
+The following fields are fundamental:<br />
+- <em>Name</em>: the name of the submodel. Input <em>Interfaces</em> for the 
+first submodel, and <em>Routing</em> for the second submodel. <br />
+- <em>Kind</em>: the type of the submodel. Choose <em>Instance</em>. <br />
+- <em>Identification</em>: the identifier of the AAS. Click the plus button, 
+choose idType as Custom, then input an id.  </p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> The submodel must be <strong>Interfaces</strong> and 
+<strong>Routing</strong>. 
+If written incorrectly, it will not function properly.
+</span></p>
+<p>In the <em>Interfaces</em> submodel, add properties related to the network
+interfaces that your NPB supports. Right click at <em>Interfaces</em>, 
+go to <em>New Submodel child</em> &gt; <em>Property</em>.<br />
+Likewise, in the <em>Routing</em> submodel, add properties related to 
+the routing nodes that your NPB supports.
+You must use the <em>Properties</em> window to specify each property. 
+The following fields are fundamental for a property:<br />
+- <em>Name</em>: the name of the property. <br />
+- <em>Is dynamic</em>: the value of the property is changable or not. Choose <em>true</em>. 
+- <em>Endpoint</em>: the endpoint related to the property. Choose the endpoint of
+the asset. <br />
+- <em>Kind</em>: the type of the submodel. Choose <em>Instance</em>. <br />
+- <em>Type</em>: the data type of the value of the property. Choose <em>Boolean</em>.    </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/profields.jpg" alt="download" style="height:340px;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 3. Submodels Interfaces and Routing with their properties
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<div style="color:#2196f3; font-style:italic;">
+<ul>
+<u>Note:</u> 
+<li>
+The property of Interfaces can be <strong>ros2</strong>, 
+<strong>modbustcp</strong>, <strong>ethernetip</strong>, 
+<strong>uafx</strong>, or <strong>canopen</strong>. 
+If written incorrectly, it will not function properly
+</li>
+<li>
+The property of Routing must follow the format 
+<strong>brx_</strong>[A]<strong>_</strong>[B]<strong>_</strong>[C]</strong>.
+In which, A is device id, B is group id, and C is node id. 
+If using the wrong format, it will not function properly
+</li>
+</ul></div>
+
+<h4 id="step-3-activate-the-npb-generation-feature">Step 3: Activate the NPB generation feature</h4>
+<p>In the <em>Project Explorer</em> window, right click on <em>di</em> file, 
+go to <em>Open With</em> &gt; <em>Text Editor</em>. 
+In the appeared editor window, add <code>featureId="ceatmp1015750572"</code> right before
+<code>/&gt;</code> in the second line. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/featureid.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 4. Information about featureId in di file
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<hr />
+<h3 id="helpful-tips">Helpful Tips</h3>
+<p>This section presents some useful tips to design AAS model for NPB and NPB DT. </p>
+<h4 id="aas-model-validation">AAS Model Validation</h4>
+<p>The validation tool is intergrated into Papyrus4Manufacturing. 
+In the <em>Model Explorer</em> window, right click at the model element needed to be
+valided, go to <em>Validation</em> &gt; <em>Validation Model</em>. 
+The result of the validation will be shown on the <em>Model Validation</em> window.  </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/validation.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 5. Validation window details the error of an AAS model design
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<h4 id="viewing-model-design-with-the-class-diagram-designer">Viewing model design with the Class Diagram Designer</h4>
+<p>An AAS model design can be viewed with the Class diagram.
+In the <em>Model Explorer</em> window. Right click at the folder <em>Assets</em>, 
+go to <em>New Diagram</em> &gt; <em>AAS Design Diagram</em>. 
+Double click on the diagram to open diagram editor. 
+You can drag-and-drop the element from the <em>Model Explorer</em> window into this 
+editor. Use the pallette to add other elements if necessary. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/diadesigner.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 6. AAS model viewed as a Class diagram
+    </figcaption> 
+  </figure>                                                                     
+</div>
 
 
 

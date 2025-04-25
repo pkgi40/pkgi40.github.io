@@ -9,7 +9,7 @@
 
 .md-sidebar--secondary .md-sidebar__scrollwrap,
 .md-sidebar--secondary .md-sidebar__inner {
-    background-color: inherit;
     min-height: 100%;
     background-color: #f4f4f4;
+    scrollbar-width: none;
 }

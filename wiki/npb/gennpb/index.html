@@ -20,11 +20,14 @@
     
     
       
-        <title>Software Bridge generation - P4M for ROS6GBridge</title>
+        <title>Software NPB generation - Papyrus4Manufacturing for ROS6GBridge</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -55,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#todo" class="md-skip">
+        <a href="#software-network-protocols-bridge-generation" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="P4M for ROS6GBridge" class="md-header__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-header__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,21 +102,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            P4M for ROS6GBridge
+            Papyrus4Manufacturing for ROS6GBridge
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software Bridge generation
+              Software NPB generation
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -178,13 +186,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="P4M for ROS6GBridge" class="md-nav__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-nav__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    P4M for ROS6GBridge
+    Papyrus4Manufacturing for ROS6GBridge
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -202,6 +210,28 @@
   
   <span class="md-ellipsis">
     Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDE Setup
     
   </span>
   
@@ -249,17 +279,124 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Software NPB generation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Software Bridge generation
+    Software NPB generation
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-generate-npb-java-maven-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Generate NPB Java Maven project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-the-npb-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build the NPB software
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helpful-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpful Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpful Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devices-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devices configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -277,7 +414,7 @@
   
   
   <span class="md-ellipsis">
-    Digital Twin generation
+    NPB Digital Twin generation
     
   </span>
   
@@ -299,7 +436,7 @@
   
   
   <span class="md-ellipsis">
-    UC01 PAL
+    Use case 01
     
   </span>
   
@@ -321,7 +458,7 @@
   
   
   <span class="md-ellipsis">
-    UC02 LW
+    Use case 02
     
   </span>
   
@@ -351,6 +488,89 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-generate-npb-java-maven-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Generate NPB Java Maven project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-the-npb-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build the NPB software
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helpful-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpful Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpful Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devices-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devices configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -365,7 +585,118 @@
 
 
 
-<h1 id="todo">TODO</h1>
+<h1 id="software-network-protocols-bridge-generation">Software Network Protocols Bridge Generation</h1>
+<p>Network Protocols Bridge (NPB) is a software component that can bridge 
+different industrial network protocols, 
+including <strong>Modbus TCP</strong>, <strong>OPC UA PubSub</strong>, <strong>EtherNet/IP Class 1</strong>, 
+<strong>ROS 2</strong>, and <strong>CANopen</strong>. 
+The generation of this software component from the AAS model is integrated 
+into the Papyrus4Manufacturing. </p>
+<hr />
+<h3 id="step-by-step-guide">Step-by-Step Guide</h3>
+<p>This section presents three basic steps to generate software NPB.</p>
+<h4 id="step-1-generate-npb-java-maven-project">Step 1: Generate NPB Java Maven project</h4>
+<p>In the <em>Model Explorer</em> window, right click at the AAS, 
+go to <em>AAS</em> &gt; <em>Generate Network Protocols Bridge (NPB)</em>. 
+If the AAS model design is correct, then a new generate code folder will 
+appear in the <em>Project Explorer</em> window and it will show no error 
+(no red star on the project icon). </p>
+<p>If there is no new generated folder or a new project is generated with 
+a red star, you should recheck the AAS model design and re-generate it. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">  
+    <img src="../images/newnpb.jpg" alt="download" style="height: 400px;"/>
+    <figcaption style="text-align: center;">    
+      Figure 1. Successful new generated Java Maven project for NPB 
+    </figcaption> 
+  </figure>   
+</div>
+
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> The files generated can be different depended on the 
+<strong>featureId</strong>.  <br />
+</span></p>
+<h4 id="step-2-build-the-npb-software">Step 2: Build the NPB software</h4>
+<p>Two methods to build the NPB software. 
+First, in the <em>Project Explorer</em> window, right click at the <em>pom.xml</em> file, 
+go <em>Maven</em> &gt; <em>Update Project...</em>. 
+In the new appeared window, check <em>Force Update of Snapshots/Releases</em>, 
+click <em>OK</em>. 
+Right click at the <em>pom.xml</em> again, go to <em>Run As</em> &gt; <em>Maven Install</em>. </p>
+<p>In the second, open a terminal. Run the following commands: </p>
+<blockquote>
+<p>$ <code>cd &lt;YOUR_PROJECT_WORKSPACE&gt;</code><br />
+$ <code>mvn clean install -U</code></p>
+</blockquote>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">   
+    <img src="../images/buildnpb.jpg" alt="download" style="width 100%;"/>
+    <figcaption style="text-align: center;">  
+      Figure 2. Successful build with the second method 
+    </figcaption> 
+  </figure>      
+</div>
+
+<hr />
+<h3 id="usage">Usage</h3>
+<p>You can run the NPB on the Papyrus4Manufacturing environment: 
+In the <em>Project Explorer</em>, right click at the project folder of the NPB, 
+go to <em>Run As</em> &gt; <em>Java Application</em>.</p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> If an error related to root privileges occur due to the
+need of root access for some ports (e.g. default port 502 for Modbus TCP), 
+re-run Papyrus4Manufacturing with <strong>sudo</strong>. 
+</span></p>
+<p>Another method is to use Docker. 
+Search for the docker images generated by the build then run it with 
+adequate parameters. 
+We supports also a <em>run.sh</em> including the command the Docker with 
+pre-defined parameters in the generated NPB folder. </p>
+<p>If the NPB boots correctly, the console will show no error 
+and all network interfaces are raised properly. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;"> 
+    <img src="../images/runnpbok.jpg" alt="download" style="width 100%;"/>
+    <figcaption style="text-align: center;"> 
+      Figure 3. Successful run NPB
+    </figcaption> 
+  </figure> 
+</div>
+
+<hr />
+<h3 id="helpful-tips">Helpful Tips</h3>
+<p>This section presents some useful tips to build and run NPB.</p>
+<h4 id="devices-configuration">Devices configuration</h4>
+<p>The EtherNet/IP device must work in adapter mode and be turned on before 
+connecting to the NPB. 
+In other words, the EtherNet/IP device needs to boot first, 
+then you can launch the NPB.
+You should get the parameters in the EDS associated to 
+the EtherNet/IP device to configure the <em>application.properties</em> 
+file of NPB. 
+This configuration requires knowledge on the EtherNet/IP.</p>
+<p>To test CANopen device, you can use a virtual can (vcan) interface
+and using a tunnel to translate CAN-Socket data messages. </p>
+<h4 id="network-configuration">Network configuration</h4>
+<p>To check the available network interfaces in your computer, you can use one 
+of following commands: </p>
+<blockquote>
+<p>$ <code>ifconfig</code><br />
+$ <code>ip address</code>  </p>
+</blockquote>
+<p>To raise network interface vcan0 required by CANopen, you use the following 
+commands: </p>
+<blockquote>
+<p>$ <code>sudo modprobe vcan</code><br />
+$ <code>sudo ip link add dev vcan0 type vcan</code><br />
+$ <code>sudo ip link set vcan0 mtu 16</code><br />
+$ <code>sudo ip link set up vcan0</code>  </p>
+</blockquote>
+<p>Some default values of network interfaces' configuration:<br />
+- The default port of ModbusTCP is <strong>502</strong>. <br />
+- The default port of OPC UA PubSub is <strong>4801</strong>. <br />
+- The default port of EtherNet/IP is <strong>2222</strong> and <strong>44818</strong>. <br />
+- The default ROS DOMAIN ID of ROS2 is <strong>0</strong>.    </p>
 
 
 

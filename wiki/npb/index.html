@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="design/">
+        <link rel="next" href="setup/">
       
       
       <link rel="icon" href="None">
@@ -18,11 +18,14 @@
     
     
       
-        <title>P4M for ROS6GBridge</title>
+        <title>Papyrus4Manufacturing for ROS6GBridge</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="P4M for ROS6GBridge" class="md-header__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href="." title="Papyrus4Manufacturing for ROS6GBridge" class="md-header__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            P4M for ROS6GBridge
+            Papyrus4Manufacturing for ROS6GBridge
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -105,8 +113,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -176,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="P4M for ROS6GBridge" class="md-nav__button md-logo" aria-label="P4M for ROS6GBridge" data-md-component="logo">
+    <a href="." title="Papyrus4Manufacturing for ROS6GBridge" class="md-nav__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    P4M for ROS6GBridge
+    Papyrus4Manufacturing for ROS6GBridge
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -276,6 +284,28 @@
   
   
     <li class="md-nav__item">
+      <a href="setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDE Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="design/" class="md-nav__link">
         
   
@@ -303,7 +333,7 @@
   
   
   <span class="md-ellipsis">
-    Software Bridge generation
+    Software NPB generation
     
   </span>
   
@@ -325,7 +355,7 @@
   
   
   <span class="md-ellipsis">
-    Digital Twin generation
+    NPB Digital Twin generation
     
   </span>
   
@@ -347,7 +377,7 @@
   
   
   <span class="md-ellipsis">
-    UC01 PAL
+    Use case 01
     
   </span>
   
@@ -369,7 +399,7 @@
   
   
   <span class="md-ellipsis">
-    UC02 LW
+    Use case 02
     
   </span>
   
@@ -443,24 +473,35 @@
 <p>This user guide provides instructions on how to design, build and run 
 the network protocols bridges (NPB) and its digital twin (DT). 
 Two use cases 01 &amp; 02 demonstrates simulated applications of the NPB. </p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> This document is intended to use on <strong>Linux</strong> 
+machines. 
+</span></p>
+<hr />
 <h3 id="table-of-contents">Table of Contents</h3>
 <ol>
 <li>
+<p><a href="setup/">Development Environment Setup</a>  </p>
+<blockquote>
+<p>Instructions on settings up Papyrus4Manufacturing. </p>
+</blockquote>
+</li>
+<li>
 <p><a href="design/">AAS Model design</a>  </p>
 <blockquote>
-<p>Intructions on designing an AAS model for NPB and NPB DT.    </p>
+<p>Instructions on designing an AAS model for NPB and NPB DT.    </p>
 </blockquote>
 </li>
 <li>
-<p><a href="gennpb/">Software Bridge generation</a>  </p>
+<p><a href="gennpb/">Software NPB generation</a>  </p>
 <blockquote>
-<p>Intructions on generating and configuring NPB.    </p>
+<p>Instructions on generating and configuring NPB.    </p>
 </blockquote>
 </li>
 <li>
-<p><a href="genaas/">Digital Twin generation</a>  </p>
+<p><a href="genaas/">NPB Digital Twin generation</a>  </p>
 <blockquote>
-<p>Intructions on generating and configuring AAS DT of NPB.   </p>
+<p>Instructions on generating and configuring AAS DT of NPB.   </p>
 </blockquote>
 </li>
 <li>
@@ -476,6 +517,7 @@ Two use cases 01 &amp; 02 demonstrates simulated applications of the NPB. </p>
 </blockquote>
 </li>
 </ol>
+<hr />
 <h3 id="acknowledgements">Acknowledgements</h3>
 <p>This document and its related resources are developed within the project 
 TARGET-X : ROS6GBridge. The <a href="https://target-x.eu/">TARGET-X project</a> 
