@@ -343,6 +343,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Use case 02
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -354,6 +367,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -379,6 +420,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -394,8 +452,36 @@
 
 
 <h1 id="use-case-02-led-waterfall">Use Case 02: Led Waterfall</h1>
+<p>Led Waterfall is a educative use case with a simple concept and 
+easy to reproduce. 
+It was first deployed in the LocalSEA testbed of CEA List, 
+then its components was dockerized using Docker to be able to test 
+in other environments. </p>
+<hr />
+<h3 id="description">Description</h3>
+<p>Given a waterfall consisted of multiple stairs. 
+When pouring the water into a stair, the water will go down 
+stair-by-stair until the final one. 
+The use case mimic the mechanism of the waterfall.</p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/uc02ctx.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 1. Devices used in the PAL use case  
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<p>There are five software components using five network protocols: 
+CANopen, Modbus TCP, OPC UA FX, ROS 2, and EtherNet/IP Class 1, 
+represent five stairs of the waterfall. 
+When a trigger send a message to a stair, it will trigger its 
+lower stair by sending a message to it. 
+For example, when the stair OPC UA FX is triggered, it will trigger 
+the stair ROS 2; then, the stair ROS 2 will trigger the stair EtherNet/IP.  </p>
 <blockquote>
-<p>Content will be available soon. Stay tuned!</p>
+<p>The content will be fully available on the <strong>30th June 2025</strong>. 
+Stay tuned!!!</p>
 </blockquote>
 
 
