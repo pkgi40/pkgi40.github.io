@@ -1,0 +1,783 @@
+<http://www.w3id.org/def/caso> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.w3id.org/def/caso> <http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3id.org/def/caso/201912> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/elements/1.1/description> "CASO (Context Aware System Observation) is an ontology for context aware system and observation services. Its goal is to describe all the processing of the context."@en .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/elements/1.1/issued> "2019-11-26T00:00:00+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/elements/1.1/modified> "2021-03-01T00:00:00+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/elements/1.1/publisher> <https://www6.clermont.inrae.fr/tscf> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/elements/1.1/title> "Context Aware System Observation Ontology"@en .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-0421-452X> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-7011-4535> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0002-3076-5499> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0002-3517-0945> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-3587-0367> .
+<http://www.w3id.org/def/caso> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+<http://www.w3id.org/def/caso> <http://purl.org/vocab/vann/preferredNamespacePrefix> "caso" .
+<http://www.w3id.org/def/caso> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.w3id.org/def/caso"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://www.w3id.org/def/caso> <http://www.w3.org/2002/07/owl#versionInfo> "1.2.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/domainIncludes
+<http://schema.org/domainIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/rangeIncludes
+<http://schema.org/rangeIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/prov#category
+<http://www.w3.org/ns/prov#category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/prov#component
+<http://www.w3.org/ns/prov#component> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/prov#inverse
+<http://www.w3.org/ns/prov#inverse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/prov#qualifiedForm
+<http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "This property links an entity to a om:Unit instance."@en .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> <http://www.w3.org/2000/01/rdf-schema#label> "has unit" .
+# 
+# http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasInfluencedBy> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#comment> "Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity."@en .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#label> "used" .
+# 
+# http://www.w3.org/ns/prov#wasInfluencedBy
+<http://www.w3.org/ns/prov#wasInfluencedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasInfluencedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation."@en .
+<http://www.w3.org/ns/prov#wasInfluencedBy> <http://www.w3.org/2000/01/rdf-schema#label> "was influence by"@en .
+# 
+# http://www.w3.org/ns/prov#wasInformedBy
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasInfluencedBy> .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2."@en .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov-o#> .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/2000/01/rdf-schema#label> "wasInformedBy" .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/ns/prov#category> "starting-point" .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/ns/prov#component> "entities-activities" .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/ns/prov#inverse> "informed" .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#Communication> .
+<http://www.w3.org/ns/prov#wasInformedBy> <http://www.w3.org/ns/prov#qualifiedForm> <http://www.w3.org/ns/prov#qualifiedCommunication> .
+# 
+# http://www.w3.org/ns/sosa/actsOnProperty
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isActedOnBy> .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/ActuatableProperty> .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an Actuation and the property of a FeatureOfInterest it is acting upon."@en .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/2000/01/rdf-schema#label> "acts on property"@en .
+<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/2004/02/skos/core#example> "In the activity (Actuation) of automatically closing a window if the temperature in a room drops below 20 degrees Celsius, the property on which the Actuator acts upon is the state of the window as it changes from being open to being closed. "@en .
+# 
+# http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "has feature of interest"@en .
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/2004/02/skos/core#example> "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en .
+# 
+# http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isResultOf> .
+<http://www.w3.org/ns/sosa/hasResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/hasResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/hasResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/hasResult> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Result> .
+<http://www.w3.org/ns/sosa/hasResult> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation linking an Observation and a Sensor or Actuator and a Result, which contains a value representing the value associated with the observed Property."@en .
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en .
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#label> "has result"@en .
+# 
+# http://www.w3.org/ns/sosa/hasSample
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isSampleOf> .
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.w3.org/ns/sosa/hasSample> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/hasSample> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a FeatureOfInterest and the Sample used to represent it."@en .
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/hasSample> <http://www.w3.org/2000/01/rdf-schema#label> "has sample"@en .
+# 
+# http://www.w3.org/ns/sosa/hosts
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isHostedBy> .
+<http://www.w3.org/ns/sosa/hosts> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Platform> .
+<http://www.w3.org/ns/sosa/hosts> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuator> .
+<http://www.w3.org/ns/sosa/hosts> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Platform> .
+<http://www.w3.org/ns/sosa/hosts> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sampler> .
+<http://www.w3.org/ns/sosa/hosts> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it."@en .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2000/01/rdf-schema#label> "hosts"@en .
+# 
+# http://www.w3.org/ns/sosa/isActedOnBy
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/ActuatableProperty> .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an ActuatableProperty of a FeatureOfInterest and an Actuation changing its state."@en .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://www.w3.org/2000/01/rdf-schema#label> "is acted on by"@en .
+<http://www.w3.org/ns/sosa/isActedOnBy> <http://www.w3.org/2004/02/skos/core#example> "In the activity (Actuation) of automatically closing a window if the temperature in a room drops below 20 degrees Celsius, the property on which the Actuator acts upon is the state of the window as it changes from being open to being closed. "@en .
+# 
+# http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://www.w3.org/2000/01/rdf-schema#label> "is feature of interest of"@en .
+# 
+# http://www.w3.org/ns/sosa/isHostedBy
+<http://www.w3.org/ns/sosa/isHostedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuator> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Platform> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampler> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Platform> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by."@en .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isHostedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is hosted by"@en .
+# 
+# http://www.w3.org/ns/sosa/isObservedBy
+<http://www.w3.org/ns/sosa/isObservedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/observes> .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an ObservableProperty and the Sensor able to observe it."@en .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is observed by"@en .
+# 
+# http://www.w3.org/ns/sosa/isResultOf
+<http://www.w3.org/ns/sosa/isResultOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Result> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it."@en .
+<http://www.w3.org/ns/sosa/isResultOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isResultOf> <http://www.w3.org/2000/01/rdf-schema#label> "is result of"@en .
+# 
+# http://www.w3.org/ns/sosa/isSampleOf
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of."@en .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#label> "is sample of"@en .
+# 
+# http://www.w3.org/ns/sosa/madeActuation
+<http://www.w3.org/ns/sosa/madeActuation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/madeActuation> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/madeByActuator> .
+<http://www.w3.org/ns/sosa/madeActuation> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuator> .
+<http://www.w3.org/ns/sosa/madeActuation> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/madeActuation> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an Actuator and the Actuation it has made."@en .
+<http://www.w3.org/ns/sosa/madeActuation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/madeActuation> <http://www.w3.org/2000/01/rdf-schema#label> "made actuation"@en .
+# 
+# http://www.w3.org/ns/sosa/madeByActuator
+<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/madeByActuator> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/madeByActuator> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Actuator> .
+<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation linking an Actuation to the Actuator that made that Actuation."@en .
+<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/2000/01/rdf-schema#label> "made by actuator"@en .
+# 
+# http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/madeObservation> .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an Observation and the Sensor which made the Observation."@en .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/2000/01/rdf-schema#label> "made by sensor"@en .
+# 
+# http://www.w3.org/ns/sosa/madeObservation
+<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/madeObservation> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/madeObservation> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a Sensor and an Observation made by the Sensor."@en .
+<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/2000/01/rdf-schema#label> "made observation"@en .
+# 
+# http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/observedProperty> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/observedProperty> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
+<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/2000/01/rdf-schema#label> "observed property"@en .
+# 
+# http://www.w3.org/ns/sosa/observes
+<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/observes> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/observes> <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
+<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/2000/01/rdf-schema#label> "observes"@en .
+# 
+# http://www.w3.org/ns/sosa/phenomenonTime
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://schema.org/rangeIncludes> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The time that the Result of an Observation, Actuation or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an Interval or an Instant, or some other compound TemporalEntity."@en .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/phenomenonTime> <http://www.w3.org/2000/01/rdf-schema#label> "phenomenon time"@en .
+# 
+# http://www.w3.org/ns/ssn/hasProperty
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/ssn/isPropertyOf> .
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an entity and a Property of that entity."@en .
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/ssn/> .
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property"@en .
+# 
+# http://www.w3.org/ns/ssn/isPropertyOf
+<http://www.w3.org/ns/ssn/isPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/ssn/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a Property and the entity it belongs to."@en .
+<http://www.w3.org/ns/ssn/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/ssn/> .
+<http://www.w3.org/ns/ssn/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> "is property of"@en .
+# 
+# http://www.w3id.org/def/caso#greaterThan
+<http://www.w3id.org/def/caso#greaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#greaterThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#greaterThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#greaterThan> <http://www.w3.org/2000/01/rdf-schema#comment> "greater than - Relation between States to define an order. The domain State is greater than the range State."@en .
+<http://www.w3id.org/def/caso#greaterThan> <http://www.w3.org/2000/01/rdf-schema#label> "greater than"@en .
+# 
+# http://www.w3id.org/def/caso#greaterThanOrEqualTo
+<http://www.w3id.org/def/caso#greaterThanOrEqualTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#greaterThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#greaterThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#greaterThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#comment> "greater than or equal to - Relation between States to define an order. The domain State is greater than or equal to the range State."@en .
+<http://www.w3id.org/def/caso#greaterThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#label> "greater than or equal to"@en .
+# 
+# http://www.w3id.org/def/caso#hasClosedLowerBoundary
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#Boundary> .
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#comment> "has closed lower boundary - Relation from a State to its lower Boundary. The State is reached when the associated state value is equal or superior to the lower Boundary value."@en .
+<http://www.w3id.org/def/caso#hasClosedLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has closed lower boundary"@en .
+# 
+# http://www.w3id.org/def/caso#hasClosedUpperBoundary
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#Boundary> .
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#comment> "has closed upper boundary - Relation from a State to its upper Boundary. The State is reached when the associated state value is equal or inferior  to the upper Boundary value."@en .
+<http://www.w3id.org/def/caso#hasClosedUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has closed upper boundary"@en .
+# 
+# http://www.w3id.org/def/caso#hasOpenLowerBoundary
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#Boundary> .
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#comment> "has open lower boundary - Relation from a State to its lower Boundary. The State is reached when the associated state value is superior to the lower Boundary value."@en .
+<http://www.w3id.org/def/caso#hasOpenLowerBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has open lower boundary"@en .
+# 
+# http://www.w3id.org/def/caso#hasOpenUpperBoundary
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#Boundary> .
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#comment> "has open upper boundary - Relation from a State to its upper Boundary. The State is reached when the associated state value is inferior to the upper Boundary value."@en .
+<http://www.w3id.org/def/caso#hasOpenUpperBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has open upper boundary"@en .
+# 
+# http://www.w3id.org/def/caso#hasResultState
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/hasResult> .
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#Deduction> .
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/2000/01/rdf-schema#comment> "has state result - Relation linking a Deduction and its result that is to say the State that is applied on the Property for a time."@en .
+<http://www.w3id.org/def/caso#hasResultState> <http://www.w3.org/2000/01/rdf-schema#label> "has result state"@en .
+# 
+# http://www.w3id.org/def/caso#hasState
+<http://www.w3id.org/def/caso#hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasState> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#Property> .
+<http://www.w3id.org/def/caso#hasState> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#hasState> <http://www.w3.org/2000/01/rdf-schema#comment> "has state - Relation from a Property to one of the possible States of that Property"@en .
+<http://www.w3id.org/def/caso#hasState> <http://www.w3.org/2000/01/rdf-schema#label> "has state"@en .
+# 
+# http://www.w3id.org/def/caso#hasValidTime
+<http://www.w3id.org/def/caso#hasValidTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#hasValidTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#Deduction> .
+<http://www.w3id.org/def/caso#hasValidTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3id.org/def/caso#hasValidTime> <http://www.w3.org/2000/01/rdf-schema#comment> "has valid time - The time that the result of a Deduction (state) applies to the ObservableProperty. Not necessarily the same as the sosa:PhenomenonTime or the sosa:ResultTime. May be an Interval or an Instant, or some other compound TemporalEntity."@en .
+<http://www.w3id.org/def/caso#hasValidTime> <http://www.w3.org/2000/01/rdf-schema#label> "has valid time"@en .
+# 
+# http://www.w3id.org/def/caso#lesserThan
+<http://www.w3id.org/def/caso#lesserThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#lesserThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#lesserThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#lesserThan> <http://www.w3.org/2000/01/rdf-schema#comment> "less than - Relation between States to define an order. The domain State is lesser than the range State."@en .
+<http://www.w3id.org/def/caso#lesserThan> <http://www.w3.org/2000/01/rdf-schema#label> "lesser than"@en .
+# 
+# http://www.w3id.org/def/caso#lesserThanOrEqualTo
+<http://www.w3id.org/def/caso#lesserThanOrEqualTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#lesserThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#lesserThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3id.org/def/caso#State> .
+<http://www.w3id.org/def/caso#lesserThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#comment> "lesser than or equal to - Relation between States to define an order. The domain State is lesser than or equal to the range State."@en .
+<http://www.w3id.org/def/caso#lesserThanOrEqualTo> <http://www.w3.org/2000/01/rdf-schema#label> "lesser than or equal to"@en .
+# 
+# http://www.w3id.org/def/caso#triggersFunction
+<http://www.w3id.org/def/caso#triggersFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3id.org/def/caso#triggersFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#Actuation> .
+<http://www.w3id.org/def/caso#triggersFunction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/saref#Function> .
+<http://www.w3id.org/def/caso#triggersFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "triggers function - Relation from an Actuation to a Function. The Actuation trigger the operation of the Function."@en .
+<http://www.w3id.org/def/caso#triggersFunction> <http://www.w3.org/2000/01/rdf-schema#label> "triggers function"@en .
+# 
+# https://w3id.org/saref#hasCommand
+<https://w3id.org/saref#hasCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/saref#hasCommand> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/saref#isCommandOf> .
+<https://w3id.org/saref#hasCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between an entity (such as a function) and a command" .
+<https://w3id.org/saref#hasCommand> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/saref#> .
+<https://w3id.org/saref#hasCommand> <http://www.w3.org/2000/01/rdf-schema#label> "has command" .
+# 
+# https://w3id.org/saref#hasFunction
+<https://w3id.org/saref#hasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/saref#hasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the type of function of a device" .
+<https://w3id.org/saref#hasFunction> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/saref#> .
+<https://w3id.org/saref#hasFunction> <http://www.w3.org/2000/01/rdf-schema#label> "has function" .
+# 
+# https://w3id.org/saref#isCommandOf
+<https://w3id.org/saref#isCommandOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/saref#isCommandOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a command and a function." .
+<https://w3id.org/saref#isCommandOf> <http://www.w3.org/2000/01/rdf-schema#label> "is command of" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue> <http://www.w3.org/2000/01/rdf-schema#comment> "This property links an entity to a numerical value."@en .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue> <http://www.w3.org/2000/01/rdf-schema#label> "has numerical value"@en .
+# 
+# http://www.w3.org/ns/sosa/hasSimpleResult
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://www.w3.org/2000/01/rdf-schema#comment> "The simple value of an Observation or Actuation or act of Sampling."@en .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://www.w3.org/2000/01/rdf-schema#label> "has simple result"@en .
+<http://www.w3.org/ns/sosa/hasSimpleResult> <http://www.w3.org/2004/02/skos/core#example> "For instance, the values 23 or true."@en .
+# 
+# http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/ns/sosa/resultTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.w3.org/ns/sosa/resultTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3.org/ns/sosa/resultTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/resultTime> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sampling> .
+<http://www.w3.org/ns/sosa/resultTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
+<http://www.w3.org/ns/sosa/resultTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/resultTime> <http://www.w3.org/2000/01/rdf-schema#label> "result time"@en .
+# 
+# http://www.w3id.org/def/caso#boundaryValue
+<http://www.w3id.org/def/caso#boundaryValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3id.org/def/caso#boundaryValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3id.org/def/caso#Boundary> .
+<http://www.w3id.org/def/caso#boundaryValue> <http://www.w3.org/2000/01/rdf-schema#comment> "boundary value - Numeric value of a Boundary"@en .
+<http://www.w3id.org/def/caso#boundaryValue> <http://www.w3.org/2000/01/rdf-schema#label> "boundary value"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.ontology-of-units-of-measure.org/resource/om-2/Unit
+<http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> <http://www.w3.org/2000/01/rdf-schema#comment> "A unit of measure is a definite magnitude of a quantity, defined and adopted by convention or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called \"metre\"."@en .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#comment> "The class skos:Concept is the class of SKOS concepts.\n\nA SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\n\nThe notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS.\n\nNote that, because SKOS is designed to be a vehicle for representing semi-formal KOS, such as thesauri and classification schemes, a certain amount of flexibility has been built in to the formal definition of this class."@en .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
+# 
+# http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "A temporal interval or instant."@en .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://www.w3.org/2006/time#" .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Temporal entity"@en .
+# 
+# http://www.w3.org/ns/sosa/ActuatableProperty
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "An actuatable quality (property, characteristic) of a FeatureOfInterest."@en .
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Actuatable Property"@en .
+<http://www.w3.org/ns/sosa/ActuatableProperty> <http://www.w3.org/2004/02/skos/core#example> "A window actuator acts by changing the state between a frame and a window. The ability of the window to be opened and closed is its ActuatableProperty."@en .
+# 
+# http://www.w3.org/ns/sosa/Actuation
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/actsOnProperty> .
+_:genid1 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/ActuatableProperty> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid2 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasResult> .
+_:genid3 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Result> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeByActuator> .
+_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Actuator> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/actsOnProperty> .
+_:genid5 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasResult> .
+_:genid6 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeByActuator> .
+_:genid8 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/resultTime> .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#comment> "An Actuation carries out an (Actuation) Procedure to change the state of the world using an Actuator."@en .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2000/01/rdf-schema#label> "Actuation"@en .
+<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/2004/02/skos/core#example> "The activity of automatically closing a window if the temperature in a room drops below 20 degree Celsius. The activity is the Actuation and the device that closes the window is the Actuator. The Procedure is the rule, plan, or specification that defines the conditions that triggers the Actuation, here a drop in temperature. "@en .
+# 
+# http://www.w3.org/ns/sosa/Actuator
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/System> .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world."@en .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#label> "Actuator"@en .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2004/02/skos/core#example> "A window actuator for automatic window control, i.e., opening or closing the window."@en .
+# 
+# http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/ssn/hasProperty> .
+_:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/ssn/Property> .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/ssn/hasProperty> .
+_:genid11 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Feature Of Interest"@en .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/2004/02/skos/core#example> "When measuring the height of a tree, the height is the observed ObservableProperty, 20m may be the Result of the Observation, and the tree is the FeatureOfInterest. A window is a FeatureOfInterest for an automatic window control Actuator."@en .
+# 
+# http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/observedProperty> .
+_:genid12 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "An observable quality (property, characteristic) of a FeatureOfInterest."@en .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Observable Property"@en .
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+# 
+# http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid14 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasResult> .
+_:genid15 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Result> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeBySensor> .
+_:genid16 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observedProperty> .
+_:genid17 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasResult> .
+_:genid18 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid19 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeBySensor> .
+_:genid20 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observedProperty> .
+_:genid21 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/phenomenonTime> .
+_:genid22 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/resultTime> .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#comment> "Observation - Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#label> "Observation"@en .
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2004/02/skos/core#example> "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+# 
+# http://www.w3.org/ns/sosa/Platform
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hosts> .
+_:genid24 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/ssn/System> .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#comment> "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#label> "Platform"@en .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2004/02/skos/core#example> "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators."@en .
+# 
+# http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/2000/01/rdf-schema#comment> "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en .
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/2000/01/rdf-schema#label> "Result"@en .
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/2004/02/skos/core#example> "The value 20 as the height of a certain tree together with the unit, e.g., Meter."@en .
+# 
+# http://www.w3.org/ns/sosa/Sample
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/isSampleOf> .
+_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/isSampleOf> .
+_:genid26 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "A Sample is the result from an act of Sampling."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "Feature which is intended to be representative of a FeatureOfInterest on which Observations may be made."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical samples are sometimes known as 'specimens'."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "Samples are artifacts of an observational strategy, and have no significant function outside of their role in the observation process. The characteristics of the samples themselves are of little interest, except perhaps to the manager of a sampling campaign.\n\nA Sample is intended to sample some FatureOfInterest, so there is an expectation of at least one isSampleOf property. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2000/01/rdf-schema#label> "Sample"@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2004/02/skos/core#example> "A 'station' is essentially an identifiable locality where a sensor system or Procedure may be deployed and an observation made. In the context of the observation model, it connotes the 'world in the vicinity of the station', so the observed properties relate to the physical medium at the station, and not to any physical artifact such as a mooring, buoy, benchmark, monument, well, etc."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2004/02/skos/core#example> "A statistical sample is often designed to be characteristic of an entire population, so that observations can be made regarding the sample that provide a good estimate of the properties of the population."@en .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/2004/02/skos/core#note> "A transient sample, such as a ships-track or flight-line, might be identified and described, but is unlikely to be revisited exactly."@en .
+# 
+# http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/System> .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor"@en .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2004/02/skos/core#example> "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
+# 
+# http://www.w3.org/ns/ssn/Property
+<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en .
+<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/ssn/> .
+<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
+# 
+# http://www.w3.org/ns/ssn/System
+<http://www.w3.org/ns/ssn/System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/ssn/System> <http://www.w3.org/2000/01/rdf-schema#comment> "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems."@en .
+<http://www.w3.org/ns/ssn/System> <http://www.w3.org/2000/01/rdf-schema#label> "System"@en .
+# 
+# http://www.w3id.org/def/caso#Actuation
+<http://www.w3id.org/def/caso#Actuation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#Actuation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Actuation> .
+<http://www.w3id.org/def/caso#Actuation> <http://www.w3.org/2000/01/rdf-schema#comment> "Actuation - Act of carrying out an (Actuation) Procedure to change the state of world  using an Actuator. This act is performed during the context exploitation phase of a context aware system. An Actuation links to an Actuator to describe what made the Actuation and how; links to an ActuatableProperty to describe the target that the Actuation change; links to a FeatureOfInterest to detail what that property was associated with; links to a Deduction by the wasInfluencedBy property when the act is performed based on the given Deduction; and links to the Function that is triggered by the Actuation by the triggersFunction property."@en .
+<http://www.w3id.org/def/caso#Actuation> <http://www.w3.org/2000/01/rdf-schema#label> "Actuation"@en .
+# 
+# http://www.w3id.org/def/caso#Boundary
+<http://www.w3id.org/def/caso#Boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#Boundary> <http://www.w3.org/2000/01/rdf-schema#comment> "Boundary - Limit of a State. The value of the limit could be a quantitative or a qualitative data. To store the value, the boundaryValue data property is used."@en .
+<http://www.w3id.org/def/caso#Boundary> <http://www.w3.org/2000/01/rdf-schema#label> "Boundary"@en .
+# 
+# http://www.w3id.org/def/caso#Deduction
+<http://www.w3id.org/def/caso#Deduction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#Deduction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3id.org/def/caso#Observation> .
+<http://www.w3id.org/def/caso#Deduction> <http://www.w3.org/2000/01/rdf-schema#comment> "Deduction - Act of carrying out an (Observation) Procedure to estimate the State of a Property of a FeatureOfInterest. The Observation may be performed by an inference engine. A Deduction links to a State by the hasResultState property to describe what the result is; links to a TemporalEntity by the hasValidTime property to indicate when the result is valid and for how many time."@en .
+<http://www.w3id.org/def/caso#Deduction> <http://www.w3.org/2000/01/rdf-schema#label> "Deduction"@en .
+# 
+# http://www.w3id.org/def/caso#Observation
+<http://www.w3id.org/def/caso#Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.w3id.org/def/caso#Observation> <http://www.w3.org/2000/01/rdf-schema#comment> "Observation - Act of carrying out an (Observation) Procedure to estimate or calculate a value of a Property of a FeatureOfInterest. This act can be performed during the context acquisition or context processing phases of a context aware system. An Observation links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of; and links to a FeatureOfInterest to detail what that property was associated with. When the act is made during the context processing phase the entry values of the procedure should be linked to the observation by the wasDerivedFrom property."@en .
+<http://www.w3id.org/def/caso#Observation> <http://www.w3.org/2000/01/rdf-schema#label> "Observation"@en .
+# 
+# http://www.w3id.org/def/caso#Property
+<http://www.w3id.org/def/caso#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
+<http://www.w3id.org/def/caso#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Property - A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity.The possible quality values should be expressed by State. A Property is linked to its possible States using the hasState property."@en .
+<http://www.w3id.org/def/caso#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
+# 
+# http://www.w3id.org/def/caso#State
+<http://www.w3id.org/def/caso#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3id.org/def/caso#State> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3id.org/def/caso#State> <http://www.w3.org/2000/01/rdf-schema#comment> "State - A qualitative value of a Property, summarizing a set of information about that Property. A State links to its Property by the isStateOf property. To delimit the State of a Property, some Boundary may be defined."@en .
+<http://www.w3id.org/def/caso#State> <http://www.w3.org/2000/01/rdf-schema#label> "State"@en .
+# 
+# https://w3id.org/saref#Actuator
+<https://w3id.org/saref#Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/saref#Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/saref#Device> .
+<https://w3id.org/saref#Actuator> <http://www.w3.org/2000/01/rdf-schema#comment> "A device responsible for moving or controlling a mechanism or system by performing an actuating function" .
+<https://w3id.org/saref#Actuator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/saref#> .
+<https://w3id.org/saref#Actuator> <http://www.w3.org/2000/01/rdf-schema#label> "Actuator" .
+# 
+# https://w3id.org/saref#Command
+<https://w3id.org/saref#Command> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/saref#Command> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/saref#isCommandOf> .
+_:genid27 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid27 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/saref#Function> .
+<https://w3id.org/saref#Command> <http://www.w3.org/2000/01/rdf-schema#comment> "A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended." .
+<https://w3id.org/saref#Command> <http://www.w3.org/2000/01/rdf-schema#label> "Command" .
+# 
+# https://w3id.org/saref#Device
+<https://w3id.org/saref#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/saref#Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/System> .
+<https://w3id.org/saref#Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/saref#hasFunction> .
+_:genid28 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid28 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/saref#Function> .
+<https://w3id.org/saref#Device> <http://www.w3.org/2000/01/rdf-schema#comment> "A tangible object designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function. Devices can be structured in categories (subclasses) that reflect the different domain in which a device is used, e.g., smart appliances domain (subclass FunctionRelated) vs. building domain (subclass BuildingRelated) vs. smart grid domain (subclass EnergyRelated). New categories can be defined,if needed, to reflect other differences, for example different points of view, such as the point of view of the device's user vs. the point of view of the device's manufacturer. We propose a list of devices that are relevant for the purpose of SAREF, but this list can be extended." .
+<https://w3id.org/saref#Device> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/saref#> .
+<https://w3id.org/saref#Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device" .
+# 
+# https://w3id.org/saref#Function
+<https://w3id.org/saref#Function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/saref#Function> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/saref#hasCommand> .
+_:genid29 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid29 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/saref#Command> .
+<https://w3id.org/saref#Function> <http://www.w3.org/2000/01/rdf-schema#comment> "The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function. Functions can be structured in categories (subclasses) that reflect different points of view, for example, considering the specific application area for which a function can be used (e.g., light, temperature, motion, heat, power, etc.), or the capability that a function can support (e.g., receive, reply, notify, etc.), and so forth. " .
+<https://w3id.org/saref#Function> <http://www.w3.org/2000/01/rdf-schema#label> "Function"@en .
+# 
+# https://w3id.org/saref#Sensor
+<https://w3id.org/saref#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/saref#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/saref#Device> .
+<https://w3id.org/saref#Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction." .
+<https://w3id.org/saref#Sensor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/saref#> .
+<https://w3id.org/saref#Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointProperties> .
+_:genid30 <http://www.w3.org/2002/07/owl#members> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3id.org/def/caso#hasClosedLowerBoundary> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3id.org/def/caso#hasClosedUpperBoundary> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3id.org/def/caso#hasOpenLowerBoundary> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3id.org/def/caso#hasOpenUpperBoundary> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
