@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../None">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
       
       
 
@@ -46,7 +46,7 @@
     
       <link rel="stylesheet" href="../styles/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,13 +64,14 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#use-case-02-led-waterfall" class="md-skip">
+        <a href="#use-case-02-waterfall" class="md-skip">
           Skip to content
         </a>
       
@@ -89,12 +90,12 @@
     <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-header__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -117,35 +118,32 @@
     
     
     
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -156,7 +154,6 @@
     </div>
   </div>
 </div>
-      
     
     
   </nav>
@@ -187,7 +184,7 @@
     <a href=".." title="Papyrus4Manufacturing for ROS6GBridge" class="md-nav__button md-logo" aria-label="Papyrus4Manufacturing for ROS6GBridge" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     Papyrus4Manufacturing for ROS6GBridge
@@ -200,15 +197,12 @@
   
   
   
-  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Introduction
-    
   </span>
   
 
@@ -219,7 +213,6 @@
     
       
       
-  
   
   
   
@@ -227,10 +220,8 @@
       <a href="../setup/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     IDE Setup
-    
   </span>
   
 
@@ -241,7 +232,6 @@
     
       
       
-  
   
   
   
@@ -249,10 +239,8 @@
       <a href="../design/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     AAS Model design
-    
   </span>
   
 
@@ -263,7 +251,6 @@
     
       
       
-  
   
   
   
@@ -271,10 +258,8 @@
       <a href="../gennpb/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Software NPB generation
-    
   </span>
   
 
@@ -285,7 +270,6 @@
     
       
       
-  
   
   
   
@@ -293,10 +277,8 @@
       <a href="../genaas/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     NPB Digital Twin generation
-    
   </span>
   
 
@@ -307,7 +289,6 @@
     
       
       
-  
   
   
   
@@ -315,10 +296,8 @@
       <a href="../uc01/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Use case 01
-    
   </span>
   
 
@@ -332,7 +311,6 @@
   
   
     
-  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -346,10 +324,8 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
-  
   <span class="md-ellipsis">
     Use case 02
-    
   </span>
   
 
@@ -359,10 +335,8 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
-  
   <span class="md-ellipsis">
     Use case 02
-    
   </span>
   
 
@@ -385,10 +359,83 @@
       
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
+    Description
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-instructions" class="md-nav__link">
+    Deployment Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-and-load-docker-files" class="md-nav__link">
+    Step 1: Download and Load Docker files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-run-docker-for-stairs" class="md-nav__link">
+    Step 2: Run Docker for stairs
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Run Docker for stairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-modbus-tcp-stair" class="md-nav__link">
+    a. Modbus TCP stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-opc-ua-fx-stair" class="md-nav__link">
+    b. OPC UA FX stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ros2-stair" class="md-nav__link">
+    c. ROS2 stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ethernetip-stair" class="md-nav__link">
+    d. EtherNet/IP stair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-npb-docker" class="md-nav__link">
+    Step 3: Run NPB Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-trigger-a-stair" class="md-nav__link">
+    Step 4: Trigger a stair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -428,10 +475,83 @@
       
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
+    Description
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-instructions" class="md-nav__link">
+    Deployment Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-and-load-docker-files" class="md-nav__link">
+    Step 1: Download and Load Docker files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-run-docker-for-stairs" class="md-nav__link">
+    Step 2: Run Docker for stairs
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Run Docker for stairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-modbus-tcp-stair" class="md-nav__link">
+    a. Modbus TCP stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-opc-ua-fx-stair" class="md-nav__link">
+    b. OPC UA FX stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ros2-stair" class="md-nav__link">
+    c. ROS2 stair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ethernetip-stair" class="md-nav__link">
+    d. EtherNet/IP stair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-npb-docker" class="md-nav__link">
+    Step 3: Run NPB Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-trigger-a-stair" class="md-nav__link">
+    Step 4: Trigger a stair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -450,9 +570,8 @@
                   
 
 
-
-<h1 id="use-case-02-led-waterfall">Use Case 02: Led Waterfall</h1>
-<p>Led Waterfall is a educative use case with a simple concept and 
+<h1 id="use-case-02-waterfall">Use Case 02: Waterfall</h1>
+<p>Waterfall is a educative use case with a simple concept and 
 easy to reproduce. 
 It was first deployed in the LocalSEA testbed of CEA List, 
 then its components was dockerized using Docker to be able to test 
@@ -462,12 +581,14 @@ in other environments. </p>
 <p>Given a waterfall consisted of multiple stairs. 
 When pouring the water into a stair, the water will go down 
 stair-by-stair until the final one. 
-The use case mimic the mechanism of the waterfall.</p>
+The use case mimic the mechanism of the waterfall. 
+Figure 1 illustrates this concept. </p>
 <div align="center">       
   <figure style="display: inline-block; margin: 0 10px;">                       
-    <img src="../images/uc02ctx.jpg" alt="download" style="width: 100%;"/>
+    <img src="../images/uc02ctx.jpg" alt="download" 
+        style="width: 40vw; max-width: 900px;"/>
     <figcaption style="text-align: center;">                                    
-      Figure 1. Devices used in the PAL use case  
+      Figure 1. Illustration of the waterfall concept 
     </figcaption> 
   </figure>                                                                     
 </div>
@@ -476,20 +597,147 @@ The use case mimic the mechanism of the waterfall.</p>
 CANopen, Modbus TCP, OPC UA FX, ROS 2, and EtherNet/IP Class 1, 
 represent five stairs of the waterfall. 
 When a trigger send a message to a stair, it will trigger its 
-lower stair by sending a message to it. 
+lower stair by sending a message to this lower one. 
 For example, when the stair OPC UA FX is triggered, it will trigger 
 the stair ROS 2; then, the stair ROS 2 will trigger the stair EtherNet/IP.  </p>
+<h3 id="deployment-instructions">Deployment Instructions</h3>
+<p>Figure 2 shows the topology of the waterfall use case. 
+There are seven components: the NPB, five components for five stair 
+applications using the five protocols, and a component running as 
+the trigger. The trigger and the five stairs connect to the NPB. 
+All components are containerized into Docker images. 
+To ease the deployment, the Docker images for both amd64 and arm64 are prepared in <a href="https://github.com/pkgi40/p4m-projects/releases/download/ros6gbridge_uc02_kit_v0.1/UC02_kit.zip">ROS6GBridge UC02 kit</a>.<br />
+</p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/uc02topo.jpg" alt="download" 
+        style="width: 100%;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 2. Topology of the waterfall use case
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<p>This use case requires at least two devices, for example, 
+one computer (amd64) and one Raspberry Pi (arm64). 
+The first device runs NPB and the trigger and the second runs 
+the five stairs. The five basic steps are as follows.    </p>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> The current version of use case supports only four lastest stairs. 
+The <strong style="color:#2196f3">CAN Open</strong> stair will be 
+supported in the future. 
+</span></p>
+<h4 id="step-1-download-and-load-docker-files">Step 1: Download and Load Docker files</h4>
+<p>User can download the <a href="https://github.com/pkgi40/p4m-projects/releases/download/ros6gbridge_uc02_kit_v0.1/UC02_kit.zip">ROS6GBridge UC02 kit</a>, then extract it using the command:  </p>
 <blockquote>
-<p>The content will be fully available on the <strong>30th June 2025</strong>. 
-Stay tuned!!!</p>
+<p>$ <code>unzip UC02_kit.zip</code></p>
 </blockquote>
+<p>User need to copy all arm64 files (file with <em>arm</em> in name) to the device 
+using architecture arm64. The other files are for amd64.    </p>
+<p>Each device needs to load its corresponding docker images. In this example, 
+the computer load NPB and Trigger docker images:   </p>
+<blockquote>
+<p>$ <code>docker load -i npb_brx_img.tar.gz</code><br />
+$ <code>docker load -i pourer_mtcp_img.tar.gz</code>  </p>
+</blockquote>
+<p>and the Raspberry Pi loads the docker images of stairs:  </p>
+<blockquote>
+<p>$ <code>docker load -i stair_mtcp_img_arm.tar.gz</code><br />
+$ <code>docker load -i stair_uafx_img_arm.tar.gz</code><br />
+$ <code>docker load -i stair_ros2_img_arm.tar.gz</code><br />
+$ <code>docker load -i stair_eip_img_arm.tar.gz</code>  </p>
+</blockquote>
+<h4 id="step-2-run-docker-for-stairs">Step 2: Run Docker for stairs</h4>
+<p>Each stair may need a specific configuration to run properly. </p>
+<h5 id="a-modbus-tcp-stair">a. Modbus TCP stair</h5>
+<p>Modbus TCP stair requires the address of NPB bridge as input. For example, 
+the address of NPB bridge is <em>192.168.56.11</em>. Run the following command:  </p>
+<blockquote>
+<p>$ <code>docker run -it --net=host --rm stair_mtcp:0.2.arm /app 192.168.56.11</code>  </p>
+</blockquote>
+<p>The expected successful output is <code>Server MODBUSTCP: port 502</code> showing that 
+the Modbus TCP stair is listening at port <em>502</em>.   </p>
+<h5 id="b-opc-ua-fx-stair">b. OPC UA FX stair</h5>
+<p>OPC UA FX stair requires the network interface that connect to the bridge 
+as input. For example, the network interface is <em>eth0</em>. 
+Run the following command:  </p>
+<blockquote>
+<p>$ <code>docker run -it --net=host --cap-add=NET_ADMIN --rm stair_uafx:0.2.arm /app eth0</code>  </p>
+</blockquote>
+<p>The expected successful output is <code>Server OPC UA FX: port 4801</code> showing 
+that the OPC UA FX stair is listening at port <em>4801</em>.   </p>
+<h5 id="c-ros2-stair">c. ROS2 stair</h5>
+<p>ROS2 stair requires some input parameters. Run the following command:  </p>
+<blockquote>
+<p>$ <code>docker run -it --net=host --rm stair_ros2:0.2.arm /bin/bash -c "export ROS_DOMAIN_ID=0 &amp;&amp; source /opt/ros/humble/setup.bash &amp;&amp; source /workspace/install/setup.bash &amp;&amp; ros2 run stair led_waterfall"</code>  </p>
+</blockquote>
+<p>The expected successful output is <code>Server ROS2: ROS_DOMAIN_ID=0</code>.</p>
+<h5 id="d-ethernetip-stair">d. EtherNet/IP stair</h5>
+<p>EtherNet/IP stair requires the network interface that connect to the bridge 
+as input. For example, the network interface is <em>eth0</em>. 
+Run the following command:  </p>
+<blockquote>
+<p>$ <code>docker run -it --net=host --rm stair_eip:0.2.arm /app eth0</code>   </p>
+</blockquote>
+<p>The expected successful output is <code>Server EtherNet/IP: port 2222</code> showing that 
+the EtherNet/IP stair is listening at port <em>2222</em>.     </p>
+<h4 id="step-3-run-npb-docker">Step 3: Run NPB Docker</h4>
+<p>Users need to create a configuration file <em>application.properties</em> which is 
+the input for the NPB Docker. In this example, the address of the 
+Raspberry Pi is <em>192.168.56.13</em> and the network interface for the connection 
+with it is <em>eth0</em>. The content of the file is as follows. </p>
+<blockquote>
+<p><code>app.name=npb_brxfpga</code><br />
+<code>app.version=v1.0</code><br />
+<code>app.sdn.agent.interface=eth0</code><br />
+<code>app.sdn.agent.endpoint=ws://192.168.56.11:8080</code><br />
+<code>ros2.interface=eth0</code><br />
+<code>ros2.domain.id=0</code><br />
+<code>modbustcp.interface=eth0</code><br />
+<code>modbustcp.endpoint=modbus-tcp://192.168.56.13:502</code><br />
+<code>ethernetip.interface=eth0</code><br />
+<code>ethernetip.endpoint=eip-tcp://192.168.56.13:44818</code><br />
+<code>ethernetip.data.endpoint=eip-udp://192.168.56.13:2222</code><br />
+<code>ethernetip.to.connection.point=100</code><br />
+<code>ethernetip.to.elements.range=32</code><br />
+<code>ethernetip.ot.connection.point=150</code><br />
+<code>ethernetip.ot.elements.range=32</code><br />
+<code>uafx.interface=eth0</code><br />
+<code>uafx.multicast.endpoint=udp://224.0.0.1:4801</code>  </p>
+</blockquote>
+<p>Run NPB bridge using the following command:   </p>
+<blockquote>
+<p><code>cat application.properties | docker run -i --rm --net=host --cap-add=NET_ADMIN npb_brx:0.4 bash -c "tee application.properties &amp;&amp; java -jar app.jar"</code></p>
+</blockquote>
+<p>The expected successful output is <code>=========== BRx ON</code> with errors 
+displayed on the prompt. </p>
+<h4 id="step-4-trigger-a-stair">Step 4: Trigger a stair</h4>
+<p>A stair can be triggered using Pourer Docker. 
+The trigger needs three inputs which are: <br />
+- Address of the bridge: in this example, it is <em>192.168.56.11</em>.<br />
+- Unit identifier of the stair: 41 (Modbus TCP), 96 (OPC UA FX), 31 (ROS2), 
+or 60(EtherNet/IP). <br />
+- Value: 0 (false) or 1 (true).   </p>
+<p>Figure 3 shows the result after triggering the stair Modbus TCP with the 
+following command:  </p>
+<blockquote>
+<p>$ <code>docker run -it --net=host --rm pourer_mtcp:0.1 /app 192.168.56.11 41 1</code>   </p>
+</blockquote>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">    
+    <img src="../images/poureroutput.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">       
+      Figure 3. Output when triggering stair Modbus TCP 
+    </figcaption> 
+  </figure>        
+</div>
 
-
-
-
-
-
-
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> All stairs will be triggered once except stair 
+<strong style="color:#2196f3">EtherNet/IP</strong> which will be loop. 
+This last stair can only be stopped by triggering this stair with the 
+value <strong style="color:#2196f3">False</strong>.
+</span></p>
 
 
 
@@ -500,7 +748,6 @@ Stay tuned!!!</p>
             </div>
           
           
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -520,13 +767,10 @@ Stay tuned!!!</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>
