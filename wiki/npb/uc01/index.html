@@ -449,9 +449,10 @@ workstation, where a worker will pick the object and assembles
 it with different type of part.
 The worker clicks a button to notify that the object is already picked. 
 The number of sucessful objects will be calculated by a counter. </p>
-<div align="center">       
-  <figure style="display: inline-block; margin: 0 10px;">                       
-    <img src="../images/uc01ctx.jpg" alt="download" style="width: 80%;"/>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="../images/uc01ctx.jpg" alt="download" 
+        style="width: 80%; display: block; margin: 0 auto;"/>
     <figcaption style="text-align: center;">                                    
       Figure 1. Illustration of a pick and place scenario
     </figcaption> 
@@ -465,7 +466,7 @@ The number of sucessful objects will be calculated by a counter. </p>
 (c) <a href="https://www.arduino.cc/pro/hardware-arduino-opta/">PLC Opta</a>, 
 (d) <a href="https://www.raspberrypi.com/products/raspberry-pi-2-model-b/">Rapsberry Pi 2</a> (RPi2), and 
 (e) the <a href="https://logiicdev.eu/">board FPGA</a> 
-designed and developed by Logiicdev (FPGA). </p>
+designed and developed by <a href="https://www.logiicdev.eu">Logiicdev</a>. </p>
 <div align="center">       
   <figure style="display: inline-block; margin: 0 10px;">                       
     <img src="../images/uc01dev.jpg" alt="download" 
@@ -476,9 +477,53 @@ designed and developed by Logiicdev (FPGA). </p>
   </figure>                                                                     
 </div>
 
+<p>Figure 3 illustrates the topology of the PAL use case. In detail, all 
+field-level devices communicate through the NPB bridge which is the FPGA board.
+The AAS DT of the NPB bridge plays a role of an Software-Defined Network (SDN)
+controller to monitor and control the NPB bridge. The AAS DT of the PAL 
+is an orchestrator which monitor and control the field-level devices 
+to deploy the PAL use case. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/uc01topo.jpg" alt="download" 
+        style="width: 35vw; max-width: 900px;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 3. Topology of the PAL use case 
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<p>Figure 4 illustrates the AAS information model used to generate bridge NPB and 
+its AAS DT. It shows that bridge NPB has four interfaces corresponding to 
+four protocols OPC UA FX, ROS 2, EtherNet/IP, and Modbus TCP. Each interface
+has one or several routing nodes.     </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/uc01aas.jpg" alt="download" 
+        style="width: 40vw; max-width: 900px;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 4. The AAS information model of bridge NPB
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
+<p>Figure 5 illustrates the BPMN diagram depicting the production process 
+of the PAL use case. The AAS DT of PAL has two threads: one monitors the 
+states of field-level devices, and the other orchestrates the devices for 
+production. The other components (UR3e, T3WP, RPi2, and Opta) wait for events 
+before proceeding with their operations.  </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">                       
+    <img src="../images/uc01bpmn.jpg" alt="download" 
+        style="width: 50vw; max-width: 900px;"/>
+    <figcaption style="text-align: center;">                                    
+      Figure 5. BPMN of the production process of the PAL use case
+    </figcaption> 
+  </figure>                                                                     
+</div>
+
 <blockquote>
-<p>The content will be fully available on the <strong>30th June 2025</strong>. 
-Stay tuned!!!</p>
+<p>to be continued...</p>
 </blockquote>
 
 

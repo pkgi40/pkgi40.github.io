@@ -611,22 +611,34 @@ To ease the deployment, the Docker images for both amd64 and arm64 are prepared 
 <div align="center">       
   <figure style="display: inline-block; margin: 0 10px;">                       
     <img src="../images/uc02topo.jpg" alt="download" 
-        style="width: 100%;"/>
+        style="width: 50vw; max-width: 900px;"/>
     <figcaption style="text-align: center;">                                    
       Figure 2. Topology of the waterfall use case
     </figcaption> 
   </figure>                                                                     
 </div>
 
-<p>This use case requires at least two devices, for example, 
-one computer (amd64) and one Raspberry Pi (arm64). 
-The first device runs NPB and the trigger and the second runs 
-the five stairs. The five basic steps are as follows.    </p>
 <p><span style="color:#2196f3; font-style:italic;">
 <u>Note:</u> The current version of use case supports only four lastest stairs. 
 The <strong style="color:#2196f3">CAN Open</strong> stair will be 
 supported in the future. 
 </span></p>
+<p>This use case requires at least two devices, for example, 
+one computer (amd64) and one Raspberry Pi (arm64). 
+While the first device runs NPB and the trigger, the second runs the stairs. 
+Figure 3 illustrates the AAS information model that is used to generate 
+bridge NPB. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">    
+    <img src="../images/uc02aas.jpg" alt="download"
+        style="width: 40vw; max-width: 900px;"/>
+    <figcaption style="text-align: center;">       
+      Figure 3. The AAS information model of bridge NPB
+    </figcaption> 
+  </figure>        
+</div>
+
+<p>The four basic steps are as follows.    </p>
 <h4 id="step-1-download-and-load-docker-files">Step 1: Download and Load Docker files</h4>
 <p>User can download the <a href="https://github.com/pkgi40/p4m-projects/releases/download/ros6gbridge_uc02_kit_v0.1/UC02_kit.zip">ROS6GBridge UC02 kit</a>, then extract it using the command:  </p>
 <blockquote>
@@ -718,7 +730,7 @@ The trigger needs three inputs which are: <br />
 - Unit identifier of the stair: 41 (Modbus TCP), 96 (OPC UA FX), 31 (ROS2), 
 or 60(EtherNet/IP). <br />
 - Value: 0 (false) or 1 (true).   </p>
-<p>Figure 3 shows the result after triggering the stair Modbus TCP with the 
+<p>Figure 4 shows the result after triggering the stair Modbus TCP with the 
 following command:  </p>
 <blockquote>
 <p>$ <code>docker run -it --net=host --rm pourer_mtcp:0.1 /app 192.168.56.11 41 1</code>   </p>
@@ -727,7 +739,7 @@ following command:  </p>
   <figure style="display: inline-block; margin: 0 10px;">    
     <img src="../images/poureroutput.jpg" alt="download" style="width: 100%;"/>
     <figcaption style="text-align: center;">       
-      Figure 3. Output when triggering stair Modbus TCP 
+      Figure 4. Output when triggering stair Modbus TCP 
     </figcaption> 
   </figure>        
 </div>
