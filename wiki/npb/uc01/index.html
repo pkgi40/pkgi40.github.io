@@ -356,29 +356,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-hardware-setup" class="md-nav__link">
-    Step 1: Hardware setup
+  <a href="#step-1-network-setup" class="md-nav__link">
+    Step 1: Network setup
   </a>
-  
-    <nav class="md-nav" aria-label="Step 1: Hardware setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-networking" class="md-nav__link">
-    a. Networking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-device-map" class="md-nav__link">
-    b. Device map
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -446,13 +426,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
-    Evaluation
-  </a>
   
 </li>
       
@@ -525,29 +498,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-hardware-setup" class="md-nav__link">
-    Step 1: Hardware setup
+  <a href="#step-1-network-setup" class="md-nav__link">
+    Step 1: Network setup
   </a>
-  
-    <nav class="md-nav" aria-label="Step 1: Hardware setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-networking" class="md-nav__link">
-    a. Networking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-device-map" class="md-nav__link">
-    b. Device map
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -615,13 +568,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
-    Evaluation
-  </a>
   
 </li>
       
@@ -729,8 +675,7 @@ before proceeding with their operations.  </p>
 <p>To deploy the PAL use case, users need to setup hardware devices and their 
 software. The software has several exact configurations associated to the 
 hardware devices as follows.   </p>
-<h4 id="step-1-hardware-setup">Step 1: Hardware setup</h4>
-<h5 id="a-networking">a. Networking</h5>
+<h4 id="step-1-network-setup">Step 1: Network setup</h4>
 <p>Field-level devices can connect to the FPGA board via either an Ethernet cable 
 or WiFi. However, they all need to be on the <em>192.168.56.0/24</em> network. 
 In detail,   <br />
@@ -742,10 +687,6 @@ In detail,   <br />
 otherwise, the software part may not work properly.  </p>
 <p>AAS PAL and AAS Brx can be either in the same network or in another network 
 and they need to be able to connect to Brx. </p>
-<h5 id="b-device-map">b. Device map</h5>
-<blockquote>
-<p>to be continued...</p>
-</blockquote>
 <h4 id="step-2-software-setup">Step 2: Software setup</h4>
 <p>To support the deployment, many programs and Docker images are prepared in 
 <a href="https://github.com/pkgi40/p4m-projects/releases/download/ros6gbridge_uc01_kit_v0.1/UC01_kit.zip">ROS6GBridge UC01 kit</a>. After downloading, users can extract it using the command:  </p>
@@ -754,36 +695,100 @@ and they need to be able to connect to Brx. </p>
 </blockquote>
 <p>Inside the zip, there are different resources for different devices.   </p>
 <h5 id="a-ur3e">a. UR3e</h5>
+<p>To install the program for UR3e, users need a running UR3e. The deployment 
+steps are as follows. </p>
+<p><u>Step 1:</u> Extract the UR3e package and copy the inner files to an USB  </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>tar -zxvf ur3e_app.tar.gz</code><br />
+$ <code>sudo mount /dev/sda1 /mnt</code> <br />
+$ <code>cp ur3e_app/* /mnt</code>  </p>
 </blockquote>
+<p><u>Step 2:</u> Plug the USB onto the UR3e teach pendant. Load the files:<br />
+- <em>File</em> &gt; <em>Load Installation</em> &gt; select <em>ur3e.installation</em><br />
+- <em>File</em> &gt; <em>Load Program</em> &gt; select <em>ur3e_program.urp</em>. The file <em>ur3e.variables</em>
+will be auto-loaded. </p>
+<p><u>Step 3:</u> Run the program by clicking Play on the teach pendant.  </p>
 <h5 id="b-t3wp">b. T3WP</h5>
+<p>To install the program for T3WP, users need a running T3WP with ROS2 
+middleware. The deployment steps are as follows.    </p>
+<p><u>Step 1:</u> Extract the T3WP package and copy the inner file to an USB  </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>tar -zxvf t3wp_app.tar.gz</code><br />
+$ <code>sudo mount /dev/sda1 /mnt</code>  <br />
+$ <code>cp t3wp_app/* /mnt</code>  </p>
+</blockquote>
+<p><u>Step 2:</u> On T3WP, enter the ROS2 workspace (e.g. ~/ros2ws, 
+then create a python ROS2 package  </p>
+<blockquote>
+<p>$ <code>cd ~/ros2ws</code><br />
+$ <code>ros2 pkg create palusecase --build-type ament_python --dependencies rclpy</code>   </p>
+</blockquote>
+<p><u>Step 3:</u> Plug the USB onto the Raspberry Pi of T3WP, copy the file, then 
+build it with colcon  </p>
+<blockquote>
+<p>$ <code>sudo mount /dev/sda1 /mnt</code> <br />
+$ <code>cp /mnt/t3wp_program ~/ros2ws/src/palusecase/palusecase/t3wp_program.py</code><br />
+$ <code>sudo chmod +x ~/ros2ws/src/palusecase/</code><br />
+$ <code>colcon build</code>  </p>
+</blockquote>
+<p><u>Step 4:</u> Run the program  </p>
+<blockquote>
+<p>$ <code>source install/setup.bash</code> <br />
+$ <code>ros2 run palusecase t3wp_program.py</code>  </p>
 </blockquote>
 <h5 id="c-opta">c. OPTA</h5>
+<p>To install the program for Opta, users need an Opta connect with the computer
+using a USB-C cable and a preinstalled 
+<a href="https://www.arduino.cc/en/software">Arduino IDE</a>. 
+The deployment steps are as follows.  </p>
+<p><u>Step 1:</u> Extract the Opta package </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>tar -zxvf opta_app.tar.gz</code></p>
 </blockquote>
+<p><u>Step 2:</u> Open Arduino, open the file: <em>File</em> &gt; <em>Open...</em> &gt;
+select <code>opta_program.ino</code>. Click <em>Verify</em> to verify the code,
+then click <code>Upload</code> to build and push the binary to the Opta.  </p>
+<p><u>Step 3:</u> Opta only needs a power supply to run. However, to run the 
+program, users need to use a Modbus TCP client to set the target number to be
+produced first, then users click the <em>USER</em> button on the Opta to start the 
+program.  </p>
 <h5 id="d-rpi2">d. RPi2</h5>
+<p>To install the program for RPi2, users need an Raspberry Pi with python3. The 
+deployment steps are as follows.   </p>
+<p><u>Step 1:</u> Extract the RPi2 package and copy the inner file to an USB  </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>tar -zxvf rpi2_app.tar.gz</code><br />
+$ <code>sudo mount /dev/sda1 /mnt</code> <br />
+$ <code>cp rpi2_app/* /mnt</code>  </p>
+</blockquote>
+<p><u>Step 2:</u> Plug the USB onto RPi2, copy the files to a workspace 
+(e.g. ~/rpi2ws) then run the program   </p>
+<blockquote>
+<p>$ <code>sudo mount /dev/sda1 /mnt</code> <br />
+$ <code>cp /mnt/* ~/rpi2ws/</code> <br />
+$ <code>sudo chmod +x ~/rpi2ws/rpi2_program</code>  <br />
+$ <code>cd ~/rpi2ws &amp;&amp; ./rpi2_program</code>  </p>
 </blockquote>
 <h5 id="e-brx">e. Brx</h5>
+<p>The Brx is put in a Docker image for arm64. Users need a FPGA running Ubuntu 
+arm64 or a Raspberry Pi working as bridge. The deployment steps are as follows.  </p>
+<p><u>Step 1:</u> Copy <em>brx_app.tar.gz</em> onto the arm64 device.  </p>
+<p><u>Step 2:</u> Users need to load the docker image, then run it.  </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>docker load -i brx_app.tar.gz</code> <br />
+$ <code>docker run -it --net=host --rm npb_brx:0.3.arm64</code>    </p>
 </blockquote>
 <h5 id="f-aas-brx">f. AAS Brx</h5>
+<p>The AAS Brx is put in a Docker image. Users need to load, then run it.  </p>
 <blockquote>
-<p>to be continued...</p>
+<p>$ <code>docker load -i aas_brx_app.tar.gz</code><br />
+$ <code>docker run -it --net=host --rm aas_brxfpga:0.1.0-SNAPSHOT</code> </p>
 </blockquote>
 <h5 id="g-aas-pal">g. AAS PAL</h5>
+<p>The AAS PAL is put in a Docker image. Users need to load, then run it.   </p>
 <blockquote>
-<p>to be continued...</p>
-</blockquote>
-<h2 id="evaluation">Evaluation</h2>
-<blockquote>
-<p>to be continued...  </p>
+<p>$ <code>docker load -i pal_app.tar.gz</code> <br />
+$ <code>docker run -it --net=host --rm aas_pal:0.1</code>  </p>
 </blockquote>
 
 
