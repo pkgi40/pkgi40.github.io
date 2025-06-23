@@ -434,6 +434,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bonus-canopen-sdo" class="md-nav__link">
+    (Bonus) CANOpen SDO
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -550,6 +557,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bonus-canopen-sdo" class="md-nav__link">
+    (Bonus) CANOpen SDO
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -619,9 +633,10 @@ To ease the deployment, the Docker images for both amd64 and arm64 are prepared 
 </div>
 
 <p><span style="color:#2196f3; font-style:italic;">
-<u>Note:</u> The current version of use case supports only four lastest stairs. 
-The <strong style="color:#2196f3">CAN Open</strong> stair will be 
-supported in the future. 
+<u>Note:</u> The official version of this use case supports only four 
+lastest stairs. 
+The <strong style="color:#2196f3">CAN Open</strong> stair will be put as a 
+bonus. 
 </span></p>
 <p>This use case requires at least two devices, for example, 
 one computer (amd64) and one Raspberry Pi (arm64). 
@@ -749,6 +764,113 @@ following command:  </p>
 <strong style="color:#2196f3">EtherNet/IP</strong> which will be loop. 
 The loop of this last stair can only be stopped by triggering it with the 
 value <strong style="color:#2196f3">False</strong>.
+</span></p>
+<h4 id="bonus-canopen-sdo">(Bonus) CANOpen SDO</h4>
+<p>CANOpen is a protocol for CAN bus. 
+Thus, it does not work with Ethernet natively. 
+To test a CAN bus communication, there are two solutions. 
+First, it requires a module to convert from one socket type to CAN bus. 
+For example, it is <em>MCP2515 CAN Controller</em> in the case of Raspberry Pi. 
+Second, it is possible to use a software tunnel running in the two ends 
+of the communication. 
+In both cases, users must raise the vcan interface with the following 
+commands:  </p>
+<blockquote>
+<p>$ <code>sudo modprobe vcan</code><br />
+$ <code>sudo ip link add dev vcan0 type vcan</code><br />
+$ <code>sudo ip link set vcan0 mtu 16</code><br />
+$ <code>sudo ip link set up vcan0</code>  </p>
+</blockquote>
+<p>The following is content of <em>tunnel.py</em> running on the computer. </p>
+<pre><code>#!/usr/bin/python3
+
+import can, socket, json
+import threading
+import signal
+import os
+
+def signal_handler(sig, frame):
+  os._exit(0)
+
+signal.signal(signal.SIGINT,signal_handler)
+
+bus = can.interface.Bus(channel='vcan0', interface='socketcan')
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+SRC_PORT = 8811
+SRC_ADDR = &quot;0.0.0.0&quot;
+DES_PORT = 8813
+DES_ADDR = &quot;192.168.56.13&quot;
+
+def forward_data():
+  while True:
+    msg = bus.recv()
+    data = json.dumps({'arbitration_id': msg.arbitration_id,
+      'data': list(msg.data),'is_extended_id': msg.is_extended_id}).encode()
+    sock.sendto(data, (DES_ADDR, DES_PORT))
+
+thread = threading.Thread(target=forward_data)
+thread.start()
+
+sock.bind((SRC_ADDR, SRC_PORT))
+while True:
+  data, _ = sock.recvfrom(1024)
+  msg_data = json.loads(data.decode())
+  msg = can.Message(
+    arbitration_id=msg_data['arbitration_id'],
+    data=msg_data['data'],
+    is_extended_id=msg_data['is_extended_id']
+  )
+  bus.send(msg)
+</code></pre>
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> For the 
+<strong style="color:#2196f3">tunnel.py</strong> running on Raspberry Pi,
+it is necessary to change the values of 
+<strong style="color:#2196f3">SRC_PORT</strong>, 
+<strong style="color:#2196f3">DES_PORT</strong>, and 
+<strong style="color:#2196f3">DES_ADDR</strong>.<br />
+</span></p>
+<p>After establishing the CAN over Ethernet channel, 
+the CAN data communication is ready. 
+The CANOpen implemented in this test follows the simpliest CANOpen 
+<a href="https://eclipse.dev/papyrus/components/manufacturing/">Service Data Object</a> 
+(SDO) mapping. 
+Figure 5 illustrates the new AAS information model of bridge NPB including 
+CANOpen. In detail, a new interface <code>canopen</code> and a new routing node 
+<code>brx_70_1_1</code> are added. </p>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">    
+    <img src="../images/uc02baas.jpg" alt="download"
+        style="width: 40vw; max-width: 900px;"/>
+    <figcaption style="text-align: center;">       
+      Figure 5. The AAS information model of bridge NPB with CANOpen
+    </figcaption> 
+  </figure>        
+</div>
+
+<p>To ease the deployment, an amd64 Docker image for the bridge 
+and a arm64 Docker image for stair CANOpen are prepared in 
+<a href="https://github.com/pkgi40/p4m-projects/releases/download/ros6gbridge_uc02-b_kit_v0.1/UC02-b_kit.zip">ROS6GBridge UC02-b kit</a>
+. Users can reuse other components to 
+test with these two extensions. Figure 6 shows the result when triggering 
+the stair CANOpen. with the following command:  </p>
+<blockquote>
+<p>$<code>docker run -it --net=host --rm pourer_mtcp:0.1 /app 192.168.56.11 70 1</code></p>
+</blockquote>
+<div align="center">       
+  <figure style="display: inline-block; margin: 0 10px;">    
+    <img src="../images/poureroutputb.jpg" alt="download" style="width: 100%;"/>
+    <figcaption style="text-align: center;">       
+      Figure 6. Output when triggering stair CANOpen
+    </figcaption> 
+  </figure>        
+</div>
+
+<p><span style="color:#2196f3; font-style:italic;">
+<u>Note:</u> This test requires fundamentally two stairs 
+<strong style="color:#2196f3">CANOpen</strong> and 
+<strong style="color:#2196f3">ModbusTCP</strong>. 
 </span></p>
 
 
