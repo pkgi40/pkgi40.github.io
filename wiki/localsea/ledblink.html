@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T01 - Led blink &mdash; Tutorials in LocalSEA 2025 documentation</title>
+  <title>T01 - Led Blink &mdash; Tutorials in LocalSEA 2025 documentation</title>
       <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
 
@@ -45,7 +45,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">T01 - Led blink</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">T01 - Led Blink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#led-setup">Led setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#led-aas-dt-setup">Led AAS DT setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="t3wpmove.html">T02 - T3WP Moving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ur3econtrol.html">T03 - UR3e Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mprotocols.html">T04 - Multiple Protocols</a></li>
@@ -70,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">T01 - Led blink</li>
+      <li class="breadcrumb-item active">T01 - Led Blink</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -80,8 +89,127 @@
            <div itemprop="articleBody">
              
   <section id="t01-led-blink">
-<h1>T01 - Led blink<a class="headerlink" href="#t01-led-blink" title="Permalink to this heading"></a></h1>
-<p>TODO</p>
+<h1>T01 - Led Blink<a class="headerlink" href="#t01-led-blink" title="Permalink to this heading"></a></h1>
+<p>Led blink is a simple use case to create an AAS Digital Twin (DT) of a Led,
+then to monitor its state.
+In detail, a led integrated with a Raspberry Pi (RPi) has two states
+ON and OFF. When a user click on a button on the RPi, the led switch its
+current state (from ON to OFF or from OFF to ON).
+The information can be monitored from the distance due to using an AAS DT
+of the led. This use case allows understanding the mechanism behind
+reading an AAS DT’s property.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>The following components are required:</p>
+<ul class="simple">
+<li><p>Network 192.168.56.0/24</p></li>
+<li><p>Raspberry Pi 2/3/4/5 with pre-installed Docker</p></li>
+<li><p>Led, button, and breadboard.</p></li>
+<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t01_ledblink_v0.1/LocalSEA_T01_LedBlink.zip">LocalSEA T01 Kit</a>
+including some ready-to-run software components.</p></li>
+</ul>
+</section>
+<section id="deployment-instructions">
+<h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
+<p>In this particular example, the computer has the IP address <em>192.168.56.11</em>
+and the RPi has the IP address <em>192.168.56.18</em>. After downloading the T01 Kit,
+decompress it to get the two packages: (1) <strong>led_arm_v0.1.tar.gz</strong>
+contains the Docker image for the RPi,
+and (2) <strong>T01-LedBlink.tar.gz</strong> contains the AAS model design for the computer.</p>
+<section id="led-setup">
+<h3>Led setup<a class="headerlink" href="#led-setup" title="Permalink to this heading"></a></h3>
+<p>Figure 1 illustrates the hardware setup for RPi, led, button, and breadboard.
+In this fiture, <strong>L</strong> means led, <strong>B</strong> means button, <strong>R</strong> means register.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t01_rpi2.jpg" 
+        style="width: 90%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 1. Schematic view of led, button, and RPi
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+<p>On the RPi, install and run the Docker image with the following commands:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">led_arm_v0.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">--privileged</span> <span class="pre">--rm</span> <span class="pre">led_arm:v0.1</span></code></p>
+</div></blockquote>
+<p>The result is as in Figure 2. There is a server running
+at endpoint <code class="docutils literal notranslate"><span class="pre">http://192.168.56.18:8080</span></code> to control the led.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t01_ledapp.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 2. Result when running the Docker image for led correctly
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>To test if the led work, users can click the button,
+and verify the led’s state using the following command.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">http://192.168.56.18:8080/state</span></code></p>
+</div></blockquote>
+<p>When the led is on, the result of the above command is <strong>True</strong>. When the led
+is off, the result of the above command is <strong>False</strong>.</p>
+</section>
+<section id="led-aas-dt-setup">
+<h3>Led AAS DT setup<a class="headerlink" href="#led-aas-dt-setup" title="Permalink to this heading"></a></h3>
+<p>Extract <strong>T01-LedBlink.tar.gz</strong> with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">T01-LedBlink.tar.gz</span></code></p>
+</div></blockquote>
+<p>Open Papyrus4Manufacturing and import the project as in Figure 3.
+The AAS Design Diagram shows the basic elements of the project.
+Note that users can see property <strong>state</strong> inside submodel <strong>Basic</strong>.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t01_add.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 3. Project T01-LedBlink shown on Papyrus4Manufacturing
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>In Model Explorer, right click on the <em>AssetAministrationShell</em> <em>Led</em>,
+choose <em>AAS</em>, then click
+<em>Generate Asset Administration Shell Basyx code (AAS)</em>.
+When a new project <em>AAS_Led</em> is generated, users open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>basic</em> and modify<br />
+function <em>get_Basic_state( )</em> as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="nf">get_Basic_state</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">	</span>
+<span class="w">  </span><span class="c1">// Work with your Dynamic Property here. </span>
+<span class="w">  </span><span class="n">Boolean</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Boolean</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/state&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To run the AAS server including the Led AAS DT: in Project Explorer,
+right click on <em>AASServer.launch</em>, choose <em>Run As</em>, then click <em>AASServer</em>.
+To test if the server work propertly, users can run the following command
+to get the AAS information model brief structure as output.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">http://127.0.0.1:1067/aas</span></code></p>
+</div></blockquote>
+</section>
+<section id="verification">
+<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h3>
+<p>If all the above setups are correct, then the led AAS DT is connecting to
+the physical led. The aim is to get the state of the led through the AAS API.
+The following command is to get the state every one second.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">while</span> <span class="pre">true;</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">do</span> <span class="pre">curl</span> <span class="pre">http://127.0.0.1:1067/aas/submodels/Basic/submodel/submodelElements/state/value;</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">echo</span> <span class="pre">'';</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sleep</span> <span class="pre">1;</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">done</span></code></p>
+</div></blockquote>
+<p>Users click the button and see the result showing on the prompt.</p>
+</section>
+</section>
 </section>
 
 
