@@ -124,7 +124,7 @@ In this fiture, <strong>L</strong> means led, <strong>B</strong> means button, <
 <div style="text-align: center;">       
   <figure style="display: inline-block; margin: 0;">                       
     <img src="static/t01_rpi2.jpg" 
-        style="width: 90%; display: block; margin: 0 auto;"/>
+        style="width: 100%; display: block; margin: 0 auto;"/>
     <figcaption style="text-align: center; margin-top: 0.5em;">                                    
       Figure 1. Schematic view of led, button, and RPi
     </figcaption> 
@@ -135,8 +135,9 @@ In this fiture, <strong>L</strong> means led, <strong>B</strong> means button, <
 <div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">led_arm_v0.1.tar.gz</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">--privileged</span> <span class="pre">--rm</span> <span class="pre">led_arm:v0.1</span></code></p>
 </div></blockquote>
-<p>The result is as in Figure 2. There is a server running
-at endpoint <code class="docutils literal notranslate"><span class="pre">http://192.168.56.18:8080</span></code> to control the led.</p>
+<p>The expected result is shown in Figure 2. A server runs a simple program
+to control the led, and it is exposed at
+the endpoint <code class="docutils literal notranslate"><span class="pre">http://192.168.56.18:8080</span></code>.</p>
 <div style="text-align: center;">       
   <figure style="display: inline-block; margin: 0;">                       
     <img src="static/t01_ledapp.jpg" 
