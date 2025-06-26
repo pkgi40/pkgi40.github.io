@@ -20,7 +20,7 @@
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="T03 - UR3e Control" href="ur3econtrol.html" />
+    <link rel="next" title="T03 - UR3e Controlling" href="ur3econtrol.html" />
     <link rel="prev" title="T01 - Led Blink" href="ledblink.html" /> 
 </head>
 
@@ -46,8 +46,12 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ledblink.html">T01 - Led Blink</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">T02 - T3WP Moving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ur3econtrol.html">T03 - UR3e Control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">T02 - T3WP Moving</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ur3econtrol.html">T03 - UR3e Controlling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mprotocols.html">T04 - Multiple Protocols</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
@@ -81,7 +85,24 @@
              
   <section id="t02-t3wp-moving">
 <h1>T02 - T3WP Moving<a class="headerlink" href="#t02-t3wp-moving" title="Permalink to this heading"></a></h1>
+<p>T3WP Moving is a simple use case to create an AAS Digital Twin (DT) of a
+TurtleBot3 Waffle Pi (T3WP), then to monitor and control it.
+In detail, the robot can move forward and backward between two points A and B.<br />
+This use case allows understanding the mechanism behind invoking an AAS DT’s
+operation.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Network 192.168.56.0/24</p></li>
+<li><p>TurtleBot3 Waffle Pi running ROS2</p></li>
+<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
+<li><p><a class="reference external" href="http://127.0.0.1">LocalSEA T02 Kit</a> including some read-to-run software components</p></li>
+</ul>
+</section>
+<section id="deployment-instructions">
+<h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
 <p>TODO</p>
+</section>
 </section>
 
 
@@ -89,7 +110,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ledblink.html" class="btn btn-neutral float-left" title="T01 - Led Blink" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ur3econtrol.html" class="btn btn-neutral float-right" title="T03 - UR3e Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ur3econtrol.html" class="btn btn-neutral float-right" title="T03 - UR3e Controlling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

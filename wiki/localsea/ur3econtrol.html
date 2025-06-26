@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T03 - UR3e Control &mdash; Tutorials in LocalSEA 2025 documentation</title>
+  <title>T03 - UR3e Controlling &mdash; Tutorials in LocalSEA 2025 documentation</title>
       <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
 
@@ -47,7 +47,11 @@
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ledblink.html">T01 - Led Blink</a></li>
 <li class="toctree-l1"><a class="reference internal" href="t3wpmove.html">T02 - T3WP Moving</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">T03 - UR3e Control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">T03 - UR3e Controlling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="mprotocols.html">T04 - Multiple Protocols</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
@@ -70,7 +74,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">T03 - UR3e Control</li>
+      <li class="breadcrumb-item active">T03 - UR3e Controlling</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -79,9 +83,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="t03-ur3e-control">
-<h1>T03 - UR3e Control<a class="headerlink" href="#t03-ur3e-control" title="Permalink to this heading"></a></h1>
+  <section id="t03-ur3e-controlling">
+<h1>T03 - UR3e Controlling<a class="headerlink" href="#t03-ur3e-controlling" title="Permalink to this heading"></a></h1>
+<p>UR3e Control is a simple use case to create an AAS Digital Twin (DT) of a
+UR3e, then to monitor and control it.
+In detail, the robot can move and change from one pose to another.
+This use case allows understanding the mechanism behind writing to
+an AAS DT’s property.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Network 192.168.56.0/24</p></li>
+<li><p>UR3e 6-axis robot</p></li>
+<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
+<li><p><a class="reference external" href="http://127.0.0.1">LocalSEA T03 Kit</a> including some read-to-run software components</p></li>
+</ul>
+</section>
+<section id="deployment-instructions">
+<h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
 <p>TODO</p>
+</section>
 </section>
 
 
