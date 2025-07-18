@@ -14,6 +14,9 @@
       .file { cursor: pointer; margin-bottom: 5px; padding: 5px; }
       .file:hover { background: #ddd; }
   </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/jquery.json-viewer/json-viewer/jquery.json-viewer.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
 </head>
 <body>
   <div id="sidebar">
@@ -34,54 +37,62 @@
 let fileData = [];
 
 function loadFileList() {
-    fetch('https://feline-modest-optionally.ngrok-free.app/list')
-        .then(response => response.json())
-        .then(data => {
-            fileData = data; // Save for later
-            renderFileList();
-        })
-        .catch(err => {
-            document.getElementById('fileList').textContent = "Error loading file list.";
-            console.error(err);
-        });
-}
-
-function renderFileList() {
-    const fileListDiv = document.getElementById('fileList');
-    fileListDiv.innerHTML = "";
-    fileData.forEach(file => {
-        const div = document.createElement('div');
-        div.className = 'file';
-        div.textContent = file.filename;
-        div.onclick = () => showFileContent(file.filename);
-        fileListDiv.appendChild(div);
+  fetch('https://feline-modest-optionally.ngrok-free.app/modelake/api/v1/submodels')
+    .then(response => response.json())
+    .then(data => {
+      fileData = data;
+      renderFileList();
+    })
+    .catch(err => {
+      document.getElementById('fileList').textContent = "Error: #404";
+      console.error(err);
     });
 }
 
-function showFileContent(filename) {
-    const file = fileData.find(f => f.filename === filename);
-    if (file) {
-        document.getElementById('content').textContent = file.content;
-    }
+function renderFileList() {
+  const fileListDiv = document.getElementById('fileList');
+  fileListDiv.innerHTML = "";
+  fileData.forEach(file => {
+    const div = document.createElement('div');
+    div.className = 'file';
+    div.textContent = file.filename;
+    div.onclick = () => showFileContent(file.filename);
+    fileListDiv.appendChild(div);
+  });
 }
+
+function showFileContent(filename) {
+  const file = fileData.find(f => f.filename === filename);
+  if (file) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = "";
+
+    if (typeof file.content === 'string') {
+      contentDiv.textContent = file.content;
+    } else {
+      $(contentDiv).jsonViewer(file.content, { collapsed: false });
+    }
+  }
+}
+
 
 
 // Handle prompt input and button click
 function sendInput() {
-    const text = inputBox.value.trim();
-    //if (text) {
-    //    document.getElementById('content').textContent += "\n> " + text;
-    //    inputBox.value = "";
-    //}
-    document.getElementById('content').textContent = "FakeGPT will be available soon. Stay tuned.";
-    inputBox.value = "";
+  const text = inputBox.value.trim();
+  //if (text) {
+  //    document.getElementById('content').textContent += "\n> " + text;
+  //    inputBox.value = "";
+  //}
+  document.getElementById('content').textContent = "FakeGPT will be available soon. Stay tuned.";
+  inputBox.value = "";
 }
 
 const inputBox = document.getElementById('inputBox');
 const sendButton = document.getElementById('sendButton');
 
 inputBox.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') sendInput();
+  if (e.key === 'Enter') sendInput();
 });
 sendButton.addEventListener('click', sendInput);
 
