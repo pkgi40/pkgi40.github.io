@@ -4,15 +4,34 @@
   <meta charset="UTF-8">
   <title>Model Lake</title>
   <style>
-      body { display: flex; font-family: sans-serif; margin: 0; height: 100vh; }
-      #sidebar { width: 250px; background: #f4f4f4; padding: 10px; overflow-y: auto; border-right: 1px solid #ccc; }
-      #main { flex: 1; display: flex; flex-direction: column; }
-      #content { flex: 1; padding: 10px; white-space: pre-wrap; overflow-y: auto; background: #fff; }
-      #prompt { display: flex; padding: 10px; border-top: 1px solid #ccc; background: #eee; }
-      #inputBox { flex: 1; padding: 8px; margin-right: 5px; }
-      #sendButton { padding: 8px 12px; cursor: pointer; }
-      .file { cursor: pointer; margin-bottom: 5px; padding: 5px; }
-      .file:hover { background: #ddd; }
+    body { display: flex; font-family: sans-serif; margin: 0; height: 100vh; }
+    #sidebar { width: 250px; background: #f4f4f4; padding: 10px; 
+      overflow-y: auto; border-right: 1px solid #ccc; }
+    #main { flex: 1; display: flex; flex-direction: column; }
+    #content { flex: 1; padding: 10px; white-space: pre-wrap; 
+      overflow-y: auto; background: #fff; }
+    #prompt { display: flex; padding: 10px; border-top: 1px solid #ccc; 
+      background: #32b9b4; }
+    #inputBox { flex: 1; padding: 8px; margin-right: 5px; }
+    #sendButton { padding: 8px 12px; cursor: pointer; }
+    .file { cursor: pointer; margin-bottom: 5px; padding: 5px; }
+    .file:hover { background: #ddd; }
+    #topBar {position: sticky; top: 0; background: #f9f9f9; 
+      padding: 8px 10px; border-bottom: 1px solid #ccc; 
+      display: flex; align-items: center; justify-content: space-between; 
+      z-index: 10; }
+
+    #buttonGroup {
+        display: flex;
+        gap: 8px;
+    }
+    
+    #buttonGroup button {
+        min-width: 100px;
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/jquery.json-viewer/json-viewer/jquery.json-viewer.css" rel="stylesheet"/>
@@ -24,7 +43,6 @@
     <h3>AAS Submodels</h3>
     <div id="fileList"></div>
   </div>
-
   <div id="main">
     <div id="content"></div>
     <div id="prompt">
@@ -37,7 +55,7 @@
 let fileData = [];
 
 function loadFileList() {
-  fetch('https://feline-modest-optionally.ngrok-free.app/modelake/api/v1/submodels')
+  fetch('https://feline-modest-optionally.ngrok-free.app/api/v1/submodels')
     .then(response => response.json())
     .then(data => {
       fileData = data;
@@ -49,20 +67,58 @@ function loadFileList() {
     });
 }
 
+function getMiddlePart(filename) {
+  const parts = filename.split('.');
+  if (parts.length >= 3) {
+    return parts[1];
+  } else {
+    return filename;
+  }
+}
+
 function renderFileList() {
   const fileListDiv = document.getElementById('fileList');
   fileListDiv.innerHTML = "";
   fileData.forEach(file => {
     const div = document.createElement('div');
     div.className = 'file';
-    div.textContent = file.filename;
+    div.textContent = getMiddlePart(file.filename);
     div.onclick = () => showFileContent(file.filename);
     fileListDiv.appendChild(div);
   });
 }
 
+function extractSubmodelTemplate(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return null;
+  }
+
+  if (obj.modelType === 'Submodel' && obj.kind === 'Template') {
+    return obj;
+  }
+
+  if (Array.isArray(obj.submodels)) {
+    for (const sub of obj.submodels) {
+      if (sub.modelType === 'Submodel' && sub.kind === 'Template') {
+        return sub;
+      }
+    }
+  }
+
+  for (const key in obj) {
+    const child = obj[key];
+    const result = extractSubmodelTemplate(child);
+    if (result !== null) {
+      return result; 
+    }
+  }
+
+  return null;
+}
+
 function showFileContent(filename) {
   const file = fileData.find(f => f.filename === filename);
+
   if (file) {
     const contentDiv = document.getElementById('content');
     contentDiv.innerHTML = "";
@@ -70,33 +126,33 @@ function showFileContent(filename) {
     if (typeof file.content === 'string') {
       contentDiv.textContent = file.content;
     } else {
-      $(contentDiv).jsonViewer(file.content, { collapsed: false });
+      const extracted = extractSubmodelTemplate(file.content);
+
+      if (extracted) {
+        $(contentDiv).jsonViewer(extracted, { collapsed: false });
+      } else {
+        contentDiv.textContent = "No Submodel Template found.";
+      }
     }
   }
 }
 
-
-
-// Handle prompt input and button click
 function sendInput() {
   const text = inputBox.value.trim();
-  //if (text) {
-  //    document.getElementById('content').textContent += "\n> " + text;
-  //    inputBox.value = "";
-  //}
-  document.getElementById('content').textContent = "FakeGPT will be available soon. Stay tuned.";
+  document.getElementById('content').textContent = "FakeGPT TODO. Stay tuned.";
   inputBox.value = "";
 }
 
 const inputBox = document.getElementById('inputBox');
 const sendButton = document.getElementById('sendButton');
-
 inputBox.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') sendInput();
 });
 sendButton.addEventListener('click', sendInput);
 
 loadFileList();
+
+
 </script>
 
 </body>
