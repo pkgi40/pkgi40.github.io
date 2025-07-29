@@ -180,7 +180,7 @@ function showFileContent(filename) {
     btn2.textContent = "ADDv2";
     btn2.onclick = () => {
       const link = document.createElement('a');
-      link.href = ep + "/api/v1/file/add/v2/" + label.textContent + ".uml";
+      link.href = ep + "/api/v1/file/xmi/" + label.textContent + ".xmi";
       link.download = filename;
       document.body.appendChild(link);
       link.click();
@@ -191,7 +191,7 @@ function showFileContent(filename) {
     btn3.textContent = "ADDv3";
     btn3.onclick = () => {
       const link = document.createElement('a');
-      link.href = ep + "/api/v1/file/add/v3/" + label.textContent + ".uml";
+      link.href = ep + "/api/v1/file/uml/" + label.textContent + ".uml";
       link.download = filename;
       document.body.appendChild(link);
       link.click();
@@ -247,9 +247,14 @@ async function sendInput() {
     }
 
     const data = await response.json();
+    let output = "<br>"
+    if (data.answer === "#404") {
+      output = output + "No answer found";
+    } else {
+      output = output + data.answer.join("<br>");
+    }
 
-    document.getElementById('content').innerHTML = "<u>Answer:</u> " 
-      + data.answer + "<br>";
+    document.getElementById('content').innerHTML = "<u>Answer:</u> " + output;
   } catch (err) {
     console.error(err);
     document.getElementById('content').textContent = "Error: " + err.message;
