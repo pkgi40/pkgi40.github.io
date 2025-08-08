@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T05 - AAS UML to JSON Conversion &mdash; Tutorials in LocalSEA 2025 documentation</title>
+  <title>T05 - AAS Template Conversion &mdash; Tutorials in LocalSEA 2025 documentation</title>
       <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
 
@@ -49,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2-t3wpmove.html">T02 - T3WP Moving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3-ur3econtrol.html">T03 - UR3e Controlling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4-mprotocols.html">T04 - Multiple Protocols</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">T05 - AAS UML to JSON Conversion</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">T05 - AAS Template Conversion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
 </ul>
@@ -74,7 +74,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">T05 - AAS UML to JSON Conversion</li>
+      <li class="breadcrumb-item active">T05 - AAS Template Conversion</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -83,15 +83,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="t05-aas-uml-to-json-conversion">
-<h1>T05 - AAS UML to JSON Conversion<a class="headerlink" href="#t05-aas-uml-to-json-conversion" title="Permalink to this heading"></a></h1>
+  <section id="t05-aas-template-conversion">
+<h1>T05 - AAS Template Conversion<a class="headerlink" href="#t05-aas-template-conversion" title="Permalink to this heading"></a></h1>
+<p>The server inside LocalSEA provides a service to convert AAS Template between
+different formats: AAS UML version 2, AAS UML version 3, and AASX JSON.
+In which, AAS UML version 2 is used by Papyrus4Manufacturing (P4M) version
+Desktop, AAS UML version 3 is used by P4M version Web, and
+AASX JSON conforms with the AASX Package Explorer supported by IDTA.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>The following components are required:</p>
+<ul class="simple">
+<li><p>Network 192.168.56.0/24 or
+Internal network at Nano (<em>contact DILS/LSEA for access</em>)</p></li>
+<li><p>Computer with P4M vDesktop, P4M vWeb, or AASX Package Explorer optionally
+installed</p></li>
+</ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about AAS</p></li>
+</ul>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>In this example, the computer has the IP address <em>192.168.56.11</em>.
+Open the web browser and navigate to <code class="docutils literal notranslate"><span class="pre">http://192.168.56.8/srv/modelake</span></code>.
+Figure 1 shows the page of the model lake at LocalSEA.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t05_page.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 1. Model Lake page at LocalSEA 
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br> 
+<p><em><strong>a. Download An AAS Template</strong></em></p>
+<p>Select the template to be downloaded on the left side, then verify the template
+on the main view. Click the format JSON, XMI, or UML to download it.
+Note that JSON is for AASX Package Xplorer,
+XMI is for P4M vDesktop (AAS UML v2), and
+UML is for P4M vWeb (AAS UML v3).</p>
+<p><u>Note:</u> To use the version XMI, rename the file from .xmi to .uml before
+importing it into the project.</p>
+<p><em><strong>b. Upload An AAS Template</strong></em></p>
+<p>Prepare a file to be uploaded with the name following the format
+<code class="docutils literal notranslate"><span class="pre">&lt;ACTOR&gt;.&lt;TEMPLATE&gt;.&lt;TYPE&gt;</span></code>.
+In which, <code class="docutils literal notranslate"><span class="pre">&lt;ACTOR&gt;</span></code> is the name of the organization or person that create
+the template, <code class="docutils literal notranslate"><span class="pre">&lt;TEMPLATE&gt;</span></code> is the name of the AAS template,
+and <code class="docutils literal notranslate"><span class="pre">&lt;TYPE&gt;</span></code> can be json, xmi, or uml depending of the format of the file.
+For example: <em>LSEA.Sample.xmi</em> is a valid file name.</p>
+<p>Run the following command to upload the above template to the server:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">&quot;accept:</span> <span class="pre">application&quot;</span> <span class="pre">-H</span> <span class="pre">&quot;Content-Type:</span> <span class="pre">multipart/form-data&quot;</span> <span class="pre">\</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">-F</span> <span class="pre">&quot;file=&#64;LSEA.Sample.xmi&quot;</span> <span class="pre">http://192.168.56.8/srv/modelake/api/v1/upload</span></code></p>
+</div></blockquote>
+<p><em><strong>c. Delete An AAS Template</strong></em></p>
+<p>Run the following command to delete a template from the server:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">DELETE</span> <span class="pre">&quot;http://192.168.56.8/srv/modelake/api/v1/delete.LSEA.Sample.xmi</span></code></p>
+</div></blockquote>
 </section>
 </section>
 
