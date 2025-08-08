@@ -20,7 +20,7 @@
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="T06 - AAS to OPC UA IM Conversion" href="6-aas2ua.html" />
+    <link rel="next" title="T06 - EDC Connector" href="6-edc.html" />
     <link rel="prev" title="T04 - Multiple Protocols" href="4-mprotocols.html" /> 
 </head>
 
@@ -54,8 +54,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="6-aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="7-edc.html">T07 - EDC Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-edc.html">T06 - EDC Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-aas2ua.html">T07 - AAS to OPC UA IM Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-gui.html">T08 - GUI with Chatbot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9-security.html">T09 - Security</a></li>
 </ul>
@@ -138,12 +138,12 @@ For example: <em>LSEA.Sample.xmi</em> is a valid file name.</p>
 <p>Run the following command to upload the above template to the server:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">&quot;accept:</span> <span class="pre">application&quot;</span> <span class="pre">-H</span> <span class="pre">&quot;Content-Type:</span> <span class="pre">multipart/form-data&quot;</span> <span class="pre">\</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">-F</span> <span class="pre">&quot;file=&#64;LSEA.Sample.xmi&quot;</span> <span class="pre">http://192.168.56.8/srv/modelake/api/v1/upload</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">-F</span> <span class="pre">&quot;file=&#64;LSEA.Sample.xmi&quot;</span> <span class="pre">http://192.168.56.8:1067/api/v1/upload</span></code></p>
 </div></blockquote>
 <p><em><strong>c. Delete An AAS Template</strong></em></p>
 <p>Run the following command to delete a template from the server:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">DELETE</span> <span class="pre">&quot;http://192.168.56.8/srv/modelake/api/v1/delete.LSEA.Sample.xmi</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">DELETE</span> <span class="pre">&quot;http://192.168.56.8:1067/api/v1/delete/LSEA.Sample.xmi</span></code></p>
 </div></blockquote>
 </section>
 </section>
@@ -153,7 +153,7 @@ For example: <em>LSEA.Sample.xmi</em> is a valid file name.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="4-mprotocols.html" class="btn btn-neutral float-left" title="T04 - Multiple Protocols" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="6-aas2ua.html" class="btn btn-neutral float-right" title="T06 - AAS to OPC UA IM Conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="6-edc.html" class="btn btn-neutral float-right" title="T06 - EDC Connector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
