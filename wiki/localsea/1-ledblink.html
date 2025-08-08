@@ -58,7 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2-t3wpmove.html">T02 - T3WP Moving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3-ur3econtrol.html">T03 - UR3e Controlling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4-mprotocols.html">T04 - Multiple Protocols</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to JSON Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6-aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7-edc.html">T07 - EDC Connector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-gui.html">T08 - GUI with Chatbot</a></li>
@@ -108,10 +108,16 @@ of the led.</p>
 <li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t01_ledblink_v0.1/LocalSEA_T01_LedBlink.zip">LocalSEA T01 Kit</a>
 including some ready-to-run software components</p></li>
 </ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Basic about Networking</p></li>
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about Docker</p></li>
+</ul>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
-<p>In this particular example, the computer has the IP address <em>192.168.56.11</em>
+<p>In this example, the computer has the IP address <em>192.168.56.11</em>
 and the RPi has the IP address <em>192.168.56.18</em>. After downloading the T01 Kit,
 decompress it to get the two packages: (1) <strong>led_arm_v0.1.tar.gz</strong>
 contains the Docker image for the RPi,
@@ -130,6 +136,7 @@ and breadboard. In this fiture, <strong>L</strong> means led, <strong>B</strong>
     </figcaption> 
   </figure>                                                                     
 </div> 
+</br> 
 <p>On the RPi, install and run the Docker image with the following commands:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">led_arm_v0.1.tar.gz</span></code><br />
@@ -158,7 +165,7 @@ is off, the result of the above command is <strong>False</strong>.</p>
 </section>
 <section id="led-aas-dt-setup">
 <h3>Led AAS DT setup<a class="headerlink" href="#led-aas-dt-setup" title="Permalink to this heading"></a></h3>
-<p>Extract <strong>T01-LedBlink.tar.gz</strong> with the following command:</p>
+<p>On the computer, extract <strong>T01-LedBlink.tar.gz</strong> with the following command:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">T01-LedBlink.tar.gz</span></code></p>
 </div></blockquote>
@@ -188,7 +195,7 @@ function <em>get_Basic_state( )</em> as follows.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>To run the AAS server including the Led AAS DT: in Project Explorer,
+<p>To run the AAS server including the Led AAS DT in Project Explorer,
 right click on <em>AASServer.launch</em>, choose <em>Run As</em>, then click <em>AASServer</em>.
 To test if the server work propertly, users can run the following command
 to get the AAS information model brief structure as output.</p>

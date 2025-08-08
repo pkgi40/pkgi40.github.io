@@ -20,7 +20,7 @@
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="T05 - AAS UML to AASX Conversion" href="5-uml2aasx.html" />
+    <link rel="next" title="T05 - AAS UML to JSON Conversion" href="5-uml2aasx.html" />
     <link rel="prev" title="T03 - UR3e Controlling" href="3-ur3econtrol.html" /> 
 </head>
 
@@ -50,10 +50,15 @@
 <li class="toctree-l1"><a class="reference internal" href="3-ur3econtrol.html">T03 - UR3e Controlling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">T04 - Multiple Protocols</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#circle-object-setup">Circle Object setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circle-dt-setup">Circle DT setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to JSON Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6-aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7-edc.html">T07 - EDC Connector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-gui.html">T08 - GUI with Chatbot</a></li>
@@ -85,13 +90,289 @@
              
   <section id="t04-multiple-protocols">
 <h1>T04 - Multiple Protocols<a class="headerlink" href="#t04-multiple-protocols" title="Permalink to this heading"></a></h1>
+<p>Multiple protocols is a use case to test the communication between an asset
+and its AAS DT via different communication protocols.
+The current version supports 11 protocols: HTTP, OPC UA, MQTT, ROS2,
+WebSocket, Modbus TCP, COAP, Zenoh, UA FX, EtherNetIP, and CANOpen.</p>
+<p><u>Note:</u> UA FX, EtherNetIP and CANOpen are not yet included in this tutorial.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>The following components are required:</p>
+<ul class="simple">
+<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a> nightly version and IPv6 configuration</p></li>
+<li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t04_multipleprotocols_v0.1/LocalSEA_T04_MultipleProtocols.zip">LocalSEA T04 Kit</a>
+including some read-to-run software components</p></li>
+</ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Intermediate about Networking</p></li>
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about Docker</p></li>
+</ul>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>In this example, the computer runs a software presenting a digital circle.
+The computer also hosts a Circle AAS DT to change the color of the digital
+circle. After downloading the T04 Kit,
+decompress it to get the two packages: (1) <strong>circle_v0.1.tar.gz</strong>
+contains the Docker image for the digital circle software, and
+(2) <strong>T04-Mprotocols.tar.gz</strong> contains the AAS model design for the computer.</p>
+<section id="circle-object-setup">
+<h3>Circle Object setup<a class="headerlink" href="#circle-object-setup" title="Permalink to this heading"></a></h3>
+<p>On the computer, install and run the Docker image with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">circle_v0.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">--rm</span> <span class="pre">circle:v0.1</span></code></p>
+</div></blockquote>
+<p>Open a web browser and access noVNC page at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:6081/vnc.html</span></code>,
+click connect to view the circle
+as in Figure 1. The circle has four colors: <em>white</em>, <em>red</em>, <em>green</em>, <em>blue</em>,
+corresponding to four values: <em>0</em>, <em>1</em>, <em>2</em>, <em>3</em>.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t04_circle.jpg" 
+        style="width: 60%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 1. Circle object program 
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br> 
+</section>
+<section id="circle-dt-setup">
+<h3>Circle DT setup<a class="headerlink" href="#circle-dt-setup" title="Permalink to this heading"></a></h3>
+<p>On the computer, extract <strong>T04-Mprotocols.tar.gz</strong> with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">T04-Mprotocols.tar.gz</span></code></p>
+</div></blockquote>
+<p>Open Papyrus4Manufacturing and import the project as in Figure 2.
+The AAS Design Diagram shows the basic elements of the project.
+Note that users can see operation <strong>switch</strong> inside submodel <strong>Color</strong>.
+This operation aims to change the color of the circle.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t04_add.jpg" 
+        style="width: 75%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 2. Project T04-Mprotocols shown on Papyrus4Manufacturing
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>In Model Explorer, right click on the <em>AssetAministrationShell</em> <em>Circle</em>,
+choose <em>AAS</em>, then click
+<em>Generate Asset Administration Shell Basyx code (AAS)</em>.
+When a new project <em>AAS_UR3e</em> is generated, open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>color</em> and modify function
+<em>switch( )</em>. Depending on the protocol, the code will be different
+as follows.</p>
+<p><em><strong>a. HTTP</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">).</span><span class="na">strip</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>b. OPC UA</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_opcua</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NodeId</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_opcua</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NodeId</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_opcua</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NodeId</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_opcua</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NodeId</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_opcua</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NodeId</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>c. MQTT</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mqtt</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;read&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mqtt</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mqtt</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mqtt</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mqtt</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>d. ROS2</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ros2</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;read&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ros2</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ros2</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ros2</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ros2</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>e. WebSocket</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ws</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ws</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ws</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ws</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_ws</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>f. Modbus TCP</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mtcp</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">EDataTypeMODBUS</span><span class="p">.</span><span class="na">REGISTER</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mtcp</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">EDataTypeMODBUS</span><span class="p">.</span><span class="na">REGISTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mtcp</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">EDataTypeMODBUS</span><span class="p">.</span><span class="na">REGISTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mtcp</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">EDataTypeMODBUS</span><span class="p">.</span><span class="na">REGISTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_mtcp</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">EDataTypeMODBUS</span><span class="p">.</span><span class="na">REGISTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>g. COAP</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_coap</span><span class="p">.</span><span class="na">readValue</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_coap</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_coap</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_coap</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_coap</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>h. Zenoh</strong></em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Color_switch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_zenoh</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;read&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_zenoh</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_zenoh</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_zenoh</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">    </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_zenoh</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em><strong>UAFX</strong></em></p>
+<p><mark>TODO…</mark></p>
+<p><em><strong>EtherNetIP</strong></em></p>
+<p><mark>TODO…</mark></p>
+<p><em><strong>CANOpen</strong></em></p>
+<p><mark>TODO…</mark></p>
+</section>
+</section>
+<section id="verification">
+<h2>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h2>
+<p>If all the above setups are correct, then the Circle AAS DT is connecting to
+the Circle software. The aim is to send command to Circle AAS DT to switch
+the color of the circle object.</p>
+<p>The command requires a body. Create a file named <em>Body</em> and add the
+following content:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;requestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{$timestamp}}&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w"> </span><span class="nt">&quot;inputArguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w"> </span><span class="nt">&quot;outputArguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w"> </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="mi">5000</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run the following command to switch color of the circle object:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">'Content-Type:</span> <span class="pre">application/json'</span> <span class="pre">-d</span> <span class="pre">&#64;Body</span> <span class="pre">\</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8001/aas/submodels/Circle/submodel/submodelElements/switch/invoke</span></code></p>
+</div></blockquote>
 </section>
 </section>
 
@@ -100,7 +381,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="3-ur3econtrol.html" class="btn btn-neutral float-left" title="T03 - UR3e Controlling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="5-uml2aasx.html" class="btn btn-neutral float-right" title="T05 - AAS UML to AASX Conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="5-uml2aasx.html" class="btn btn-neutral float-right" title="T05 - AAS UML to JSON Conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

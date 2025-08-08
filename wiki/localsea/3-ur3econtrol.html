@@ -49,11 +49,16 @@
 <li class="toctree-l1"><a class="reference internal" href="2-t3wpmove.html">T02 - T3WP Moving</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">T03 - UR3e Controlling</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ur3e-setup">UR3e setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ur3e-dt-setup">UR3e DT setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4-mprotocols.html">T04 - Multiple Protocols</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to JSON Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6-aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7-edc.html">T07 - EDC Connector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-gui.html">T08 - GUI with Chatbot</a></li>
@@ -87,19 +92,125 @@
 <h1>T03 - UR3e Controlling<a class="headerlink" href="#t03-ur3e-controlling" title="Permalink to this heading"></a></h1>
 <p>UR3e Control is a simple use case to create an AAS Digital Twin (DT) of a
 UR3e, then to monitor and control it.
-In detail, the robot can move and change from one pose to another.</p>
+In detail, the robotic arm can move and change from one pose to another.
+When the UR3e DT receives a pose number, it controls the
+physical UR3e to change the pose accordingly.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>The following components are required:</p>
 <ul class="simple">
 <li><p>Network 192.168.56.0/24</p></li>
 <li><p>UR3e 6-axis robot</p></li>
 <li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
-<li><p><a class="reference external" href="http://127.0.0.1">LocalSEA T03 Kit</a> including some read-to-run software components</p></li>
+<li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t03_ur3econtrol/LocalSEA_T03_UR3eControl.zip">LocalSEA T03 Kit</a>
+including some read-to-run software components</p></li>
+</ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Basic about Networking</p></li>
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about Docker</p></li>
+<li><p>Basic about UR3e teach pendant utilisation</p></li>
 </ul>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>In this example, computer has the IP address <em>192.168.56.11</em>, and
+UR3e has the IP address <em>192.168.56.6</em>.
+After downloading the T03 Kit, decompress it to get the two packages:
+(1) <strong>ur3e_v0.1.tar.gz</strong> contains a dockerized UR3e controller program to
+control the physical UR3e, and (2) <strong>T03-Ur3e.tar.gz</strong> contains the AAS model
+design to be built and run UR3e AAS DT.</p>
+<section id="ur3e-setup">
+<h3>UR3e setup<a class="headerlink" href="#ur3e-setup" title="Permalink to this heading"></a></h3>
+<p>Turn on the UR3e using its teach pendant. Create a simple program as shown
+on Figure 1. The program should have four if-else clauses corresponding
+to the possible four values of two digital output bits (00, 01, 10, 11).
+They lead to four situations, in which UR3e changes its pose.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t03_ur3e.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;"> 
+      Figure 1. UR3e program on teach pendant 
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br> 
+<p>Launch the program on UR3e.</p>
+<p>On the computer, install and run the Docker image for UR3e controller with
+the following commands:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">ur3e_v0.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">--rm</span> <span class="pre">ur3e_controller:v0.1</span> <span class="pre">/app</span> <span class="pre">192.168.56.6</span></code></p>
+</div></blockquote>
+<p>The expected result is shown in Figure 2. A server runs a simple
+UR3e controller program exposed at the endpoint: <code class="docutils literal notranslate"><span class="pre">http://192.168.56.18:1067</span></code></p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t03_result.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 2. Result when running the Docker image for UR3e controller
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+</section>
+<section id="ur3e-dt-setup">
+<h3>UR3e DT setup<a class="headerlink" href="#ur3e-dt-setup" title="Permalink to this heading"></a></h3>
+<p>On the computer, extract <strong>T03-Ur3e.tar.gz</strong> with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">T03-Ur3e.tar.gz</span></code></p>
+</div></blockquote>
+<p>Open Papyrus4Manufacturing and import the project as in Figure 3.
+The AAS Design Diagram shows the basic elements of the project.
+Note that users can see property <strong>pose</strong> inside submodel <strong>Basic</strong>.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t03_add.jpg" 
+        style="width: 70%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 3. Project T01-Ur3e shown on Papyrus4Manufacturing
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>In Model Explorer, right click on the <em>AssetAministrationShell</em> <em>UR3e</em>,
+choose <em>AAS</em>, then click
+<em>Generate Asset Administration Shell Basyx code (AAS)</em>.
+When a new project <em>AAS_UR3e</em> is generated, users open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>basic</em> and modify<br />
+functions <em>get_Basic_pose( )</em> and <em>set_Basic_pose( )</em> as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Basic_pose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Work with your Dynamic Property here. </span>
+<span class="w">  </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/state&quot;</span><span class="p">).</span><span class="na">strip</span><span class="p">());</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w">  </span><span class="kt">void</span><span class="w">  </span><span class="nf">set_Basic_pose</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">inputVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="s">&quot;/pose&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">inputVar</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To run the AAS server including the UR3e AAS DT in Project Explorer,
+right click on <em>AASServer.launch</em>, choose <em>Run As</em>, then click <em>AASServer</em>.</p>
+</section>
+<section id="verification">
+<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h3>
+<p>If all the above setups are correct, then the UR3e AAS DT is connecting to
+the UR3e controller. The aim is to send command to UR3e AAS DT to control T3WP
+through the AAS API.</p>
+<p>To get the pose of UR3e, use the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">http://127.0.0.1:8080/aas/submodels/Basic/submodel/submodelElements/pose/value</span></code></p>
+</div></blockquote>
+<p>To set the pose of UR3e from 0 to 3 with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">PUT</span> <span class="pre">-d</span> <span class="pre">&lt;POSE&gt;</span> <span class="pre">\</span> </code><br />
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8080/aas/submodels/Basic/submodel/submodelElements/pose/value</span></code></p>
+</div></blockquote>
+</section>
 </section>
 </section>
 

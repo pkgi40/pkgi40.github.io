@@ -48,12 +48,17 @@
 <li class="toctree-l1"><a class="reference internal" href="1-ledblink.html">T01 - Led Blink</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">T02 - T3WP Moving</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#t3wp-setup">T3WP setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#t3wp-dt-setup">T3WP DT setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3-ur3econtrol.html">T03 - UR3e Controlling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4-mprotocols.html">T04 - Multiple Protocols</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to AASX Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS UML to JSON Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6-aas2ua.html">T06 - AAS to OPC UA IM Conversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7-edc.html">T07 - EDC Connector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-gui.html">T08 - GUI with Chatbot</a></li>
@@ -88,19 +93,155 @@
 <p>T3WP Moving is a simple use case to create an AAS Digital Twin (DT) of a
 TurtleBot3 Waffle Pi (T3WP), then to monitor and control it.
 In detail, this Automated Mobile Robot can move forward and backward
-between two points A and B.</p>
+between two points A and B. When the T3WP DT receives a command from a user,
+it controls the T3WP to move forward or backward accordingly.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>The following components are required:</p>
 <ul class="simple">
 <li><p>Network 192.168.56.0/24</p></li>
 <li><p>TurtleBot3 Waffle Pi running ROS2</p></li>
-<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
-<li><p><a class="reference external" href="http://127.0.0.2">LocalSEA T02 Kit</a> including some read-to-run software components</p></li>
+<li><p>Computer A with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a></p></li>
+<li><p>Computer B with pre-installed ROS2</p></li>
+<li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t02_t3wpmoving_v0.1/LocalSEA_T02_T3WPMoving.zip">LocalSEA T02 Kit</a>
+including some read-to-run software components</p></li>
+</ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Basic about Networking</p></li>
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about ROS 2</p></li>
 </ul>
 </section>
 <section id="deployment-instructions">
 <h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
-<p>TODO</p>
+<p>In this example, computer A has the IP address <em>192.168.56.11</em>,
+computer B has the IP address <em>192.168.56.8</em>,
+and the T3WP has the IP address <em>192.168.56.3</em>.
+After downloading the T02 Kit, decompress it to get the two packages:
+(1) <strong>t3wp_v0.1.tar.gz</strong> contains the ROS2 project to control T3WP from
+computer B, and (2) <strong>T02-T3wp.tar.gz</strong> contains the AAS model design to be
+built and run T3WP DT on computer A.</p>
+<section id="t3wp-setup">
+<h3>T3WP setup<a class="headerlink" href="#t3wp-setup" title="Permalink to this heading"></a></h3>
+<p>Put T3WP on a flat surface and turn on the power switch.</p>
+<p>On computer B, suppose that ROS2 is running,
+open a terminal and input the following commands:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle_pi</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">export</span> <span class="pre">ROS_DOMAIN_ID=30</span></code></p>
+</div></blockquote>
+<p>Verify if the setup is correct by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">list</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">cmd_vel</span></code>
+and the expected result will be shown as in Figure 1.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t02_result.jpg" 
+        style="width: 75%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 1. Result when checking a topic of T3WP 
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br> 
+<p>Extract <strong>t3wp_v0.1.tar.gz</strong>, copy it to the ROS2 workspace
+with the following commands:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">t3wp_v0.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">t3wp</span> <span class="pre">~/Workspace/ament/src/</span></code></p>
+</div></blockquote>
+<p>Build and run the T3WP controller with the following commands:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">~/Workspace/ament</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">t3wp</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">t3wp</span> <span class="pre">move</span></code></p>
+</div></blockquote>
+<p>The expected result will be shown as in Figure 2.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t02_controller.jpg" 
+        style="width: 100%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 2. Result when launch T3Wp controller
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br> 
+</section>
+<section id="t3wp-dt-setup">
+<h3>T3WP DT setup<a class="headerlink" href="#t3wp-dt-setup" title="Permalink to this heading"></a></h3>
+<p>On computer A, extract <strong>T02-T3wp.tar.gz</strong> with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tar</span> <span class="pre">-xzvf</span> <span class="pre">T02-T3wp.tar.gz</span></code></p>
+</div></blockquote>
+<p>Open Papyrus4Manufacturing and import the project as in Figure 3.
+The AAS Design Diagram shows the basic elements of the project.
+Note that users can see property <strong>state</strong> and two operations <strong>goForward</strong> and
+<strong>goBackward</strong> inside submodel <strong>Basic</strong>.</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t02_add.jpg" 
+        style="width: 80%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 3. Project T02-T3wp shown on Papyrus4Manufacturing
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>In Model Explorer, right click on the <em>AssetAministrationShell</em> <em>T3WP</em>,
+choose <em>AAS</em>, then click
+<em>Generate Asset Administration Shell Basyx code (AAS)</em>.
+When a new project <em>AAS_T3WP</em> is generated, users open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>basic</em> and modify functions
+<em>get_Basic_state( )</em>, <em>Basic_goForward( )</em>, and <em>Basic_goBackward( )</em>
+as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Basic_state</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">	</span>
+<span class="w">  </span><span class="c1">// Work with your Dynamic Property here. </span>
+<span class="w">  </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/state&quot;</span><span class="p">).</span><span class="na">strip</span><span class="p">());</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Basic_goForward</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">invokeMethod</span><span class="p">(</span><span class="s">&quot;/forward&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Basic_goBackward</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">invokeMethod</span><span class="p">(</span><span class="s">&quot;/backward&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>To run the AAS server including the T3WP AAS DT in Project Explorer,
+right click on <em>AASServer.launch</em>, choose <em>Run As</em>, then click <em>AASServer</em>.</p>
+</section>
+<section id="verification">
+<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h3>
+<p>If all the above setups are correct, then the T3WP AAS DT is connecting to
+the T3WP controller. The aim is to send command to T3WP AAS DT to control T3WP
+through the AAS API.</p>
+<p>To get the state of T3WP, use the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">http://127.0.0.1:8080/aas/submodels/Basic/submodel/submodelElements/state/value</span></code></p>
+</div></blockquote>
+<p>The commands for T3WP moving forward and backward require a content body.
+Create a file named <em>Body</em> and add the following content:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;requestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{$timestamp}}&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w"> </span><span class="nt">&quot;inputArguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w"> </span><span class="nt">&quot;outputArguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w"> </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="mi">5000</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run the following command to control T3WP moving forward:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">'Content-Type:</span> <span class="pre">application/json'</span> <span class="pre">-d</span> <span class="pre">&#64;Body</span> <span class="pre">\</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8080/aas/submodels/Basic/submodel/submodelElements/goForward/invoke</span></code></p>
+</div></blockquote>
+<p>Run the following command to control T3WP moving backward:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">'Content-Type:</span> <span class="pre">application/json'</span> <span class="pre">-d</span> <span class="pre">&#64;Body</span> <span class="pre">\</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8080/aas/submodels/Basic/submodel/submodelElements/goBackward/invoke</span></code></p>
+</div></blockquote>
+</section>
 </section>
 </section>
 
