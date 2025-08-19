@@ -70,7 +70,15 @@ function getMiddlePart(filename) {
 function renderFileList() {
   const fileListDiv = document.getElementById('fileList');
   fileListDiv.innerHTML = "";
-  fileData.forEach(file => {
+  fileData
+    .sort((a, b) => 
+      getMiddlePart(a.filename).replaceAll('_','').localeCompare(
+        getMiddlePart(b.filename).replaceAll('_',''),
+        undefined,
+        { sensitivity: 'base' }
+      )
+    )
+    .forEach(file => {
     const div = document.createElement('div');
     div.className = 'file';
     div.textContent = getMiddlePart(file.filename).replaceAll('_','');
