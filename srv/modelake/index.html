@@ -260,8 +260,10 @@ async function sendInput() {
     let output = "<br>"
     if (data.answer === "#404") {
       output = output + "No answer found";
+    } else if (Array.isArray(data.answer)) {
+      output += data.answer.join("<br>");
     } else {
-      output = output + data.answer.join("<br>");
+      output += data.answer;
     }
 
     document.getElementById('content').innerHTML = "<u>Answer:</u> " + output;
