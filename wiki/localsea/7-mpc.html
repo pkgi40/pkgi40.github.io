@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T07 - EDC &amp; MPC &mdash; Tutorials in LocalSEA 2026 documentation</title>
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="canonical" href="./7-mpc.html" />
+      <script src="static/jquery.js?v=5d32c60e"></script>
+      <script src="static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="static/documentation_options.js?v=84af279d"></script>
+      <script src="static/doctools.js?v=888ff710"></script>
+      <script src="static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="T06 - EDC Connector" href="6-edc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Tutorials in LocalSEA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0-home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ledblink.html">T01 - Led Blink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-t3wpmove.html">T02 - T3WP Moving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-ur3econtrol.html">T03 - UR3e Controlling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-mprotocols.html">T04 - Multiple Protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-uml2aasx.html">T05 - AAS Template Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-edc.html">T06 - EDC Connector</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">T07 - EDC &amp; MPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-instructions">Deployment Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#experiment-setup">Experiment setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#factory-ds-aas-dt-setup-optional">Factory DS-AAS DT setup (Optional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tutorials in LocalSEA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">T07 - EDC &amp; MPC</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="t07-edc-mpc">
+<h1>T07 - EDC &amp; MPC<a class="headerlink" href="#t07-edc-mpc" title="Permalink to this heading"></a></h1>
+<p>EDC Connectors are used for the exchange between Input, Computation, and Result
+nodes of a Multi-Party Computation (MPC) scenario. This use case is an updated
+version of the Tutorial 06. In particular, the scenario contains a new
+concept DS-AAS DT, which is an AAS DT integrated with Data Space connector.
+The detailed architecture of the use case is presented in the paper
+<em>“Model-Driven Development of Data Space-Enabled Asset Administration
+Shell Digital Twins”</em> presented in MDE4SA&#64;ICSA2026.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>The following components are required:</p>
+<ul class="simple">
+<li><p>Computer with pre-installed <a class="reference external" href="https://eclipse.dev/papyrus/components/manufacturing/downloadaas.html">Papyrus4Manufacturing</a> nightly version</p></li>
+<li><p><a class="reference external" href="https://github.com/pkgi40/p4m-tutorials/releases/download/localsea_t07_edcmpc_v0.1/LocalSEA_T07_EDCMPC.zip">LocalSEA T07 Kit</a>
+including some read-to-run software components</p></li>
+</ul>
+<p>The following knowledge are required:</p>
+<ul class="simple">
+<li><p>Understanding of T06 - EDC Connector</p></li>
+<li><p>Basic about Java + Eclipse IDE</p></li>
+<li><p>Basic about AAS</p></li>
+<li><p>Basic about EDC</p></li>
+<li><p>Basic about Docker</p></li>
+<li><p>Basic about Docker Compose</p></li>
+</ul>
+</section>
+<section id="deployment-instructions">
+<h2>Deployment Instructions<a class="headerlink" href="#deployment-instructions" title="Permalink to this heading"></a></h2>
+<p>In this example, all software components will be run on a computer;
+however, it is possible to run them in different machines with extra
+configurations.
+After downloading the T07 Kit, decompress it to get the ten packages:<br />
+(1) <strong>factory_v0.1.tar.gz</strong> contains the Docker image to run factories,<br />
+(2) <strong>aas_factory_vI1.tar.gz</strong> contains the Docker image to run input node I1,<br />
+(3) <strong>aas_factory_vI2.tar.gz</strong> contains the Docker image to run input node I2,<br />
+(4) <strong>aas_factory_vI3.tar.gz</strong> contains the Docker image to run input node I3,<br />
+(5) <strong>mpc_c1.1.tar.gz</strong> contains the Docker image to run compute node C1,<br />
+(6) <strong>mpc_c2.1.tar.gz</strong> contains the Docker image to run compute node C2,<br />
+(7) <strong>mpc_r1.1.tar.gz</strong> contains the Docker image to run compute node R1,<br />
+(8) <strong>mpc_edc.tar.gz</strong> contains the Docker image to run EDC connector for R1,<br />
+(9) <strong>docker-compose.yml</strong> contains the docker-compose script, and<br />
+(10) <strong>T07-Factory.zip</strong> contains the AAS information model for DS-AAS DT.</p>
+<section id="experiment-setup">
+<h3>Experiment setup<a class="headerlink" href="#experiment-setup" title="Permalink to this heading"></a></h3>
+<p>On the computer, install the Docker image with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">factory_v0.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">aas_factory_vI1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">aas_factory_vI2.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">aas_factory_vI3.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">mpc_c1.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">mpc_c2.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">mpc_r1.1.tar.gz</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">mpc_edc.tar.gz</span></code></p>
+</div></blockquote>
+<p>In the folder with the <strong>docker-compose.yml</strong> file, create a <strong>result.csv</strong>
+file to store the use case experimental output:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">touch</span> <span class="pre">result.csv</span></code></p>
+</div></blockquote>
+<p>Then, run all docker images
+using the docker compose with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span></code></p>
+</div></blockquote>
+<p>To verify the running Docker containers, using the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span></code>, and<br />
+the result should be:</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t07_docker.jpg" 
+        style="width: 90%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 1. Docker containers are launched using docker compose tool
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+<p>To verify the monitored result, using the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">result.csv</span></code>, and
+the result should be:</p>
+<div style="text-align: center;">       
+  <figure style="display: inline-block; margin: 0;">                       
+    <img src="static/t07_result.jpg" 
+        style="width: 90%; display: block; margin: 0 auto;"/>
+    <figcaption style="text-align: center; margin-top: 0.5em;">                                    
+      Figure 2. Output result of the use case 
+    </figcaption> 
+  </figure>                                                                     
+</div> 
+</br>
+</section>
+<section id="factory-ds-aas-dt-setup-optional">
+<h3>Factory DS-AAS DT setup (Optional)<a class="headerlink" href="#factory-ds-aas-dt-setup-optional" title="Permalink to this heading"></a></h3>
+<p>Running with docker compose, then the DS-AAS DTs are already configured
+correctly. This subsection provides only extra information for users who
+want to implement DS-AAS DT using Papyrus4Manufacturing.</p>
+<p>Extract <strong>T07-Factory.zip</strong> with the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">unzip</span> <span class="pre">T07-Factory.zip</span></code></p>
+</div></blockquote>
+<p>Open Papyrus4Manufacturing and import the project, users can follow the steps
+as in T06 - EDC Connector tutorial, except some differences.
+When a new project <em>AAS_FactorySample</em> is generated, users open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>share1</em> and modify it
+as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Share1_number_products</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span>
+<span class="w">    		</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/number&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">defaultVar</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Cache</span><span class="p">.</span><span class="na">properties</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Share1_number_products&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Share1_price</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">	</span>
+<span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span>
+<span class="w">    		</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/price&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">defaultVar</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Cache</span><span class="p">.</span><span class="na">properties</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Share1_price&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Also, users open the file
+<em>DynamicElementsWorkspace.java</em> inside the package <em>share2</em> and modify it
+as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Share2_price</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span>
+<span class="w">    		</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/price&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">defaultVar</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Cache</span><span class="p">.</span><span class="na">properties</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Share2_price&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">get_Share2_number_products</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span>
+<span class="w">    		</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">connectedDevices</span><span class="p">.</span><span class="na">ep_http</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="s">&quot;/number&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">defaultVar</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">defaultVar</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Cache</span><span class="p">.</span><span class="na">properties</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Share2_number_products&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">defaultVar</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It makes the values of share1/share2 are 40/60.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="6-edc.html" class="btn btn-neutral float-left" title="T06 - EDC Connector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 Commisariat à l&#39;Energie Atomique - Energies Alternatives — CEA LIST.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
